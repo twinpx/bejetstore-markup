@@ -2,7 +2,7 @@
 @block-title-height: 45px;
 
 body {
-	font-weight: 400;
+	font-weight: 300;
 }
 
 .container-fluid {
@@ -325,5 +325,13 @@ menu {
 	
 	a {
 		border: 1px solid @gray-lighter;
+	}
+	
+	&.active a {
+		&,
+		&:hover,
+		&:focus {
+			border-color: @component-active-bg;
+		}
 	}
 }
