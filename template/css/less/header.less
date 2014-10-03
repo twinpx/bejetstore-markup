@@ -40,6 +40,8 @@
 				margin: -10px 0;
 				text-align: center;
 				display: block !important;
+				background-color: @body-bg;
+				.transition( background-color 0.2s linear );
 				
 				&:hover {
 					background-color: @gray-lightest;
@@ -237,7 +239,6 @@
 	
 	&-top {
 		&-nav {
-			text-transform: uppercase;
 			
 			a {
 				display: inline-block;
@@ -247,10 +248,12 @@
 			}
 		}
 		
-		&-subnav {			
+		&-subnav {
+			text-align: center;
+			
 			a {
 				display: inline-block;
-				margin: 0 ceil( @grid-gutter-width * 0.5 );
+				margin: 0 @grid-gutter-width;
 			}
 		}
 	}
