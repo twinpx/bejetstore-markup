@@ -46,8 +46,8 @@
     "@padding-xs-horizontal": "5px",
     "@line-height-large": "1.33",
     "@line-height-small": "1.5",
-    "@border-radius-base": "3px",
-    "@border-radius-large": "ceil((@line-height-computed/2 + @padding-base-vertical + 1))",
+    "@border-radius-base": "ceil((@line-height-computed/2 + @padding-base-vertical + 1))",
+    "@border-radius-large": "6px",
     "@border-radius-small": "3px",
     "@component-active-color": "#fff",
     "@component-active-bg": "@brand-primary",
@@ -181,7 +181,7 @@
     "@nav-tabs-active-link-hover-border-color": "#000",
     "@nav-tabs-justified-link-border-color": "@nav-tabs-active-link-hover-border-color",
     "@nav-tabs-justified-active-link-border-color": "@body-bg",
-    "@nav-pills-border-radius": "@border-radius-base",
+    "@nav-pills-border-radius": "@border-radius-small",
     "@nav-pills-active-link-hover-bg": "@component-active-bg",
     "@nav-pills-active-link-hover-color": "@component-active-color",
     "@pagination-color": "@link-color",
@@ -419,5 +419,5 @@
     "scrollspy.js",
     "transition.js"
   ],
-  "customizerUrl": "http://getbootstrap.com/customize/?id=2fa843d934b89bd15055"
+  "customizerUrl": "http://getbootstrap.com/customize/?id=a2442122c8548cabf5dc"
 }
