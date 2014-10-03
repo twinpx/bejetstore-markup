@@ -1,0 +1,16 @@
+{
+  "name": "bejetstore",
+  "version": "0.0.0",
+  "description": "The best internet store",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tatiana",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt-contrib-concat": "^0.10.0",
+    "grunt-contrib-clean": "^0.10.0",
+    "grunt-contrib-cssmin": "^0.10.0"
+  }
+}

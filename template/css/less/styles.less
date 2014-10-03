@@ -1,0 +1,27 @@
+//variables
+@gray-lightest: #f2f2f2;
+
+//mixins
+.absolute-center {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+.keyframes (@name, @fromRules, @toRules) {
+    @-webkit-keyframes ~'@{name}' { 0% { @fromRules(); } 100% { @toRules(); } }
+            @keyframes ~'@{name}' { 0% { @fromRules(); } 100% { @toRules(); } }
+}
+
+
+@import url("../../bootstrap-3.2.0/less/variables.less");
+@import url("../../bootstrap-3.2.0/less/mixins.less");
+
+@import url("bootstrap-override.less");
+@import url("gui.less");
+@import url("header.less");
+@import url("footer.less");
+@import url("banner-carousel.less");
+@import url("news.less");
+
+//index
+@import url("index.less");

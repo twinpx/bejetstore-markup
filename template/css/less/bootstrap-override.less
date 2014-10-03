@@ -1,0 +1,144 @@
+//breadcrumb
+.breadcrumb {
+	font-size: 9pt;
+}
+
+//panel
+.panel {
+	border-radius: 0;
+	box-shadow: 0 0 0;
+	border: 1px solid @gray-lightest;
+	padding: @line-height-computed;
+	
+	@media (max-width: @screen-xs-max) {
+		border-right: none;
+		border-left: none;
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
+
+//carousel
+.carousel {
+	&-indicators {
+		margin-bottom: 0;
+		
+		@media (max-width: @screen-xs-max) {
+			display: none !important;
+		}
+		
+		li {
+			border-radius: 50%;
+			
+			&,
+			&.active {
+				.square( 9px );
+				margin: 0 2px;
+			}
+		}
+	}
+	
+	&-control {
+		box-shadow: 0 0 0;
+		
+		&.left,
+		&.right {
+			background-image: none;
+			width: 7%;
+			text-shadow: 0 0 0;
+		}
+		
+		span {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			margin: -10px 0 0 0;
+			line-height: 20px;
+		}
+		
+		&.right span {
+			left: auto;
+			right: 0;
+		}
+	}
+}
+
+//buttons
+.btn-default {
+	background: @body-bg;
+	text-shadow: none;
+	box-shadow: none;
+	font-size: @font-size-small;
+	padding-right: 19px;
+	padding-left: 19px;
+	
+	&:hover,
+	&:active,
+	&:focus {
+		outline: none;
+		background: @brand-primary;
+		color: #fff;
+		border-color: @brand-primary;
+	}
+}
+
+//nav tab
+.nav-tabs {
+	margin-bottom: @line-height-computed;
+  &.nav-justified {
+		border: none;
+
+	  > li > a {
+		border-radius: 0;
+		color: @gray;
+		
+		&:hover,
+		&:active,
+		&:focus {
+			border-color: transparent;
+			color: @gray-dark;
+			background-color: transparent;
+		}
+	  }
+
+	  > .active > a {
+		&,
+		&:hover,
+		&:active,
+		&:focus {
+			border-color: transparent;
+			color: @gray-darker;
+		}
+	  }
+
+	  @media (min-width: @screen-sm-min) {
+			> li > a {
+				border: none;
+				border-radius: 0;
+				
+				&,
+				&:hover,
+				&:active,
+				&:focus {
+					border-bottom: 1px solid @gray-lightest;
+				}
+			}
+			> .active > a {
+				&,
+				&:hover,
+				&:active,
+				&:focus {
+					border: none;
+					border-bottom: 1px solid #000;
+				}
+		  }
+	  }
+		
+		@media (max-width: @screen-xs-max) {
+			> li {
+				float: left;
+				width: 50%;
+			}
+		}
+  }
+}

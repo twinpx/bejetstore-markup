@@ -1,0 +1,30 @@
+.bj {
+	&-page {	
+		&-footer {
+			background-color: @brand-primary;
+			color: #fff;
+			padding-top: @line-height-computed * 3;
+			padding-bottom: @line-height-computed * 3;
+			
+			@media (max-width: @screen-xs-max) {
+				font-size: @font-size-large;
+				padding-top: ceil( @line-height-computed * 1.5 );
+				padding-bottom: ceil( @line-height-computed * 1.5 );
+			}
+			
+			a {
+				&,
+				&:hover,
+				&:active {
+					color: #fff;
+				}
+			}
+			
+			&__social {
+				@media (max-width: @screen-xs-max) {
+					text-align: center;
+				}
+			}
+		}
+	}
+}
