@@ -1,5 +1,5 @@
 @screen-xxs-width: 360px;
-@block-title-height: 41px;
+@block-title-height: 45px;
 
 body {
 	font-weight: 400;
@@ -256,6 +256,7 @@ menu {
 	}
 	
 	&-block {
+		line-height: normal;
 	
 		&__title {
 			width: 100%;
@@ -299,6 +300,7 @@ menu {
 			a {
 				white-space: nowrap;
 				word-wrap: break-word;
+				margin-right: 10px;
 			}
 		}
 		
@@ -315,5 +317,13 @@ menu {
 				margin-left: auto;
 			}
 		}
+	}
+}
+
+.bj-h1-nav.nav-pills li {
+	margin-left: 10px;
+	
+	a {
+		border: 1px solid @gray-lighter;
 	}
 }
