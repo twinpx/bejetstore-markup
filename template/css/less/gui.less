@@ -18,7 +18,6 @@ h2, .h2,
 h3, .h3,
 h4, .h4,
 h5, .h5 {
-	color: @gray-dark;
 	
 	&:first-child {
 		margin-top: 0;
@@ -26,7 +25,14 @@ h5, .h5 {
 }
 
 h1, .h1 {
+	color: @gray-dark;
 	font-family: "Open Sans";
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+	margin-bottom: @line-height-computed;
 }
 
 a:focus {
@@ -34,8 +40,7 @@ a:focus {
 	text-decoration: none;
 }
 
-.btn,
-.form-control {
+.btn {
 	border-radius: ceil(@line-height-computed/2 + @padding-base-vertical);
 }
 
@@ -89,6 +94,10 @@ menu {
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
+}
+
+.btn-100 {
+	width: 100%;
 }
 
 .text-large {

@@ -33,14 +33,46 @@
 		});
 	}
 	
-	!function userHeaderIcon() {
+	function userHeaderIcon() {
 		var options = {
 			html: true,
-			trigger: "focus",
+			trigger: "click",
 			placement: "bottom"
 		};
 		$( ".bj-page-header .bj-logo-space__icon.glyphicon-user" ).popover( options );
-	}();
+	};
+	
+	function newsForm() {
+		$( ".bj-news-subscribe form" ).submit( submitForm );
+		
+		function submitForm(e) {
+			var $form = $( this ),
+					url = $form.attr( "action" ),
+					type = $form.attr( "method" ),
+					data = $form.serialize();
+			
+			e.preventDefault();
+			
+			if ( !data ) return;
+			
+			$.ajax({
+				url: url,
+				type: type,
+				dataType: "json",
+				data: data,
+				success: function ( data ) {
+					if ( !data || !data instanceof Object ) return;
+					
+					if ( data.success ) {
+						$form.before( '<div class="alert alert-success" role="alert">' + data.success + '</div>' ).remove();
+					} else if ( data.error ) {
+						$form.before( '<div class="alert alert-warning" role="alert">' + data.error + '</div>' );
+					}
+				}
+			});
+			
+		}
+	}
 	
 	$(function() {
 		
@@ -49,6 +81,10 @@
 		headerSearch();
 		
 		catalogueDropDown();
+		
+		userHeaderIcon();
+		
+		newsForm();
 		
 		/*var hammertime = new Hammer( myElement, myOptions );
 		hammertime.on('pan', function(ev) {

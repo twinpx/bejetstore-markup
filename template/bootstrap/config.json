@@ -46,8 +46,8 @@
     "@padding-xs-horizontal": "5px",
     "@line-height-large": "1.33",
     "@line-height-small": "1.5",
-    "@border-radius-base": "ceil((@line-height-computed/2 + @padding-base-vertical + 1))",
-    "@border-radius-large": "6px",
+    "@border-radius-base": "6px",
+    "@border-radius-large": "ceil((@line-height-computed/2 + @padding-base-vertical + 1))",
     "@border-radius-small": "3px",
     "@component-active-color": "#fff",
     "@component-active-bg": "@brand-primary",
@@ -84,7 +84,7 @@
     "@input-bg-disabled": "@gray-light",
     "@input-color": "@text-color",
     "@input-border": "@gray-light",
-    "@input-border-radius": "@border-radius-base",
+    "@input-border-radius": "@border-radius-small",
     "@input-border-focus": "#66afe9",
     "@input-color-placeholder": "@gray-light",
     "@input-height-base": "(@line-height-computed + (@padding-base-vertical * 2) + 2)",
@@ -419,5 +419,5 @@
     "scrollspy.js",
     "transition.js"
   ],
-  "customizerUrl": "http://getbootstrap.com/customize/?id=a2442122c8548cabf5dc"
+  "customizerUrl": "http://getbootstrap.com/customize/?id=92ef71ae97358020e361"
 }

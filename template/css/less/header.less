@@ -158,23 +158,27 @@
 				padding: 0;
 			}
 			
-			.popover-content {
-				line-height: @line-height-base;
+			.popover {
+				border-radius: @border-radius-small;
 				
-				a {
-					display: block;
-					margin-bottom: 5px;
-				}
-				
-				b {
-					font-weight: 400;
-				}
-				
-				.glyphicon {
+				&-content {
 					line-height: @line-height-base;
-					width: auto;
-					font-size: @font-size-base;
-					margin-left: 6px;
+					
+					a {
+						display: block;
+						margin-bottom: 5px;
+					}
+					
+					b {
+						font-weight: 400;
+					}
+					
+					.glyphicon {
+						line-height: @line-height-base;
+						width: auto;
+						font-size: @font-size-base;
+						margin-left: 6px;
+					}
 				}
 			}
 		}

@@ -1,22 +1,49 @@
-<div id="news-carousel" class="carousel slide bj-news-carousel visible-xs-block" data-ride="carousel">
+<div class="panel visible-xs-block">
+	<div id="news-carousel" class="carousel slide bj-news-carousel" data-ride="carousel">
 
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-    <div class="item active bj-news-line">
-      <span class="bj-news-line__date">23 февраля 2014</span>
-	  <a href="" class="bj-news-line__text"> Магазин открывает шоу-рум в новинском бульваре. Магазин открывает шоу-рум в новинском бульваре. Магазин открывает шоу-рум в новинском бульваре.Магазин открывает шоу-рум в новинском бульваре.</a>
-    </div>
-    <div class="item bj-news-line">
-      <span class="bj-news-line__date">23 февраля 2014</span>
-	  <a href="" class="bj-news-line__text">Магазин открывает шоу-рум в новинском бульваре.</a>
-    </div>
-  </div>
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner">
+			<div class="item active bj-news-line">
+				<span class="bj-news-line__date">23 февраля 2014</span>
+				<a href="" class="bj-news-line__text"> Магазин открывает шоу-рум в новинском бульваре. Магазин открывает шоу-рум в новинском бульваре. Магазин открывает шоу-рум в новинском бульваре.Магазин открывает шоу-рум в новинском бульваре.</a>
+			</div>
+			<div class="item bj-news-line">
+				<span class="bj-news-line__date">23 февраля 2014</span>
+			<a href="" class="bj-news-line__text">Магазин открывает шоу-рум в новинском бульваре.</a>
+			</div>
+		</div>
 
-  <!-- Controls -->
-  <a class="left carousel-control" href="#news-carousel" role="button" data-slide="prev">
-    <span><</span>
-  </a>
-  <a class="right carousel-control" href="#news-carousel" role="button" data-slide="next">
-    <span>></span>
-  </a>
+		<!-- Controls -->
+		<a class="left carousel-control" href="#news-carousel" role="button" data-slide="prev">
+			<span><</span>
+		</a>
+		<a class="right carousel-control" href="#news-carousel" role="button" data-slide="next">
+			<span>></span>
+		</a>
+	</div>
+</div>
+
+<div class="bj-news-subscribe hidden-xs">
+	<h2><a href="/about/news/">Новости</a></h2>
+	<div class="row">
+		<div class="col-sm-4 bj-news-block">
+			<div class="bj-date">23 февраля 2014</div>
+			<h3><a href="/about/news/item/">Магазин открывает шоу-рум в новинском бульваре.</a></h3>
+			<p>Сегодняшняя «ЭКОНИКА» отличается от тех обувных салонов, которые многие знали в 90-е годы. С 2005 года сеть.</p>
+    </div>
+		<div class="col-sm-4 bj-news-block">
+			<div class="bj-date">23 февраля 2014</div>
+			<h3><a href="/about/news/item/">Магазин открывает бутики в новинском бульваре и на прилежащих улицах</a></h3>
+			<p>Сегодняшняя «ЭКОНИКА» отличается от тех обувных салонов, которые многие знали в 90-е годы. С 2005 года сеть.</p>
+    </div>
+		<div class="col-sm-4">
+			<h3><b>Подписаться на новости</b></h3>
+			<form action="/php/subscribe.php" method="post">
+				<div class="form-group">
+					<input type="email" name="email" value="" class="form-control" required>
+				</div>
+				<button type="submit" class="btn btn-default btn-100">Подписаться</button>
+			</form>
+    </div>
+	</div>
 </div>
