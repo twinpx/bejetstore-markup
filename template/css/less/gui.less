@@ -75,18 +75,26 @@ a:focus {
 hr {	
 	border: 0;
 	height: 1px;
-	margin-bottom: 0;
-	margin-top: 0;
-	padding-bottom: ceil( @line-height-computed * 0.75 );
-	padding-top: ceil( @line-height-computed * 0.75 );
+	margin-bottom: ceil( @line-height-computed * 0.75 );
+	margin-top: ceil( @line-height-computed * 0.75 );
 	
 	@media (max-width: @screen-xs-max) {
-		padding-bottom: ceil( @line-height-computed * 0.5 );
-		padding-top: ceil( @line-height-computed * 0.5 );
+		margin-bottom: ceil( @line-height-computed * 0.5 );
+		margin-top: ceil( @line-height-computed * 0.5 );
 	}
 	
 	&.clearfix {
 		clear: both;
+	}
+	
+	&.i-size-L {
+		margin-bottom: ceil( @line-height-computed * 1.5 );
+		margin-top: ceil( @line-height-computed * 1.5 );
+	
+		@media (max-width: @screen-xs-max) {
+			margin-bottom: @line-height-computed;
+			margin-top: @line-height-computed;
+		}
 	}
 }
 

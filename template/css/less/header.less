@@ -35,9 +35,9 @@
 			
 			&__menu-link,
 			&__sales-link {
-				text-transform: uppercase;
 				line-height: @header-top-height !important;
-				margin: -10px 0;
+				height: @header-top-height !important;
+				margin: -10px 0 -9px;
 				text-align: center;
 				display: block !important;
 				background-color: @body-bg;
@@ -264,6 +264,7 @@
 	
 	&-phone {
 		line-height: @header-top-link-height;
+		text-align: right;
 		
 		.glyphicon {
 			margin-right: @padding-base-horizontal;
