@@ -1,11 +1,8 @@
-@screen-xxs-width: 360px;
-@block-title-height: 45px;
-
 body {
 	font-weight: 300;
 }
 
-button {
+button:focus {
 	outline: none;
 }
 
@@ -24,9 +21,24 @@ h5, .h5 {
 	}
 }
 
-h1, .h1 {
-	color: @gray-dark;
-	font-family: "Open Sans";
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+	color: @gray-darker;
+}
+
+h3, .h3 {
+	font-weight: 700;
+}
+
+h4, .h4,
+h5, .h5 {
+	color: @gray;
+	font-weight: 700;
+}
+
+h5, .h5 {
+	font-size: 9pt;
 }
 
 h1, .h1,
@@ -95,6 +107,11 @@ hr {
 			margin-bottom: @line-height-computed;
 			margin-top: @line-height-computed;
 		}
+	}
+	
+	&.i-line {
+		border-top: 1px solid @gray-lighter;
+		height: 0;
 	}
 }
 
