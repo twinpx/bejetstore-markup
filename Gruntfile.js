@@ -32,7 +32,17 @@ module.exports = function (grunt) {
         src: [],
         dest: "css/plugins.css"
       }
-    }/*,  remove comments when cssmin is needed
+    },
+		
+		less: {
+			options: {
+				cleancss: true,
+			},
+			files: {
+				"template/template_styles.css": "template/css/less/styles.less"
+			}
+		}
+		/*,  remove comments when cssmin is needed
 		
 		cssmin: {
 			slick: {
@@ -50,6 +60,7 @@ module.exports = function (grunt) {
 	
   grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-less');
 	//grunt.loadNpmTasks('grunt-contrib-cssmin');
 
   grunt.registerTask("default", [ "clean"/*, "cssmin"*/, "concat" ]);
