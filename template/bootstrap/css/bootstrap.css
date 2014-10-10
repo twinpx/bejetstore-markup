@@ -5,8 +5,8 @@
  */
 
 /*!
- * Generated using the Bootstrap Customizer (http://getbootstrap.com/customize/?id=5fb847c6b0997f7bde0c)
- * Config saved to config.json and https://gist.github.com/5fb847c6b0997f7bde0c
+ * Generated using the Bootstrap Customizer (http://getbootstrap.com/customize/?id=05afe2c30485d092d62f)
+ * Config saved to config.json and https://gist.github.com/05afe2c30485d092d62f
  */
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 html {
@@ -2742,7 +2742,7 @@ select[multiple].input-lg {
 }
 .btn:hover,
 .btn:focus {
-  color: #5164b3;
+  color: #ffffff;
   text-decoration: none;
 }
 .btn:active,
@@ -2763,18 +2763,18 @@ fieldset[disabled] .btn {
   box-shadow: none;
 }
 .btn-default {
-  color: #5164b3;
-  background-color: #ffffff;
-  border-color: #cccccc;
+  color: #ffffff;
+  background-color: #a3add7;
+  border-color: #919dcf;
 }
 .btn-default:hover,
 .btn-default:focus,
 .btn-default:active,
 .btn-default.active,
 .open > .dropdown-toggle.btn-default {
-  color: #5164b3;
-  background-color: #e6e6e6;
-  border-color: #adadad;
+  color: #ffffff;
+  background-color: #7f8dc8;
+  border-color: #6777bd;
 }
 .btn-default:active,
 .btn-default.active,
@@ -2796,12 +2796,12 @@ fieldset[disabled] .btn-default:active,
 .btn-default.disabled.active,
 .btn-default[disabled].active,
 fieldset[disabled] .btn-default.active {
-  background-color: #ffffff;
-  border-color: #cccccc;
+  background-color: #a3add7;
+  border-color: #919dcf;
 }
 .btn-default .badge {
-  color: #ffffff;
-  background-color: #5164b3;
+  color: #a3add7;
+  background-color: #ffffff;
 }
 .btn-primary {
   color: #ffffff;

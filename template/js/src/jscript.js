@@ -74,36 +74,11 @@
 		}
 	}
 	
-	function catalogueFilter() {
-		
-		function range() {
-			var $range = $( ".bj-catalogue-filter .bj-range" ),
-					$input = $range.find( ".bj-range__input" ),
-					$value = $range.find( ".bj-range__value" ),
-					$slider = $range.find( ".bj-range__slider" ),
-					step = +$input.attr( "step" ) || 0,
-					min = +$input.attr( "min" ) || 0,
-					max = +$input.attr( "max" ) || 500,
-					value = +$input.val() || (min + max) / 2;
-			
-			$slider.slider({
-				range: true,
-				min: min,
-				max: max,
-				values: [ min + (value - min)/2, value + (max - value)/2 ],
-				step: step,
-				slide: function( event, ui ) {
-					$value.text( ui.values[ 0 ] + " - " + ui.values[ 1 ] );
-				}
-			});
-		}
-		
-		range();
-	}
-	
 	$(function() {
 		
 		$( ".bj-logo-space [title]" ).tooltip();
+		
+		$( ".bj-sorting [title]" ).tooltip();
 		
 		headerSearch();
 		
@@ -112,8 +87,6 @@
 		userHeaderIcon();
 		
 		newsForm();
-		
-		catalogueFilter();
 		
 		/*var hammertime = new Hammer( myElement, myOptions );
 		hammertime.on('pan', function(ev) {

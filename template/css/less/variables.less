@@ -1,0 +1,20 @@
+//variables
+@gray-lightest: #f2f2f2;
+
+@screen-xxs-width: 360px;
+@block-title-height: 45px;
+
+//mixins
+.absolute-center() {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+.keyframes (@name, @fromRules, @toRules) {
+    @-webkit-keyframes ~'@{name}' { 0% { @fromRules(); } 100% { @toRules(); } }
+            @keyframes ~'@{name}' { 0% { @fromRules(); } 100% { @toRules(); } }
+}
+
+.bg-transition() {
+	.transition( background-color 0.2s linear );
+}

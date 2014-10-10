@@ -1,0 +1,191 @@
+<script src="/components/eshop.filter/src/script.js" async></script>
+<link href="/components/eshop.filter/style.css" rel="stylesheet">
+
+<div class="bj-catalogue-filter">
+	<form action="" method="POST">
+		
+		<div class="form-group bj-range">
+			<label class="h3">Цена</label>
+			<div class="bj-range__value">100 &mdash; 3000</div>
+			<input type="range" name="price" min="100" max="3000" step="100" value="500" class="bj-range__input">
+			<div class="bj-range__slider"></div>
+		</div>
+		
+		<div class="form-group bj-cf__colors">
+			<label class="h3">Цвет</label>
+			<label class="bj-cf__colors__i bj-checkbox" style="background-color: #ff3333;">
+				<span class="bj-checkbox__u"></span>
+				<input type="checkbox" name="color[]" value="1">
+			</label>
+			<label class="bj-cf__colors__i bj-checkbox" style="background-color: #990000;">
+				<span class="bj-checkbox__u"></span>
+				<input type="checkbox" name="color[]" value="2">
+			</label>
+			<label class="bj-cf__colors__i bj-checkbox" style="background-color: #ff6600;">
+				<span class="bj-checkbox__u"></span>
+				<input type="checkbox" name="color[]" value="3">
+			</label>
+			<label class="bj-cf__colors__i bj-checkbox" style="background-color: #ff9900;">
+				<span class="bj-checkbox__u"></span>
+				<input type="checkbox" name="color[]" value="4">
+			</label>
+			<label class="bj-cf__colors__i bj-checkbox" style="background-color: #ffcc00;">
+				<span class="bj-checkbox__u"></span>
+				<input type="checkbox" name="color[]" value="5">
+			</label>
+			<label class="bj-cf__colors__i bj-checkbox" style="background-color: #99cc00;">
+				<span class="bj-checkbox__u"></span>
+				<input type="checkbox" name="color[]" value="6">
+			</label>
+			<label class="bj-cf__colors__i bj-checkbox" style="background-color: #66cc00;">
+				<span class="bj-checkbox__u"></span>
+				<input type="checkbox" name="color[]" value="7">
+			</label>
+			<label class="bj-cf__colors__i bj-checkbox" style="background-color: #66cc66;">
+				<span class="bj-checkbox__u"></span>
+				<input type="checkbox" name="color[]" value="8">
+			</label>
+			<label class="bj-cf__colors__i bj-checkbox" style="background-color: #33cc99;">
+				<span class="bj-checkbox__u"></span>
+				<input type="checkbox" name="color[]" value="9">
+			</label>
+			<label class="bj-cf__colors__i bj-checkbox" style="background-color: #33cccc;">
+				<span class="bj-checkbox__u"></span>
+				<input type="checkbox" name="color[]" value="10">
+			</label>
+			<label class="bj-cf__colors__i bj-checkbox" style="background-color: #3399cc;">
+				<span class="bj-checkbox__u"></span>
+				<input type="checkbox" name="color[]" value="11">
+			</label>
+			<label class="bj-cf__colors__i bj-checkbox" style="background-color: #3366cc;">
+				<span class="bj-checkbox__u"></span>
+				<input type="checkbox" name="color[]" value="12">
+			</label>
+			<label class="bj-cf__colors__i bj-checkbox" style="background-color: #333399;">
+				<span class="bj-checkbox__u"></span>
+				<input type="checkbox" name="color[]" value="13">
+			</label>
+			<label class="bj-cf__colors__i bj-checkbox" style="background-color: #993399;">
+				<span class="bj-checkbox__u"></span>
+				<input type="checkbox" name="color[]" value="14">
+			</label>
+			
+			<div class="clearfix"></div>
+		</div>
+		
+		<div class="form-group">
+			<label class="h3">Размер</label>
+			
+			<label class="bj-cf__size__i bj-checkbox">
+				<span class="bj-checkbox__u"></span>
+				<input type="checkbox" name="size[]" value="40/42">
+				40/42
+			</label>
+			
+			<label class="bj-cf__size__i bj-checkbox">
+				<span class="bj-checkbox__u"></span>
+				<input type="checkbox" name="size[]" value="42/44">
+				42/44
+			</label>
+			
+			<label class="bj-cf__size__i bj-checkbox">
+				<span class="bj-checkbox__u"></span>
+				<input type="checkbox" name="size[]" value="44/46">
+				44/46
+			</label>
+			
+		</div>
+		
+		<div class="form-group">
+			<label class="h3">Производитель</label>
+			
+			<div class="checkbox">
+				<label><input type="checkbox" name="brand[]" value="armani"> Giorgio Armani</label>
+			</div>
+			
+			<div class="checkbox">
+				<label><input type="checkbox" name="brand[]" value="dior"> Dior</label>
+			</div>
+			
+			<div class="checkbox">
+				<label><input type="checkbox" name="brand[]" value="chanel"> Chanel</label>
+			</div>
+			
+			<div class="checkbox">
+				<label><input type="checkbox" name="brand[]" value="gucci"> Gucci</label>
+			</div>
+			
+			<div class="bj-hidden">
+				<a href="" class="bj-hidden-link">Еще</a>
+				<div class="bj-hidden__hidden">
+					
+					<div class="checkbox">
+						<label><input type="checkbox" name="brand[]" value="prada"> Prada</label>
+					</div>
+					
+					<div class="checkbox">
+						<label><input type="checkbox" name="brand[]" value="vintage"> Vintage</label>
+					</div>
+					
+					<div class="checkbox">
+						<label><input type="checkbox" name="brand[]" value="hugo"> Hugo Boss</label>
+					</div>
+					
+					<div class="checkbox">
+						<label><input type="checkbox" name="brand[]" value="hermes"> Hermes</label>
+					</div>
+				
+				</div>
+			</div>
+			
+		</div>
+		
+		<div class="form-group">
+			<label class="h3">Материалы</label>
+			
+			<div class="checkbox">
+				<label><input type="checkbox" name="material[]" value="cotton"> Хлопок</label>
+			</div>
+			
+			<div class="checkbox">
+				<label><input type="checkbox" name="material[]" value="linen"> Лен</label>
+			</div>
+			
+			<div class="checkbox">
+				<label><input type="checkbox" name="material[]" value="wool"> Шерсть</label>
+			</div>
+			
+			<div class="checkbox">
+				<label><input type="checkbox" name="material[]" value="nylon"> Нейлон</label>
+			</div>
+			
+			<div class="bj-hidden">
+				<a href="" class="bj-hidden-link">Еще</a>
+				<div class="bj-hidden__hidden">
+					
+					<div class="checkbox">
+						<label><input type="checkbox" name="material[]" value="leather"> Кожа</label>
+					</div>
+					
+					<div class="checkbox">
+						<label><input type="checkbox" name="material[]" value="knitted"> Трикотаж</label>
+					</div>
+					
+					<div class="checkbox">
+						<label><input type="checkbox" name="material[]" value="jercey"> Джерси</label>
+					</div>
+					
+					<div class="checkbox">
+						<label><input type="checkbox" name="material[]" value="viscose"> Вискоза</label>
+					</div>
+				
+				</div>
+			</div>
+			
+		</div>
+		
+		<button type="submit" class="btn btn-default">Подобрать</button>
+		<button type="reset" class="btn bj-reset-button" title="Сбросить значения"></button>
+		
+	</form>
+</div>

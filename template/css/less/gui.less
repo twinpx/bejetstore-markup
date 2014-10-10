@@ -3,7 +3,7 @@ body {
 }
 
 button:focus {
-	outline: none;
+	outline: none !important;
 }
 
 .container-fluid {
@@ -15,6 +15,7 @@ h2, .h2,
 h3, .h3,
 h4, .h4,
 h5, .h5 {
+	display: block;
 	
 	&:first-child {
 		margin-top: 0;
@@ -53,7 +54,7 @@ a:focus {
 }
 
 .btn {
-	border-radius: ceil(@line-height-computed/2 + @padding-base-vertical);
+	background-image: none;
 }
 
 .hidden-xxs {

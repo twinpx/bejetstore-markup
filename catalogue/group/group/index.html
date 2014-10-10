@@ -38,159 +38,36 @@
 		<div class="row">
 			
 			<div class="col-sm-3 col-xs-12">
-				<div class="bj-catalogue-filter">
-					<form action="" method="POST">
-						
-						<div class="form-group bj-range">
-							<h3>Цена</h3>
-							<div class="bj-range__value">100 &mdash; 3000</div>
-							<input type="range" name="price" min="100" max="3000" step="100" value="500" class="bj-range__input">
-							<div class="bj-range__slider"></div>
-						</div>
-						
-						<div class="form-group bj-cf__colors">
-							<h3>Цвет</h3>
-							<label style="background-color: #ff3333;"><input type="checkbox" name="color[]" value="1"></label>
-							<label style="background-color: #990000;"><input type="checkbox" name="color[]" value="2"></label>
-							<label style="background-color: #ff6600;"><input type="checkbox" name="color[]" value="3"></label>
-							<label style="background-color: #ff9900;"><input type="checkbox" name="color[]" value="4"></label>
-							<label style="background-color: #ffcc00;"><input type="checkbox" name="color[]" value="5"></label>
-							<label style="background-color: #99cc00;"><input type="checkbox" name="color[]" value="6"></label>
-							<label style="background-color: #66cc00;"><input type="checkbox" name="color[]" value="7"></label>
-							<label style="background-color: #66cc66;"><input type="checkbox" name="color[]" value="8"></label>
-							<label style="background-color: #33cc99;"><input type="checkbox" name="color[]" value="9"></label>
-							<label style="background-color: #33cccc;"><input type="checkbox" name="color[]" value="10"></label>
-							<label style="background-color: #3399cc;"><input type="checkbox" name="color[]" value="11"></label>
-							<label style="background-color: #3366cc;"><input type="checkbox" name="color[]" value="12"></label>
-							<label style="background-color: #333399;"><input type="checkbox" name="color[]" value="13"></label>
-							<label style="background-color: #993399;"><input type="checkbox" name="color[]" value="14"></label>
-							
-							<div class="clearfix"></div>
-						</div>
-						
-						<div class="form-group">
-							<h3>Размер</h3>
-							
-							<label>
-								<input type="radio" name="size" value="40/42">
-								40/42
-							</label>
-							
-							<label>
-								<input type="radio" name="size" value="42/44">
-								42/44
-							</label>
-							
-							<label>
-								<input type="radio" name="size" value="44/46">
-								44/46
-							</label>
-							
-						</div>
-						
-						<div class="form-group">
-							<h3>Производитель</h3>
-							
-							<div class="checkbox">
-								<label><input type="checkbox" name="brand[]" value="armani"> Giorgio Armani</label>
-							</div>
-							
-							<div class="checkbox">
-								<label><input type="checkbox" name="brand[]" value="dior"> Dior</label>
-							</div>
-							
-							<div class="checkbox">
-								<label><input type="checkbox" name="brand[]" value="chanel"> Chanel</label>
-							</div>
-							
-							<div class="checkbox">
-								<label><input type="checkbox" name="brand[]" value="gucci"> Gucci</label>
-							</div>
-							
-							<a href="">Еще</a>
-							<div class="hidden">
-								
-								<div class="checkbox">
-									<label><input type="checkbox" name="brand[]" value="prada"> Prada</label>
-								</div>
-								
-								<div class="checkbox">
-									<label><input type="checkbox" name="brand[]" value="vintage"> Vintage</label>
-								</div>
-								
-								<div class="checkbox">
-									<label><input type="checkbox" name="brand[]" value="hugo"> Hugo Boss</label>
-								</div>
-								
-								<div class="checkbox">
-									<label><input type="checkbox" name="brand[]" value="hermes"> Hermes</label>
-								</div>
-							
-							</div>
-							
-						</div>
-						
-						<div class="form-group">
-							<h3>Материалы</h3>
-							
-							<div class="checkbox">
-								<label><input type="checkbox" name="material[]" value="cotton"> Хлопок</label>
-							</div>
-							
-							<div class="checkbox">
-								<label><input type="checkbox" name="material[]" value="linen"> Лен</label>
-							</div>
-							
-							<div class="checkbox">
-								<label><input type="checkbox" name="material[]" value="wool"> Шерсть</label>
-							</div>
-							
-							<div class="checkbox">
-								<label><input type="checkbox" name="material[]" value="nylon"> Нейлон</label>
-							</div>
-							
-							<a href="">Еще</a>
-							<div class="hidden">
-								
-								<div class="checkbox">
-									<label><input type="checkbox" name="material[]" value="leather"> Кожа</label>
-								</div>
-								
-								<div class="checkbox">
-									<label><input type="checkbox" name="material[]" value="knitted"> Трикотаж</label>
-								</div>
-								
-								<div class="checkbox">
-									<label><input type="checkbox" name="material[]" value="jercey"> Джерси</label>
-								</div>
-								
-								<div class="checkbox">
-									<label><input type="checkbox" name="material[]" value="viscose"> Вискоза</label>
-								</div>
-							
-							</div>
-							
-						</div>
-						
-						<button type="submit" class="btn btn-submit">Подобрать</button>
-						
-					</form>
-				</div>
-				
+				<!--#include virtual="/components/eshop.filter/template.html"-->
 			</div>
 			
 			<div class="col-sm-9 col-xs-12 bj-catalogue-group">
-			
-				<ul class="pagination">
-					<li><a href="#">&laquo;</a></li>
-					<li><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">...</a></li>
-					<li><a href="#">55</a></li>
-					<li><a href="#">&raquo;</a></li>
-				</ul>
 				
+				<div class="row">
+				
+					<div class="col-sm-6 col-xs-12">
+						<div class="bj-sorting">
+							<div class="dropdown">
+								<span id="dLabel" role="button" data-toggle="dropdown" data-target="#" class="form-control">
+									По алфавиту <span class="caret"></span>
+								</span>
+								<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+									<li><a href="?alpha">По цвету обуви, сумки и перчаток</a></li>
+									<li><a href="?color">По цвету</a></li>
+									<li><a href="?price">По цене</a></li>
+								</ul>
+							</div>
+							<a href="?default" class="btn bj-reset-button" title="Сбросить значения" data-toggle="tooltip" data-placement="top"></a>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+					
+					<div class="col-sm-6 col-xs-12">
+						<!--#include virtual="/blocks/page/pagination.html"-->
+					</div>
+					
+				</div>
+			
 				<hr class="i-line">
 				
 				<div class="row">
@@ -219,7 +96,7 @@
 									<div class="text-small"><s>3 450 р.</s></div>
 								</div>
 								<div class="col-xs-6">
-									<a href="/catalogue/group/group/item/" class="btn btn-default">Купить</a>
+									<a href="/catalogue/group/group/item/" class="btn btn-default">В корзину</a>
 								</div>
 							</div>
 						</div>
@@ -241,7 +118,7 @@
 							<div class="row">
 								<div class="col-xs-6 bj-product-card__price bj-price text-large">3 450 р.</div>
 								<div class="col-xs-6">
-									<a href="/catalogue/group/group/item/" class="btn btn-default">Купить</a>
+									<a href="/catalogue/group/group/item/" class="btn btn-default">В корзину</a>
 								</div>
 							</div>
 						</div>
@@ -263,7 +140,7 @@
 							<div class="row">
 								<div class="col-xs-6 bj-product-card__price bj-price text-large">3 450 р.</div>
 								<div class="col-xs-6">
-									<a href="/catalogue/group/group/item/" class="btn btn-default">Купить</a>
+									<a href="/catalogue/group/group/item/" class="btn btn-default">В корзину</a>
 								</div>
 							</div>
 						</div>
@@ -290,7 +167,7 @@
 							<div class="row">
 								<div class="col-xs-6 bj-product-card__price bj-price text-large">3 450 р.</div>
 								<div class="col-xs-6">
-									<a href="/catalogue/group/group/item/" class="btn btn-default">Купить</a>
+									<a href="/catalogue/group/group/item/" class="btn btn-default">В корзину</a>
 								</div>
 							</div>
 						</div>
@@ -312,7 +189,7 @@
 							<div class="row">
 								<div class="col-xs-6 bj-product-card__price bj-price text-large">3 450 р.</div>
 								<div class="col-xs-6">
-									<a href="/catalogue/group/group/item/" class="btn btn-default">Купить</a>
+									<a href="/catalogue/group/group/item/" class="btn btn-default">В корзину</a>
 								</div>
 							</div>
 						</div>
@@ -334,7 +211,7 @@
 							<div class="row">
 								<div class="col-xs-6 bj-product-card__price bj-price text-large">3 450 р.</div>
 								<div class="col-xs-6">
-									<a href="/catalogue/group/group/item/" class="btn btn-default">Купить</a>
+									<a href="/catalogue/group/group/item/" class="btn btn-default">В корзину</a>
 								</div>
 							</div>
 						</div>
@@ -343,15 +220,30 @@
 				
 				<hr class="i-line">
 			
-				<ul class="pagination">
-					<li><a href="#">&laquo;</a></li>
-					<li><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">...</a></li>
-					<li><a href="#">55</a></li>
-					<li><a href="#">&raquo;</a></li>
-				</ul>
+				<div class="row">
+				
+					<div class="col-sm-6 col-xs-12">
+						<div class="bj-sorting">
+							<div class="dropdown">
+								<span id="dLabel" role="button" data-toggle="dropdown" data-target="#" class="form-control">
+									По алфавиту <span class="caret"></span>
+								</span>
+								<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+									<li><a href="?alpha">По алфавиту</a></li>
+									<li><a href="?color">По цвету</a></li>
+									<li><a href="?price">По цене</a></li>
+								</ul>
+							</div>
+							<a href="?default" class="btn bj-reset-button" title="Сбросить значения" data-toggle="tooltip" data-placement="top"></a>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+					
+					<div class="col-sm-6 col-xs-12">
+						<!--#include virtual="/blocks/page/pagination.html"-->
+					</div>
+					
+				</div>
 			
 			</div>
 			
