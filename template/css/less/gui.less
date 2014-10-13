@@ -55,6 +55,12 @@ a:focus {
 
 .btn {
 	background-image: none;
+	
+	&-size-L {
+		font-size: 13.5pt;
+		font-weight: 700;
+		line-height: 56px;
+	}
 }
 
 .hidden-xxs {
@@ -376,5 +382,26 @@ menu {
 				border-color: @component-active-bg;
 			}
 		}
+	}
+}
+
+@media (max-width: @screen-xs-max) {
+	.no-float-xs {
+		float: none;
+	}
+}
+@media (min-width: @screen-sm-min) {
+	.no-float-sm {
+		float: none;
+	}
+}
+@media (min-width: @screen-md-min) {
+	.no-float-md {
+		float: none;
+	}
+}
+@media (min-width: @screen-lg-min) {
+	.no-float-lg {
+		float: none;
 	}
 }

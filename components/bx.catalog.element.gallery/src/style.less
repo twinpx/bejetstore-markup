@@ -1,0 +1,42 @@
+@import url("../../../template/css/less/components-import.less");
+
+.bx_item_detail .bx_item_slider .bx_bigimages {
+	border: none;
+	padding-top: 100%;
+	
+	&_aligner {
+		margin: 0 !important;
+	}
+}
+
+.bx_item_detail .bx_item_slider .bx_slide ul li {
+	
+	&:hover .cnt {
+		border-width: 0px;
+		
+		.cnt_item {
+			.opacity(1);
+			.transition( all 0.3s ease );
+		}
+	}
+	
+	&:active .cnt,
+	&.bx_active .cnt,
+	&.bx_active:hover .cnt {
+		border-color: darken( @brand-primary, 12% );
+		border-width: 3px;
+		padding: 0;
+	}
+	
+	.cnt {
+		border: 0;
+		
+		.cnt_item {
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			.opacity(0.9);
+		}
+	}
+}
