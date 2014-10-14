@@ -52,7 +52,7 @@
 				range: true,
 				min: min,
 				max: max,
-				values: [ min, max ],
+				values: [ $inputMin.val(), $inputMax.val() ],
 				step: step,
 				slide: function( event, ui ) {
 					$value.text( ui.values[ 0 ] + " \u2014 " + ui.values[ 1 ] );
