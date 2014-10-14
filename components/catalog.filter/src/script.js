@@ -40,13 +40,13 @@
 		
 		!function range() {
 			var $range = $( ".bj-catalogue-filter .bj-range" ),
-					$input = $range.find( ".bj-range__input" ),
+					$inputMin = $range.find( ".bj-range__input-min" ),
+					$inputMax = $range.find( ".bj-range__input-max" ),
 					$value = $range.find( ".bj-range__value" ),
 					$slider = $range.find( ".bj-range__slider" ),
-					step = +$input.attr( "step" ) || 0,
-					min = +$input.attr( "min" ) || 0,
-					max = +$input.attr( "max" ) || 500,
-					value = +$input.val() || (min + max) / 2;
+					step = +$inputMin.attr( "step" ) || +$inputMax.attr( "step" ) || 0,
+					min = +$inputMin.attr( "min" ) || 100,
+					max = +$inputMax.attr( "max" ) || 3000;
 			
 			$slider.slider({
 				range: true,
@@ -55,7 +55,9 @@
 				values: [ min, max ],
 				step: step,
 				slide: function( event, ui ) {
-					$value.text( ui.values[ 0 ] + " — " + ui.values[ 1 ] );
+					$value.text( ui.values[ 0 ] + " \u2014 " + ui.values[ 1 ] );
+					$inputMin.val( ui.values[ 0 ] );
+					$inputMax.val( ui.values[ 1 ] );
 				}
 			});
 		}();

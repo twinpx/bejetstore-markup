@@ -43,13 +43,20 @@
 				<hr class="visible-xs-block">
 			
 				<div class="col-sm-6">
-					<!--#include virtual="/components/bx.rating.vote/template.html"-->
-					<hr class="visible-xs">
-					<a href="">Написать отзыв</a>
+				
+					<div class="row">
+						<div class="col-sm-6">
+							<!--#include virtual="/components/bx.rating.vote/template.html"-->
+						</div>
+						<hr class="visible-xs">
+						<div class="col-sm-6">
+							<a href="">Написать отзыв</a>
+						</div>
+					</div>
 			
 					<hr class="i-line">
 					
-					<div class="row">
+					<div class="row small">
 							
 						<div class="col-sm-6">
 						
@@ -140,6 +147,7 @@
 							
 							<div class="text-center">
 								<a href="" class="btn btn-default btn-size-L btn-100">В корзину</a>
+								<a href="">Покупка в 1 клик</a>
 							</div>
 						</div>
 						
@@ -157,7 +165,7 @@
 							<hr>
 							
 							<div class="row">
-								<div class="text-center small bj-catalogue-label col-xs-6 no-float-sm">
+								<div class="text-center bj-catalogue-label col-xs-6 col-sm-12 no-float-sm">
 									<div class="bj-catalogue-label__icon">
 										<img src="/template/images/icons/delivery.gif" class="img-responsive center-block">
 									</div>
@@ -166,7 +174,7 @@
 								
 								<hr class="hidden-xs">
 								
-								<div class="text-center small bj-catalogue-label col-xs-6 no-float-sm">
+								<div class="text-center bj-catalogue-label col-xs-6 col-sm-12 no-float-sm">
 									<div class="bj-catalogue-label__icon">
 										<img src="/template/images/icons/fitting.gif" class="img-responsive center-block">
 									</div>
@@ -199,7 +207,11 @@
 		<div class="tab-pane active" id="comments">
 			<div class="row">
 				<div class="col-sm-6">
+					
+					<div class="bj-no-comments">Нет ни одного отзыва.<br>Стань первым!</div>
+					<hr>
 					<!--#include virtual="/components/bx.catalog.element.comments/template.html"-->
+					
 				</div>
 				<hr class="visible-xs">
 				<div class="col-sm-6">
