@@ -22,11 +22,12 @@ module.exports = function (grunt) {
       },
       js: {
         src: [
-					"js/src/html5shiv.js",
-					"js/plugins/hammer.js/hammer.js",
-					"js/src/jscript.js"
+					"template/js/src/html5shiv.js",
+					"template/js/plugins/hammer.js/hammer.js",
+					"template/js/plugins/jquery.scrollTo/jquery.scrollTo.min.js",
+					"template/js/src/jscript.js"
 				],
-        dest: "js/jscript.js"
+        dest: "template/js/script.js"
       },
       css: {
         src: [],

@@ -1,0 +1,103 @@
+@import url("../../../template/css/less/components-import.less");
+
+//@import url("bx.style.less");
+
+.bx_scu {
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		
+		&:after {
+			clear: both;
+			content: ".";
+			display: block;
+			height: 0;
+			visibility: hidden;
+		}
+	}
+	
+	li {
+		float: left;
+		width: 24px !important;
+		padding: 0 !important;
+		margin: 0 1px 12px 0;
+		position: relative;
+		
+		i {
+			position: absolute;
+			bottom: -4px;
+			left: 50%;
+			width: 4px;
+			height: 4px;
+			display: block;
+			background: #000;
+			visibility: hidden;
+			.transition( all 0.3s cubic-bezier(0.680, -0.550, 0.265, 1.550) );
+		}
+			
+		&.bx_active i {
+			width: 100%;
+			left: 0;
+			height: 2px;
+			visibility: visible;
+		}
+	}
+	
+	.cnt {
+		display: block;
+		
+		&_item {
+			width: 24px;
+			height: 24px;
+			display: block;
+			cursor: pointer;
+			border: 1px solid #f0f0f0;
+		}
+	}
+}
+
+.bx_size {
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		
+		&:after {
+			clear: both;
+			content: ".";
+			display: block;
+			height: 0;
+			visibility: hidden;
+		}
+	}
+	
+	li {
+		float: left;
+		width: auto !important;
+		padding: 0 !important;
+		margin: 0 8px 12px 0;
+		position: relative;
+		color: #999;
+		cursor: pointer;
+		
+		i {
+			position: absolute;
+			bottom: -4px;
+			left: 0;
+			width: 100%;
+			display: block;
+			height: 2px;
+			background: #000;
+			visibility: hidden;
+		}
+			
+		&.bx_active {
+			color: #333;
+			
+			i {
+				visibility: visible;
+			}
+		}
+	}
+}

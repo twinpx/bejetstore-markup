@@ -74,6 +74,16 @@
 		}
 	}
 	
+	function linkToCommentsForm() {
+		$( ".i-link-to-comments-form" ).click( function(e) {
+			e.preventDefault();
+			$.scrollTo( ".blog-comment-form", 500 );
+			var block = document.getElementsByClassName( "blog-comment-form" )[0];
+			var form = block.getElementsByTagName( "FORM" )[0];
+			form.getElementsByTagName( "TEXTAREA" )[0].focus();
+		});
+	}
+	
 	$(function() {
 		
 		$( ".bj-logo-space [title]" ).tooltip();
@@ -87,6 +97,8 @@
 		userHeaderIcon();
 		
 		newsForm();
+		
+		linkToCommentsForm();
 		
 		/*var hammertime = new Hammer( myElement, myOptions );
 		hammertime.on('pan', function(ev) {
