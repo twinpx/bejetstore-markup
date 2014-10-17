@@ -1,27 +1,36 @@
 (function($) {
 	$(function() {
 		
-		$( ".bj-catalogue-filter input:checkbox" ).on( "change", function() {
-			var $form = $( this ).closest( "form" ),
-					flag = false;
-			$form.find( "input:checkbox" ).each( function() {
-				if ( this.checked ) {
-					flag = true;
-				}
-			});
-			if ( flag ) {
-				$form.find( "button[type=reset]" ).css({ opacity: 1 });
-			} else {
-				$form.find( "button[type=reset]" ).css({ opacity: 0 });
-			}
-		});
-		
 		$( ".bj-checkbox input:checkbox" ).on( "change", function() {
 			var $this = $( this );
 			if ( this.checked ) {
 				$this.closest( ".bj-checkbox" ).addClass( "i-checked" );
 			} else {
 				$this.closest( ".bj-checkbox" ).removeClass( "i-checked" );
+			}
+		});
+		
+		$( ".bj-catalogue-filter input:checkbox" )
+		.on( "change", function() {
+			var $form = $( this ).closest( "form" ),
+					flag = false;
+			
+			$form.find( "input:checkbox" ).each( function() {
+				if ( this.checked ) {
+					console.log(this.checked);
+					flag = true;
+				}
+			});
+			
+			if ( flag ) {
+				$form.find( "button[type=reset]" ).css({ opacity: 1 });
+			} else {
+				$form.find( "button[type=reset]" ).css({ opacity: 0 });
+			}
+		})
+		.each( function() {
+			if ( this.checked ) {
+				$( this ).trigger( "change" );
 			}
 		});
 		
