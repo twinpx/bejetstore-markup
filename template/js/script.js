@@ -2733,7 +2733,7 @@ if (typeof define == TYPE_FUNCTION && define.amd) {
 	};
 	
 	function newsForm() {
-		$( ".bj-news-subscribe form" ).submit( submitForm );
+		$( ".bj-news-subscribe__s form" ).submit( submitForm );
 		
 		function submitForm(e) {
 			var $form = $( this ),

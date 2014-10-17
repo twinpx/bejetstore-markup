@@ -1,0 +1,46 @@
+<!--#set var="page" value="about_news" -->
+<!--#set var="auth" value="false" -->
+<!DOCTYPE html>
+<html>
+<head>
+<!--#include virtual="/blocks/meta.html"-->
+<title>Новости | Bejet Store</title>
+</head>
+
+<body>
+	
+	<!--#include virtual="/blocks/header.html"-->
+	
+	<div class="bj-page-content container-fluid">
+		
+		<div class="bj-top-decoration"></div>
+		
+		<ol class="breadcrumb">
+			<li><a href="/">Главная</a></li>
+		</ol>
+		
+		<h1>Новости</h1>
+		
+		<!--#include virtual="/blocks/news/groups.html"-->
+		
+		<!--#include virtual="/blocks/page/pagination.html"-->
+		
+		<hr class="i-line i-size-L">
+		
+		<div class="row">
+			<div class="col-sm-4 col-sm-offset-4">
+				<!--#include virtual="/blocks/index/subscribe.html"-->
+			</div>
+		</div>
+		
+		<hr class="i-size-L">
+		
+		<!--#include virtual="/blocks/index/banners.html"-->
+		
+		<hr class="i-size-L">
+	</div>
+	
+	<!--#include virtual="/blocks/footer.html"-->
+	<!--#include virtual="/blocks/scripts.html"-->
+</body>
+</html>
