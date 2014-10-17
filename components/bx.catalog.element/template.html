@@ -27,26 +27,35 @@
 			<div class="row small">
 					
 				<div class="col-sm-6">
-				
+					<!--Heading Размеры has changed, sizes tranformed from letters to digits-->
 					<!--#include virtual="/components/bx.catalog.element/colors-size.html"-->
 				
 					<hr>
 					
 					<div class="bj-price i-size-L">
-						<div class="text-large text-info">3 450 р.</div>
-						<div class="text-small"><s>3 450 р.</s></div>
+						<!--add class "text-large"-->
+						<div class="text-large item_current_price">3 450 р.</div>
+						<!--add classes "text-large text-info"-->
+						<div class="text-large text-info item_economy_price">3 450 р.</div>
+						<!--add class "text-small"-->
+						<div class="text-small item_old_price"><s>3 450 р.</s></div>
 					</div>
 					
 					<hr>
 					
 					<div class="text-center">
+						<!--heading is removed-->
 						<!--#include virtual="/components/bx.catalog.element/counter.html"-->
 					</div>
 					
 					<hr>
 					
 					<div class="text-center">
+						<!--cart button moved to another block, it's just a link with id-->
+						<!--add some classes to it-->
+						<!--span inside is removed, text is changed-->
 						<a href="" class="btn btn-default btn-size-L btn-100 bj-cart-button">В корзину</a>
+						<!--add this link-->
 						<a href="">Покупка в 1 клик</a>
 					</div>
 				</div>
