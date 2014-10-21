@@ -16,5 +16,9 @@
 }
 
 .bg-transition() {
-	.transition( background-color 0.2s linear );
+	.bj-transition( background-color );
+}
+
+.bj-transition( @prop ) {
+	.transition( @prop 0.2s linear );
 }
