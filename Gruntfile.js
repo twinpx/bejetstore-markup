@@ -12,9 +12,21 @@ module.exports = function (grunt) {
             " */\n",
 		
     clean: {
-      dist: [ "js/jscript.js", "css/plugins.css" ]
+      dist: [ "js/jscript.js" ]
     },
 		//concatenate all js and css files
+		
+		uglify: {
+			options: {
+				preserveComments: "some"
+			},
+			dist: {
+				files: {
+					'template/script.js': [ 'template/js/script.js' ]
+				}
+			}
+		},
+		
     concat: {
       options: {
         banner: '<%= banner %>',
@@ -28,10 +40,6 @@ module.exports = function (grunt) {
 					"template/js/src/jscript.js"
 				],
         dest: "template/js/script.js"
-      },
-      css: {
-        src: [],
-        dest: "css/plugins.css"
       }
     },
 		
@@ -62,6 +70,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-less');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 	//grunt.loadNpmTasks('grunt-contrib-cssmin');
 
   grunt.registerTask("default", [ "clean"/*, "cssmin"*/, "concat" ]);

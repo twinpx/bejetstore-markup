@@ -1,4 +1,18 @@
 (function($) {
+	
+	function scrollToSort() {
+		var search = window.location.search,
+				$sorting = $( ".bj-sorting" ),
+				to;
+		
+		if ( String( search ).search( "sort=" ) === -1 || !$sorting.length ) {
+			return;
+		}
+		
+		to = $sorting.offset().top - 20;
+		$.scrollTo( to, 500 );
+	}
+	
 	function headerSearch() {
 		$( ".bj-page-header__search .glyphicon" ).click( function () {
 			$( this )
@@ -99,6 +113,8 @@
 		newsForm();
 		
 		linkToCommentsForm();
+		
+		scrollToSort();
 		
 		/*var hammertime = new Hammer( myElement, myOptions );
 		hammertime.on('pan', function(ev) {
