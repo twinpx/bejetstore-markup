@@ -75,12 +75,18 @@
 				dataType: "json",
 				data: data,
 				success: function ( data ) {
+					var text, $warning;
 					if ( !data || !data instanceof Object ) return;
 					
+					text = '<div class="i-relative"><div class="bj-envelope-icon bj-alert-top-icon"></div></div>';
+					$warning = $form.parent().find( ".alert-warning" );
+					
 					if ( data.success ) {
-						$form.before( '<div class="alert alert-success" role="alert">' + data.success + '</div>' ).remove();
+						if ( $warning.length ) $warning.remove();
+						$form.before( '<div class="alert alert-success center-block text-center" role="alert">' + text + data.success + '</div>' ).remove();
 					} else if ( data.error ) {
-						$form.before( '<div class="alert alert-warning" role="alert">' + data.error + '</div>' );
+						if ( $warning.length ) return;
+						$form.before( '<div class="alert alert-warning center-block text-center" role="alert">' + text + data.error + '</div>' );
 					}
 				}
 			});
