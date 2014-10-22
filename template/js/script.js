@@ -2717,18 +2717,23 @@ if (typeof define == TYPE_FUNCTION && define.amd) {
 				$this.remove();
 			});
 			
+			function resize( $row, $img, lineHeight ) {
+				var height, $wrapper, wrapperHeight;
+				
+				lineHeight = parseInt( lineHeight, 10 );
+				height = $img.height();
+				$wrapper = $row.find( ".bj-text-more-wrapper" );
+				
+				if ( $wrapper.height() < height ) {
+					$this.remove();
+					return;
+				}
+				
+				wrapperHeight = Math.floor( height / lineHeight ) * lineHeight;
+				$wrapper.height( wrapperHeight );
+			}
+			
 		});
-		
-		function resize( $row, $img, lineHeight ) {
-			var height, $wrapper, wrapperHeight;
-			
-			lineHeight = parseInt( lineHeight, 10 );
-			height = $img.height();
-			$wrapper = $row.find( ".bj-text-more-wrapper" );
-			wrapperHeight = Math.floor( height / lineHeight ) * lineHeight;
-			
-			$wrapper.height( wrapperHeight );
-		}
 	}
 	
 	function scrollToSort() {
