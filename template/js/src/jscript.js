@@ -1,5 +1,46 @@
 (function($) {
 	
+	function textMore() {
+		var $link = $( ".bj-text-more a" );
+		if ( !$link.length ) return;
+		
+		$link.each( function() {
+			var $this = $( this ), $row, $img, lineHeight, $wrapper;
+			
+			$row = $this.closest( ".row" );
+			$img = $row.find( "img" );
+			$wrapper = $row.find( ".bj-text-more-wrapper" );
+			lineHeight = $row.css( "line-height" );
+			containerHeight = $row.find( ".bj-text-more-container" ).height();
+			
+			if ( $img[0].complete ) {
+				resize( $row, $img, lineHeight );
+			} else {
+				$img.load(function() {
+					resize( $row, $img, lineHeight );
+				});
+			}
+			
+			$this.click( function(e) {
+				e.preventDefault();
+				$wrapper.height( containerHeight );
+				$this.remove();
+			});
+			
+		});
+		
+		function resize( $row, $img, lineHeight ) {
+			var height, $wrapper, wrapperHeight;
+			
+			lineHeight = parseInt( lineHeight, 10 );
+			height = $img.height();
+			$wrapper = $row.find( ".bj-text-more-wrapper" );
+			wrapperHeight = Math.floor( height / lineHeight ) * lineHeight;
+			
+			$wrapper.height( wrapperHeight );
+		}
+	}
+	
 	function scrollToSort() {
 		var search = window.location.search,
 				$sorting = $( ".bj-sorting" ),
@@ -121,6 +162,8 @@
 		linkToCommentsForm();
 		
 		scrollToSort();
+		
+		textMore();
 		
 		/*var hammertime = new Hammer( myElement, myOptions );
 		hammertime.on('pan', function(ev) {
