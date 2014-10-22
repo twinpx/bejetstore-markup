@@ -2793,40 +2793,88 @@ if (typeof define == TYPE_FUNCTION && define.amd) {
 	};
 	
 	function newsForm() {
-		$( ".bj-news-subscribe__s form" ).submit( submitForm );
+		$( ".bj-news-subscribe__s" ).each( subscribeForm );
 		
-		function submitForm(e) {
-			var $form = $( this ),
-					url = $form.attr( "action" ),
-					type = $form.attr( "method" ),
-					data = $form.serialize();
+		function subscribeForm() {
+			var $subscribe = $( this ),
+					$subscribeForm = $subscribe.find( ".bj-news-subscribe-form" ),
+					$unsubscribeForm = $subscribe.find( ".bj-news-unsubscribe-form" ),
+					$unsubscribeLink = $subscribe.find( ".bj-news-unsubscribe-link" ),
+					$alertSuccess = $subscribe.find( ".alert-success" ),
+					$alertWarning = $subscribe.find( ".alert-warning" );
 			
-			e.preventDefault();
+			$subscribeForm.submit( submitForm );
+			$unsubscribeForm.submit( submitUnsubscribeForm );
+			$unsubscribeLink.click( clickUnsubscribe );
 			
-			if ( !data ) return;
+			function clickUnsubscribe(e) {
+				e.preventDefault();
+				$unsubscribeForm.submit();
+				show( $subscribeForm );
+				hide( $alertSuccess );
+				hide( $alertWarning );
+			}
 			
-			$.ajax({
-				url: url,
-				type: type,
-				dataType: "json",
-				data: data,
-				success: function ( data ) {
-					var text, $warning;
-					if ( !data || !data instanceof Object ) return;
-					
-					text = '<div class="i-relative"><div class="bj-envelope-icon bj-alert-top-icon"></div></div>';
-					$warning = $form.parent().find( ".alert-warning" );
-					
-					if ( data.success ) {
-						if ( $warning.length ) $warning.remove();
-						$form.before( '<div class="alert alert-success center-block text-center" role="alert">' + text + data.success + '</div>' ).remove();
-					} else if ( data.error ) {
-						if ( $warning.length ) return;
-						$form.before( '<div class="alert alert-warning center-block text-center" role="alert">' + text + data.error + '</div>' );
+			function submitUnsubscribeForm(e) {
+				var $form = $( this ),
+						url = $form.attr( "action" ),
+						type = $form.attr( "method" ),
+						data = $form.serialize();
+				
+				e.preventDefault();
+				
+				if ( !data ) return;
+				
+				$.ajax({
+					url: url,
+					type: type,
+					dataType: "json",
+					data: data
+				});
+			}
+		
+			function submitForm(e) {
+				var $form = $( this ),
+						url = $form.attr( "action" ),
+						type = $form.attr( "method" ),
+						data = $form.serialize();
+				
+				e.preventDefault();
+				
+				if ( !data ) return;
+				
+				$.ajax({
+					url: url,
+					type: type,
+					dataType: "json",
+					data: data,
+					success: function ( data ) {
+						if ( !data || !data instanceof Object ) return;
+						
+						if ( data.success ) {
+							if ( $alertWarning.hasClass( "show" )) {
+								hide( $alertWarning );
+							}
+							hide( $form );
+							show( $alertSuccess );
+							
+						} else if ( data.error ) {
+							if ( $alertWarning.is( ":visible" )) return;
+							show( $alertWarning );
+							
+						}
 					}
-				}
-			});
+				});
+				
+			}
 			
+			function hide( $elem ) {
+				$elem.removeClass( "show" ).addClass( "hide" );
+			}
+			
+			function show( $elem ) {
+				$elem.removeClass( "hide" ).addClass( "show" );
+			}
 		}
 	}
 	
