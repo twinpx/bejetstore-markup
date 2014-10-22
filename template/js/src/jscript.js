@@ -98,7 +98,16 @@
 	};
 	
 	function newsForm() {
-		$( ".bj-news-subscribe__s form" ).submit( submitForm );
+		$( ".bj-news-subscribe__s" ).each( subscribeForm );
+		
+		function subscribeForm() {
+			var $subscribe = $( this ),
+					$subscribeForm = $subscribe.find( ".bj-news-subscribe-form" ),
+					$unsubscribeForm = $subscribe.find( ".bj-news-unsubscribe-form" ),
+					$alertSuccess = $subscribe.find( ".alert-success" ),
+					$alertWarning = $subscribe.find( ".alert-warning" );
+			
+			$unsubscribeForm.submit( submitForm );
 		
 		function submitForm(e) {
 			var $form = $( this ),
@@ -123,10 +132,10 @@
 					$warning = $form.parent().find( ".alert-warning" );
 					
 					if ( data.success ) {
-						if ( $warning.length ) $warning.remove();
+						if ( $warning.length ) $warning.hide();
 						$form.before( '<div class="alert alert-success center-block text-center" role="alert">' + text + data.success + '</div>' ).remove();
 					} else if ( data.error ) {
-						if ( $warning.length ) return;
+						if ( $warning.is( ":visible" )) return;
 						$form.before( '<div class="alert alert-warning center-block text-center" role="alert">' + text + data.error + '</div>' );
 					}
 				}

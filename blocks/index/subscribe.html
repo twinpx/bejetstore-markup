@@ -1,9 +1,30 @@
 <div class="bj-news-subscribe__s">
-	<form action="/php/subscribe.php" method="post">
+	<form action="/php/subscribe.php" method="post" class="bj-news-subscribe-form">
 		<h3><b>Подписаться на новости</b></h3>
 		<div class="form-group">
 			<input type="email" name="email" value="" class="form-control" required>
 		</div>
 		<button type="submit" class="btn btn-default btn-100">Подписаться</button>
+	</form>
+	
+	<div class="alert alert-success center-block text-center hidden" role="alert">
+		<div class="i-relative"><div class="bj-envelope-icon bj-alert-top-icon"></div></div>
+		<h3>Вы подписаны на новости</h3>
+		<a href class="bj-news-unsubscribe-link">Отписаться</a>
+	</div>
+	
+	<div class="alert alert-warning center-block text-center hidden" role="alert">
+		<div class="i-relative"><div class="bj-envelope-icon bj-alert-top-icon"></div></div>
+		<h3>Что-то пошло не так, попробуйте ещё раз.</h3>
+	</div>
+	
+	<form action="/php/subscribe.php" method="post" class="hidden bj-news-unsubscribe-form">
+		<div class="form-group">
+			<input type="hidden" name="unsubscribe" value="Y">
+			<input type="hidden" name="hiddenValue1" value="">
+			<input type="hidden" name="hiddenValue2" value="">
+			<input type="hidden" name="hiddenValue3" value="">
+			<input type="hidden" name="hiddenValue4" value="">
+		</div>
 	</form>
 </div>
