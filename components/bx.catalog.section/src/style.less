@@ -1,9 +1,13 @@
 @import url("../../../template/css/less/components-import.less");
 @import url( "bx.style.less" );
 
-.bx-no-touch .bx_catalog_top_home .bx_item_detail_size.full {
-	margin: 0;
-	padding: 0;
+.bx_catalog_top_home {
+
+	.bx_item_detail_size.full,
+	.bx_item_detail_scu.full {
+		margin-left: 0 !important;
+		padding: 0;
+	}
 	
 	.bx_slide_right,
 	.bx_slide_left {
@@ -60,30 +64,6 @@
     width: 5%;
     max-width: 11px;
     cursor: pointer;
-}
-
-.bx-no-touch .bx_catalog_top_home .bx_item_detail_size .bx_slide_left {
-    left: -5%;
-    background: url('/bitrix/components/bitrix/catalog.top/templates/.default/section/images/arr_left.png') no-repeat left center;
-    background-size: 100% auto;
-}
-
-.bx-no-touch .bx_catalog_top_home .bx_item_detail_size .bx_slide_right {
-    right: -5%;
-    background: url('/bitrix/components/bitrix/catalog.top/templates/.default/section/images/arr_right.png') no-repeat right center;
-    background-size: 100% auto;
-}
-
-.bx-touch .bx_catalog_top_home .bx_item_detail_size .bx_slide_left {
-    left: 0;
-    background: url('/bitrix/components/bitrix/catalog.top/templates/.default/section/images/fade_left.png') repeat-y left center;
-    background-size: 100% auto;
-}
-
-.bx-touch .bx_catalog_top_home .bx_item_detail_size .bx_slide_right {
-    right: 0;
-    background: url('/bitrix/components/bitrix/catalog.top/templates/.default/section/images/fade_right.png') repeat-y right center;
-    background-size: 100% auto;
 }
 
 .bx_catalog_top_home .bx_item_detail_scu {
@@ -340,7 +320,7 @@
 
 .bx_catalog_top_home .bx_item_detail_scu {
     background-color: #f6f6f6;
-    padding: 8px;
+    padding: 8px !important;
 }
 
 .bx_catalog_top_home .bx_item_detail_scu .bx_item_section_name_gray {
@@ -373,7 +353,8 @@
 		
 		li {
 			height: auto;
-			margin: 0 8px 12px 0;
+			padding: 0 2px;
+			margin: 0 4px 12px 0;
 			float: none !important;
 			display: inline-block;
 			width: auto !important;
@@ -390,19 +371,14 @@
     line-height: 1.72857143;
 }
 
-.bx_catalog_top_home .bx_item_detail_size ul li i {
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 100%;
-    display: block;
-    height: 2px;
-    background: #000;
-    visibility: hidden;
-}
-
-.bx_catalog_top_home .bx_item_detail_size ul li.bx_active i {
-    visibility: visible;
+.bx_catalog_top_home .bx_item_detail_size ul li {
+	i {
+    .bj-get-checkbox-u();
+	}
+	
+	&.bx_active i {
+    .bj-get-checkbox-u-hover();
+	}
 }
 
 .bx_catalog_top_home .bx_item_detail_size .bx_item_section_name_gray {
@@ -551,15 +527,13 @@
 }
 
 .bx_catalog_top_home .bx_item_detail_scu .bx_scu {
-}
-
-.bx_catalog_top_home .bx_item_detail_scu .bx_scu {
 	text-align: center;
 	
 	ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
+		width: auto !important;
 		
 		&:after {
 			clear: both;
@@ -579,28 +553,15 @@
     float: none !important;
     width: 24px !important;
     padding: 0 !important;
-    margin: 0 -2px 12px 0;
+    margin: 0 1px 12px 0;
     position: relative;
 		
 		i {
-			position: absolute;
-			bottom: -4px;
-			left: 50%;
-			width: 4px;
-			height: 4px;
-			display: block;
-			background: #000;
-			visibility: hidden;
-			-webkit-transition: all .3s cubic-bezier(.68, -0.55, .265, 1.55);
-			-o-transition: all .3s cubic-bezier(.68, -0.55, .265, 1.55);
-			transition: all .3s cubic-bezier(.68, -0.55, .265, 1.55);
+			.bj-get-checkbox-u();
 		}
 		
 		&.bx_active i {
-			width: 100%;
-			left: 0;
-			height: 2px;
-			visibility: visible;
+			.bj-get-checkbox-u-hover();
 		}
 	}
 	

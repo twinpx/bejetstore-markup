@@ -73,28 +73,21 @@
 	li {
 		float: left;
 		width: auto !important;
-		padding: 0 !important;
-		margin: 0 8px 12px 0;
+		padding: 0 2px !important;
+		margin: 0 4px 12px 0;
 		position: relative;
 		color: #999;
 		cursor: pointer;
 		
 		i {
-			position: absolute;
-			bottom: -4px;
-			left: 0;
-			width: 100%;
-			display: block;
-			height: 2px;
-			background: #000;
-			visibility: hidden;
+			.bj-get-checkbox-u();
 		}
 			
 		&.bx_active {
 			color: #333;
 			
 			i {
-				visibility: visible;
+				.bj-get-checkbox-u-hover();
 			}
 		}
 	}

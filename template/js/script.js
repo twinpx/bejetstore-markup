@@ -2742,17 +2742,19 @@ if (typeof define == TYPE_FUNCTION && define.amd) {
 		});
 	}
 	
-	function scrollToSort() {
+	function scrollToElemByUrl( elem, url ) {
 		var search = window.location.search,
-				$sorting = $( ".bj-sorting" ),
+				$sorting = $( elem ),
 				to;
 		
-		if ( String( search ).search( "sort=" ) === -1 || !$sorting.length ) {
+		if ( String( search ).search( url + "=" ) === -1 || !$sorting.length ) {
 			return;
 		}
 		
-		to = $sorting.offset().top - 20;
-		$.scrollTo( to, 500 );
+		setTimeout( function() {
+			to = $sorting.offset().top - 20;
+			$.scrollTo( to, 500 );
+		}, 200 );
 	}
 	
 	function headerSearch() {
@@ -2910,7 +2912,8 @@ if (typeof define == TYPE_FUNCTION && define.amd) {
 		
 		linkToCommentsForm();
 		
-		scrollToSort();
+		scrollToElemByUrl( ".bj-sorting", "sort" );
+		scrollToElemByUrl( ".bj-catalogue-filter", "set_filter" );
 		
 		textMore();
 		

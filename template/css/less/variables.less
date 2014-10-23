@@ -6,6 +6,10 @@
 
 @title-height: 36px;
 
+@header-top-link-height: 40px;
+@header-top-height: 60px;
+@darken-brand-primary: darken( @brand-primary, 20% );
+
 //mixins
 .absolute-center() {
   margin: auto;
@@ -23,4 +27,28 @@
 
 .bj-transition( @prop ) {
 	.transition( @prop 0.2s ease );
+}
+
+.bj-checkbox-transition() {
+	.transition( all 0.3s cubic-bezier(0.680, -0.550, 0.265, 1.550) );
+}
+
+.bj-get-checkbox-u() {
+	position: absolute;
+	bottom: -4px;
+	left: 50%;
+	width: 4px;
+	height: 4px;
+	background: #000;
+	display: block;
+	visibility: hidden;
+	.transition( all 0.3s cubic-bezier(0.680, -0.550, 0.265, 1.550));
+}
+
+.bj-get-checkbox-u-hover() {
+	width: 100%;
+	left: 0;
+	height: 2px;
+	visibility: visible;
+	color: @gray-darker;
 }
