@@ -1,4 +1,4 @@
 <?
-	echo '{ "success": "success" }';
-	//echo '{ "error": "error" }';
+	//echo '{ "success": "success" }';
+	echo '{ "error": "error" }';
 ?>
