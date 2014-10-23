@@ -2699,6 +2699,12 @@ if (typeof define == TYPE_FUNCTION && define.amd) {
 			
 			$row = $this.closest( ".row" );
 			$img = $row.find( "img" );
+			
+			if ( !$img.length ) {
+				$this.remove();
+				return;
+			}
+			
 			$wrapper = $row.find( ".bj-text-more-wrapper" );
 			lineHeight = $row.css( "line-height" );
 			containerHeight = $row.find( ".bj-text-more-container" ).height();
