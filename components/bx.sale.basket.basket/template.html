@@ -1,71 +1,239 @@
 <link href="/components/bx.sale.basket.basket/style.css" rel="stylesheet">
 
-<div class="bx_my_order_switch">
-	<a class="bx_mo_link" href="/personal/order/?show_all=Y">Посмотреть все заказы</a>
-	<a class="bx_mo_link" href="/personal/order/?filter_history=Y">Посмотреть историю заказов</a>
-</div>
+<div id="warning_message"></div>
 
-<div class="bx_my_order_status_desc">
-  <h2>Заказы в статусе "Принят, ожидается оплата"</h2>
-  <div class="bx_mos_desc">Заказ принят, но пока не обрабатывается.</div>
-</div>
-<div class="bx_my_order">
-  <table class="bx_my_order_table">
-    <thead>
-      <tr>
-        <td> Заказ №8																			от 24.10.2014 </td>
-        <td style="text-align: right;"><a href="/personal/order/detail/8/">Подробнее о заказе</a> </td>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>Сумма к оплате:</strong> 6 899.30 руб. <br>
-          <strong>Оплачен:</strong> Нет <br>
-          <strong>Способ оплаты:</strong> Яндекс.Деньги <br>
-          <strong>Доставка:</strong> Доставка курьером <br>
-          <strong>Состав заказа:</strong>
-          <ul class="bx_item_list">
-            <li> <a href="/catalog/shtany/bryuki/" target="_blank"> Брюки </a> <nobr>&nbsp;— 1 шт</nobr> </li>
-            <li> <a href="/catalog/shoes-mens/kozhannye_polubotinki/" target="_blank"> Кожанные полуботинки </a> <nobr>&nbsp;— 1 шт</nobr> </li>
-          </ul></td>
-        <td> 24.10.2014
-          <div class="bx_my_order_status green">Принят, ожидается оплата</div>
+<form method="post" action="/personal/cart/" name="basket_form" id="basket_form">
+  <div id="basket_form_container">
+    <div class="bx_ordercart">
+      <div class="bx_sort_container"> <span>Товары в корзине:</span> <a href="javascript:void(0)" id="basket_toolbar_button" class="current" onclick="showBasketItemsList()">Готовые к заказу
+        <div id="normal_count" class="flat" style="display:none">&nbsp;(2)</div>
+        </a> <a href="javascript:void(0)" id="basket_toolbar_button_delayed" onclick="showBasketItemsList(2)" style="display:none">Отложенные
+        <div id="delay_count" class="flat">&nbsp;(0)</div>
+        </a> <a href="javascript:void(0)" id="basket_toolbar_button_subscribed" onclick="showBasketItemsList(3)" style="display:none">Ожидаемые
+        <div id="subscribe_count" class="flat">&nbsp;(0)</div>
+        </a> <a href="javascript:void(0)" id="basket_toolbar_button_not_available" onclick="showBasketItemsList(4)" style="display:none">Отсутствуют
+        <div id="not_available_count" class="flat">&nbsp;(0)</div>
+        </a> </div>
+      <div id="basket_items_list">
+        <div class="bx_ordercart_order_table_container">
+          <table id="basket_items">
+            <thead>
+              <tr>
+                <td class="margin"></td>
+                <td class="item" colspan="2" id="col_NAME"> Товары </td>
+                <td class="custom" id="col_DISCOUNT"> Скидка </td>
+                <td class="price" id="col_PRICE"> Цена </td>
+                <td class="custom" id="col_QUANTITY"> Количество </td>
+                <td class="custom" id="col_SUM"> Сумма </td>
+                <td class="custom"></td>
+                <td class="margin"></td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr id="45">
+                <td class="margin"></td>
+                <td class="itemphoto"><div class="bx_ordercart_photo_container"> <a href="/catalog/shtany/bryuki/">
+                    <div class="bx_ordercart_photo" style="background-image:url('/upload/resize_cache/iblock/028/110_110_1/028f0b0b83fc294adb19c97da7864354.jpg')"></div>
+                    </a> </div></td>
+                <td class="item"><h2 class="bx_ordercart_itemtitle"> <a href="/catalog/shtany/bryuki/"> Брюки </a> </h2>
+                  <div class="bx_ordercart_itemart"> </div>
+                  <div class="bx_item_detail_scu_small_noadaptive "> <span class="bx_item_section_name_gray"> Цвет: </span>
+                    <div class="bx_scu_scroller_container">
+                      <div class="bx_scu">
+                        <ul id="prop_COLOR_REF_45" style="width: 200%; margin-left:0%;" class="sku_prop_list">
+                          <li style="width:10%;" class="sku_prop bx_active" data-value-id="black" data-element="45" data-property="COLOR_REF"> <a href="javascript:void(0);"> <span style="background-image:url(/upload/uf/ddc/ddc4adb00f934285f0d7e81d1a29363e.jpg)"></span> </a> </li>
+                        </ul>
+                      </div>
+                      <div class="bx_slide_left" onclick="leftScroll('COLOR_REF', 45, 1);"></div>
+                      <div class="bx_slide_right" onclick="rightScroll('COLOR_REF', 45, 1);"></div>
+                    </div>
+                  </div>
+                  <div class="bx_item_detail_size_small_noadaptive "> <span class="bx_item_section_name_gray"> Размеры одежды : </span>
+                    <div class="bx_size_scroller_container">
+                      <div class="bx_size">
+                        <ul id="prop_SIZES_CLOTHES_45" style="width: 200%; margin-left:0%;" class="sku_prop_list">
+                          <li style="width:10%;" class="sku_prop bx_active" data-value-id="S" data-element="45" data-property="SIZES_CLOTHES"> <a href="javascript:void(0);">S</a> </li>
+                          <li style="width:10%;" class="sku_prop " data-value-id="L" data-element="45" data-property="SIZES_CLOTHES"> <a href="javascript:void(0);">L</a> </li>
+                          <li style="width:10%;" class="sku_prop " data-value-id="XL" data-element="45" data-property="SIZES_CLOTHES"> <a href="javascript:void(0);">XL</a> </li>
+                        </ul>
+                      </div>
+                      <div class="bx_slide_left" onclick="leftScroll('SIZES_CLOTHES', 45, 3);"></div>
+                      <div class="bx_slide_right" onclick="rightScroll('SIZES_CLOTHES', 45, 3);"></div>
+                    </div>
+                  </div></td>
+                <td class="custom"><span>:</span>
+                  <div id="discount_value_45">30%</div></td>
+                <td class="price"><div class="current_price" id="current_price_45"> 1 399.30 руб. </div>
+                  <div class="old_price" id="old_price_45"> 1 999 руб. </div></td>
+                <td class="custom"><span>:</span>
+                  <div class="centered">
+                    <table cellspacing="0" cellpadding="0" class="counter">
+                      <tbody>
+                        <tr>
+                          <td><input type="text" size="3" id="QUANTITY_INPUT_45" name="QUANTITY_INPUT_45" maxlength="18" min="0" max="100" step="1" style="max-width: 50px" value="3" onchange="updateQuantity('QUANTITY_INPUT_45', '45', 1, false)">
+                          </td>
+                          <td id="basket_quantity_control"><div class="basket_quantity_control"> <a href="javascript:void(0);" class="plus" onclick="setQuantity(45, 1, 'up', false);"></a> <a href="javascript:void(0);" class="minus" onclick="setQuantity(45, 1, 'down', false);"></a> </div></td>
+                          <td style="text-align: left">шт</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <input type="hidden" id="QUANTITY_45" name="QUANTITY_45" value="3">
+                </td>
+                <td class="custom"><span>:</span>
+                  <div id="sum_45"> 4 197.90 руб. </div></td>
+                <td class="control"><a href="/personal/cart/?action=delete&amp;id=45">Удалить</a><br>
+                  <a href="/personal/cart/?action=delay&amp;id=45">Отложить</a> </td>
+                <td class="margin"></td>
+              </tr>
+              <tr id="46">
+                <td class="margin"></td>
+                <td class="itemphoto"><div class="bx_ordercart_photo_container"> <a href="/catalog/kurtki/zhaket/">
+                    <div class="bx_ordercart_photo" style="background-image:url('/upload/resize_cache/iblock/56e/110_110_1/56e18d2ca194b6fe5be42dd33f685ee1.jpg')"></div>
+                    </a> </div></td>
+                <td class="item"><h2 class="bx_ordercart_itemtitle"> <a href="/catalog/kurtki/zhaket/"> Жакет </a> </h2>
+                  <div class="bx_ordercart_itemart"> </div>
+                  <div class="bx_item_detail_size_small_noadaptive "> <span class="bx_item_section_name_gray"> Размеры одежды : </span>
+                    <div class="bx_size_scroller_container">
+                      <div class="bx_size">
+                        <ul id="prop_SIZES_CLOTHES_46" style="width: 200%; margin-left:0%;" class="sku_prop_list">
+                          <li style="width:10%;" class="sku_prop bx_active" data-value-id="S" data-element="46" data-property="SIZES_CLOTHES"> <a href="javascript:void(0);">S</a> </li>
+                          <li style="width:10%;" class="sku_prop " data-value-id="M" data-element="46" data-property="SIZES_CLOTHES"> <a href="javascript:void(0);">M</a> </li>
+                          <li style="width:10%;" class="sku_prop " data-value-id="L" data-element="46" data-property="SIZES_CLOTHES"> <a href="javascript:void(0);">L</a> </li>
+                        </ul>
+                      </div>
+                      <div class="bx_slide_left" onclick="leftScroll('SIZES_CLOTHES', 46, 3);"></div>
+                      <div class="bx_slide_right" onclick="rightScroll('SIZES_CLOTHES', 46, 3);"></div>
+                    </div>
+                  </div></td>
+                <td class="custom"><span>:</span>
+                  <div id="discount_value_46">0%</div></td>
+                <td class="price"><div class="current_price" id="current_price_46"> 7 000 руб. </div>
+                  <div class="old_price" id="old_price_46"> </div></td>
+                <td class="custom"><span>:</span>
+                  <div class="centered">
+                    <table cellspacing="0" cellpadding="0" class="counter">
+                      <tbody>
+                        <tr>
+                          <td><input type="text" size="3" id="QUANTITY_INPUT_46" name="QUANTITY_INPUT_46" maxlength="18" min="0" max="0" step="0" style="max-width: 50px" value="1" onchange="updateQuantity('QUANTITY_INPUT_46', '46', 0, false)">
+                          </td>
+                          <td id="basket_quantity_control"><div class="basket_quantity_control"> <a href="javascript:void(0);" class="plus" onclick="setQuantity(46, 1, 'up', false);"></a> <a href="javascript:void(0);" class="minus" onclick="setQuantity(46, 1, 'down', false);"></a> </div></td>
+                          <td style="text-align: left">шт</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <input type="hidden" id="QUANTITY_46" name="QUANTITY_46" value="1">
+                </td>
+                <td class="custom"><span>:</span>
+                  <div id="sum_46"> 7 000 руб. </div></td>
+                <td class="control"><a href="/personal/cart/?action=delete&amp;id=46">Удалить</a><br>
+                  <a href="/personal/cart/?action=delay&amp;id=46">Отложить</a> </td>
+                <td class="margin"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <input type="hidden" id="column_headers" value="NAME,DISCOUNT,PRICE,QUANTITY,SUM,PROPS,DELETE,DELAY">
+        <input type="hidden" id="offers_props" value="SIZES_SHOES,SIZES_CLOTHES,COLOR_REF">
+        <input type="hidden" id="action_var" value="action">
+        <input type="hidden" id="quantity_float" value="N">
+        <input type="hidden" id="count_discount_4_all_quantity" value="N">
+        <input type="hidden" id="price_vat_show_value" value="Y">
+        <input type="hidden" id="hide_coupon" value="N">
+        <input type="hidden" id="coupon_approved" value="N">
+        <input type="hidden" id="use_prepayment" value="N">
+        <div class="bx_ordercart_order_pay">
+          <div class="bx_ordercart_order_pay_left">
+            <div class="bx_ordercart_coupon"> <span>Введите код купона для скидки:</span>
+              <input type="text" id="coupon" name="COUPON" value="" onchange="enterCoupon();" size="21" class="">
+            </div>
+          </div>
+          <div class="bx_ordercart_order_pay_right">
+            <table class="bx_ordercart_order_sum">
+              <tbody>
+                <tr>
+                  <td>Товаров на:</td>
+                  <td id="allSum_wVAT_FORMATED">11 197.90 руб.</td>
+                </tr>
+                <tr>
+                  <td>В том числе НДС:</td>
+                  <td id="allVATSum_FORMATED">0 руб.</td>
+                </tr>
+                <tr>
+                  <td class="fwb">Итого:</td>
+                  <td class="fwb" id="allSum_FORMATED">11&nbsp;197.90&nbsp;руб.</td>
+                </tr>
+                <tr>
+                  <td class="custom_t1"></td>
+                  <td class="custom_t2" style="text-decoration:line-through; color:#828282;" id="PRICE_WITHOUT_DISCOUNT"> 12 997 руб. </td>
+                </tr>
+              </tbody>
+            </table>
+            <div style="clear:both;"></div>
+          </div>
+          <div style="clear:both;"></div>
 					
-					<!-- classes for buttons, remove bx_big bx_bt_button_type_2 -->
-          <a href="/personal/order/cancel/8/?CANCEL=Y" style="min-width:140px" class="bx_cart bx_order_action btn btn-default">Отменить заказ</a>
-					<a href="/personal/order/index.php?ID=8&amp;COPY_ORDER=Y" style="min-width:140px" class="bx_cart bx_order_action btn btn-default">Повторить заказ</a>
+					<!-- add btn btn-default classes -->
+          <div class="bx_ordercart_order_pay_center"> <a href="javascript:void(0)" onclick="checkOut();" class="checkout btn btn-default">Оформить заказ</a> </div>
 					<!-- end -->
-				</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-<div class="bx_my_order">
-  <table class="bx_my_order_table">
-    <thead>
-      <tr>
-        <td> Заказ №7																			от 24.10.2014 </td>
-        <td style="text-align: right;"><a href="/personal/order/detail/7/">Подробнее о заказе</a> </td>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>Сумма к оплате:</strong> 4 500 руб. <br>
-          <strong>Оплачен:</strong> Нет <br>
-          <strong>Способ оплаты:</strong> Яндекс.Деньги <br>
-          <strong>Доставка:</strong> Доставка курьером <br>
-          <strong>Состав заказа:</strong>
-          <ul class="bx_item_list">
-            <li> <a href="/catalog/zhenskaya_obuv/tufli_zhenskie_svural/" target="_blank"> Туфли Ультра Лайн </a> <nobr>&nbsp;— 1 шт</nobr> </li>
-          </ul></td>
-        <td> 24.10.2014
-          <div class="bx_my_order_status green">Принят, ожидается оплата</div>
 					
-					<!-- classes for buttons -->
-          <a href="/personal/order/cancel/7/?CANCEL=Y" style="min-width:140px" class="bx_order_action btn btn-default">Отменить заказ</a> <a href="/personal/order/index.php?ID=7&amp;COPY_ORDER=Y" style="min-width:140px" class="bx_cart bx_order_action btn btn-default">Повторить заказ</a>
-					<!-- end -->
-				</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+        </div>
+      </div>
+      <div id="basket_items_delayed" class="bx_ordercart_order_table_container" style="display:none">
+        <table id="delayed_items">
+          <thead>
+            <tr>
+              <td class="margin"></td>
+              <td class="item" colspan="2"> Товары </td>
+              <td class="custom"> Скидка </td>
+              <td class="price"> Цена </td>
+              <td class="custom"> Количество </td>
+              <td class="custom"> Сумма </td>
+              <td class="custom"></td>
+              <td class="margin"></td>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+      <div id="basket_items_subscribed" class="bx_ordercart_order_table_container" style="display:none">
+        <table>
+          <thead>
+            <tr>
+              <td class="margin"></td>
+              <td class="item" colspan="2"> Товары </td>
+              <td class="custom"> Скидка </td>
+              <td class="price"> Цена </td>
+              <td class="custom"> Количество </td>
+              <td class="custom"> Сумма </td>
+              <td class="custom"></td>
+              <td class="margin"></td>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+      <div id="basket_items_not_available" class="bx_ordercart_order_table_container" style="display:none">
+        <table>
+          <thead>
+            <tr>
+              <td class="margin"></td>
+              <td class="item" colspan="2"> Товары </td>
+              <td class="price"> Цена </td>
+              <td class="custom"> Количество </td>
+              <td class="custom"></td>
+              <td class="margin"></td>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <input type="hidden" name="BasketOrder" value="BasketOrder">
+  <!-- <input type="hidden" name="ajax_post" id="ajax_post" value="Y"> -->
+</form>

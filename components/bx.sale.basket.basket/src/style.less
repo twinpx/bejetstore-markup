@@ -1,7 +1,7 @@
 @import url("../../../template/css/less/components-import.less");
 @import url("bx.style.less");
 
-.bx_my_order .bx_my_order_table {
+.bx_ordercart .bx_ordercart_order_table_container {
 	border: 3px solid @gray-lightest;
 	font-size: 10.5pt;
 	
@@ -21,13 +21,37 @@
 		&:hover {
 			color: @link-hover-color;
 		}
+	}
+}
+
+.bx_ordercart .bx_ordercart {
+
+	&_order_pay {
+		padding: 0;
+	}
+	
+	&_order_pay_center .checkout {
+		position: static;
+		top: 0;
+		padding: 6px 14px;
+		border-radius: 0;
+		background: #fff;
+		color: @darken-brand-primary;
+		vertical-align: bottom;
+		text-decoration: none;
+		text-shadow: none;
+		font-weight: 400;
+		line-height: @line-height-base;
 		
-		&.btn-default {
-			color: @darken-brand-primary;
-			
-			&:hover {
-				color: #fff;
-			}
+		&:hover{
+			background: @darken-brand-primary;
+			border-color: @darken-brand-primary;
+			color: #fff;
+		}
+		
+		&:active{
+			background: @darken-brand-primary;
+			box-shadow: none;
 		}
 	}
 }
