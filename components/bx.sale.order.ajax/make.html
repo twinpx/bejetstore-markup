@@ -1,0 +1,61 @@
+<link href="/components/bx.sale.order.ajax/style.css" rel="stylesheet">
+
+<div id="order_form_div" class="order-checkout">
+  <noscript>
+  &lt;div class="errortext"&gt;Для оформления заказа необходимо включить JavaScript. По-видимому, JavaScript либо не поддерживается браузером, либо отключен. Измените настройки браузера и затем &lt;a href=""&gt;повторите попытку&lt;/a&gt;.&lt;/div&gt;
+  </noscript>
+  <div class="bx_order_make"> <b>Заказ сформирован</b><br>
+    <br>
+    <table class="sale_order_full_table">
+      <tbody>
+        <tr>
+          <td> Ваш заказ <b>№9</b> от 24.10.2014 19:00:19 успешно создан. <br>
+            <br>
+            Вы можете следить за выполнением своего заказа в <a href="/personal/order/">Персональном разделе сайта</a>. Обратите внимание, что для входа в этот раздел вам необходимо будет ввести логин и пароль пользователя сайта. </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <br>
+    <table class="sale_order_full_table">
+      <tbody>
+        <tr>
+          <td class="ps_logo"><div class="pay_name">Оплата заказа</div>
+            <img src="/upload/sale/paysystem/logotip/1eb/1eb427d76a8a8e6648c972a41b2a390f.gif" border="0" alt="" width="95" height="55">
+            <div class="paysystem_name">Яндекс.Деньги</div>
+            <br>
+          </td>
+        </tr>
+        <tr>
+          <td><font class="tablebodytext"> Услугу предоставляет сервис онлайн-платежей <b>«Яндекс.Деньги»</b>.<br>
+            <br>
+            Сумма к оплате по счету: <b>11697,90 р.</b><br>
+            <br>
+            </font>
+            <form name="ShopForm" action="https://demomoney.yandex.ru/eshop.xml" method="post" target="_blank">
+              <font class="tablebodytext">
+              <input name="ShopID" value="" type="hidden">
+              <input name="scid" value="" type="hidden">
+              <input name="customerNumber" value="9" type="hidden">
+              <input name="orderNumber" value="9" type="hidden">
+              <input name="Sum" value="11697,90" type="hidden">
+              <input name="paymentType" value="PC" type="hidden">
+              <input name="cms_name" value="1C-Bitrix" type="hidden">
+              <!-- <br /> -->
+              <!-- Детали заказа:<br /> -->
+              <!-- <input name="OrderDetails" value="заказ №9 (24.10.2014 19:00:19)" type="hidden"> -->
+              <br>
+							
+							<!-- button classes, new hr -->
+              <input name="BuyButton" value="Оплатить" type="submit" class="btn btn-default">
+							<hr>
+							<!-- end -->
+							
+              </font>
+              <p><font class="tablebodytext"><b>Обратите внимание:</b> если вы откажетесь от покупки, для возврата денег вам придется обратиться в магазин.</font></p>
+            </form></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
