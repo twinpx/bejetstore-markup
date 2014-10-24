@@ -1,0 +1,42 @@
+<div class="bx_redetpassword_page bx-auth">
+  <form method="post" action="" name="bform">
+    <input type="hidden" name="backurl" value="/auth/?lang=ru&amp;USER_CHECKWORD=16bdc81985978c46db8007fe31079001&amp;USER_LOGIN=admin">
+    <input type="hidden" name="AUTH_FORM" value="Y">
+    <input type="hidden" name="TYPE" value="CHANGE_PWD">
+		
+		<div class="form-group">
+			<label><span class="starrequired">*</span>Логин</label>
+			<!-- new class form-control in input -->
+			<input type="text" name="USER_LOGIN" maxlength="50" value="admin" class="input_text_style form-control">
+		</div>
+		
+		<div class="form-group">
+			<label><span class="starrequired">*</span>Контрольная строка</label>
+			<!-- new class form-control in input -->
+			<input type="text" name="USER_CHECKWORD" maxlength="50" value="16bdc81985978c46db8007fe31079001" class="input_text_style form-control">
+		</div>
+		
+		<div class="form-group">
+			<label><span class="starrequired">*</span>Новый пароль</label>
+			<!-- new class form-control in input -->
+			<input type="password" name="USER_PASSWORD" maxlength="50" value="" class="input_text_style form-control">
+		</div>
+		
+		<div class="form-group">
+			<label><span class="starrequired">*</span>Подтверждение пароля</label>
+			<!-- new class form-control in input -->
+			<input type="password" name="USER_CONFIRM_PASSWORD" maxlength="50" value="" class="input_text_style form-control">
+		</div>
+		
+		<hr>
+		
+		<div class="form-group">
+			<!-- new classes -->
+			<input type="submit" name="change_pwd" value="Изменить пароль" class="big bt_blue btn btn-default">
+		</div>
+		
+    <p>Пароль должен быть не менее 6 символов длиной.<br>
+      <span class="starrequired">*</span>Обязательные поля</p>
+    <p><a href="/auth/?login=yes&amp;lang=ru&amp;USER_CHECKWORD=16bdc81985978c46db8007fe31079001&amp;USER_LOGIN=admin"><b>Авторизация</b></a></p>
+  </form>
+</div>

@@ -1,0 +1,31 @@
+<div class="bx_forgotpassword_page bx-auth">
+  <form name="bform" method="post" target="_top" action="/auth/?forgot_password=yes">
+    <input type="hidden" name="backurl" value="/auth/">
+    <input type="hidden" name="AUTH_FORM" value="Y">
+    <input type="hidden" name="TYPE" value="SEND_PWD">
+    <p>Если вы забыли пароль, введите логин или E-Mail.<br>
+      Контрольная строка для смены пароля, а также ваши регистрационные данные, будут высланы вам по E-Mail.</p>
+    <h2>Выслать контрольную строку</h2>
+		
+		<div class="form-group">
+			<label>Логин</label>
+			<!-- new class form-control in input -->
+			<input type="text" name="USER_LOGIN" maxlength="50" value="admin" class="input_text_style form-control">
+		</div>
+    <p><b>или</b></p>
+		
+		<div class="form-group">
+			<label>E-Mail</label>
+			<!-- new class form-control in input -->
+			<input type="text" name="USER_EMAIL" maxlength="255" class="input_text_style form-control">
+		</div>
+		
+		<hr>
+		
+		<div class="form-group">
+			<input type="submit" name="send_account_info" value="Выслать" class="big bt_blue btn btn-default">
+		</div>
+		
+    <p><a href="/auth/?login=yes"><b>Авторизация</b></a></p>
+  </form>
+</div>
