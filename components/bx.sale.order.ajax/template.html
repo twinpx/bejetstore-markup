@@ -1,0 +1,670 @@
+<link href="/components/bx.sale.order.ajax/style.css" rel="stylesheet">
+<link href="/components/bx.sale.order.ajax/style_cart.css" rel="stylesheet">
+
+<div id="order_form_div" class="order-checkout">
+  <noscript>
+  &lt;div class="errortext"&gt;Для оформления заказа необходимо включить JavaScript. По-видимому, JavaScript либо не поддерживается браузером, либо отключен. Измените настройки браузера и затем &lt;a href=""&gt;повторите попытку&lt;/a&gt;.&lt;/div&gt;
+  </noscript>
+  <div class="bx_order_make">
+    <script type="text/javascript">
+			var BXFormPosting = false;
+			function submitForm(val)
+			{
+				if (BXFormPosting === true)
+					return true;
+
+				BXFormPosting = true;
+				if(val != 'Y')
+					BX('confirmorder').value = 'N';
+
+				var orderForm = BX('ORDER_FORM');
+				BX.showWait();
+
+				BX.ajax.submit(orderForm, ajaxResult);
+
+				return true;
+			}
+
+			function ajaxResult(res)
+			{
+				try
+				{
+					var json = JSON.parse(res);
+					BX.closeWait();
+
+					if (json.error)
+					{
+						BXFormPosting = false;
+						return;
+					}
+					else if (json.redirect)
+					{
+						window.top.location.href = json.redirect;
+					}
+				}
+				catch (e)
+				{
+					BXFormPosting = false;
+					BX('order_form_content').innerHTML = res;
+				}
+
+				BX.closeWait();
+			}
+
+			function SetContact(profileId)
+			{
+				BX("profile_change").value = "Y";
+				submitForm();
+			}
+			</script>
+    <form action="/personal/order/make/" method="POST" name="ORDER_FORM" id="ORDER_FORM" enctype="multipart/form-data">
+      <input type="hidden" name="sessid" id="sessid" value="e435cebb6689ab23d1213895b5694c3e">
+      <div id="order_form_content">
+        <div class="section">
+          <h4>Тип плательщика</h4>
+					
+					<!-- new -->
+					<label class="bj-cf__size__i bj-checkbox i-checked">
+						<span class="bj-checkbox__u"></span>
+						<input type="radio" id="PERSON_TYPE_1" name="PERSON_TYPE" value="1" checked="checked" onclick="submitForm()">
+						Физическое лицо
+					</label>
+					
+					<label class="bj-cf__size__i bj-checkbox">
+						<span class="bj-checkbox__u"></span>
+						<input type="radio" id="PERSON_TYPE_2" name="PERSON_TYPE" value="2" onclick="submitForm()">
+						Юридическое лицо
+					</label>
+					<!-- end -->
+					
+          <div class="clear"></div>
+          <input type="hidden" name="PERSON_TYPE_OLD" value="1">
+        </div>
+        <div class="section">
+          <h4>Информация для оплаты и доставки заказа</h4>
+          <div class="bx_block r1x3"> Выберите профиль: </div>
+          <div class="bx_block r3x1">
+            <select name="PROFILE_ID" id="ID_PROFILE_ID" onchange="SetContact(this.value)" class="form-control">
+              <option value="0">Новый профиль</option>
+              <option value="2" selected="">Татьяна Карташёва</option>
+            </select>
+            <div style="clear: both;"></div>
+          </div>
+        </div>
+        <br>
+        <div class="bx_section">
+          <h4> Информация о покупателе <a href="#" class="slide" onclick="fGetBuyerProps(this); return false;"> Развернуть </a>
+            <input type="hidden" name="showProps" id="showProps" value="N">
+          </h4>
+          <div id="sale_order_props" style="display:none;">
+            <div>
+              <div class="bx_block r1x3 pt8"> Ф.И.О. <span class="bx_sof_req">*</span> </div>
+              <div class="bx_block r3x1">
+                <input type="text" maxlength="250" size="40" value="Татьяна Карташёва" name="ORDER_PROP_1" id="ORDER_PROP_1">
+              </div>
+              <div style="clear: both;"></div>
+              <br>
+              <div class="bx_block r1x3 pt8"> E-Mail <span class="bx_sof_req">*</span> </div>
+              <div class="bx_block r3x1">
+                <input type="text" maxlength="250" size="40" value="tatiana@twinpx.ru" name="ORDER_PROP_2" id="ORDER_PROP_2">
+              </div>
+              <div style="clear: both;"></div>
+              <br>
+              <div class="bx_block r1x3 pt8"> Телефон <span class="bx_sof_req">*</span> </div>
+              <div class="bx_block r3x1">
+                <input type="text" maxlength="250" size="0" value="2342342342" name="ORDER_PROP_3" id="ORDER_PROP_3">
+              </div>
+              <div style="clear: both;"></div>
+              <br>
+              <div class="bx_block r1x3 pt8"> Индекс <span class="bx_sof_req">*</span> </div>
+              <div class="bx_block r3x1">
+                <input type="text" maxlength="250" size="8" value="101000" name="ORDER_PROP_4" id="ORDER_PROP_4">
+              </div>
+              <div style="clear: both;"></div>
+              <br>
+              <div class="bx_block r1x3 pt8"> Местоположение <span class="bx_sof_req">*</span> </div>
+              <div class="bx_block r3x1">
+                <input size="40" name="ORDER_PROP_6_val" id="ORDER_PROP_6_val" value="Москва, Московская обл, Россия" class="search-suggest" type="text" autocomplete="off" onfocus="loc_sug_CheckThis(this, this.id);">
+                <input type="hidden" name="ORDER_PROP_6" id="ORDER_PROP_6" value="671">
+                <script type="text/javascript">
+
+	if (typeof oObject != "object")
+		window.oObject = {};
+
+	document.loc_sug_CheckThis = function(oObj, id)
+	{
+		try
+		{
+			if(SuggestLoadedSale)
+			{
+				window.oObject[oObj.id] = new JsSuggestSale(oObj, 'siteId:s1', '', '', 'submitForm()');
+				return;
+			}
+			else
+			{
+				setTimeout(loc_sug_CheckThis(oObj, id), 10);
+			}
+		}
+		catch(e)
+		{
+			setTimeout(loc_sug_CheckThis(oObj, id), 10);
+		}
+	}
+	
+	clearLocInput = function()
+	{				
+		var inp = BX("ORDER_PROP_6_val");			
+		if(inp)
+		{
+			inp.value = "";
+			inp.focus();
+		}
+	}	
+</script>
+              </div>
+              <div style="clear: both;"></div>
+              <br>
+              <div class="bx_block r1x3 pt8"> Адрес доставки <span class="bx_sof_req">*</span> </div>
+              <div class="bx_block r3x1">
+                <textarea rows="3" cols="30" name="ORDER_PROP_7" id="ORDER_PROP_7">ываыва</textarea>
+              </div>
+              <div style="clear: both;"></div>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript">
+	function fGetBuyerProps(el)
+	{
+		var show = 'Развернуть';
+		var hide = 'Свернуть';
+		var status = BX('sale_order_props').style.display;
+		var startVal = 0;
+		var startHeight = 0;
+		var endVal = 0;
+		var endHeight = 0;
+		var pFormCont = BX('sale_order_props');
+		pFormCont.style.display = "block";
+		pFormCont.style.overflow = "hidden";
+		pFormCont.style.height = 0;
+		var display = "";
+
+		if (status == 'none')
+		{
+			el.text = 'Свернуть';
+
+			startVal = 0;
+			startHeight = 0;
+			endVal = 100;
+			endHeight = pFormCont.scrollHeight;
+			display = 'block';
+			BX('showProps').value = "Y";
+			el.innerHTML = hide;
+		}
+		else
+		{
+			el.text = 'Развернуть';
+
+			startVal = 100;
+			startHeight = pFormCont.scrollHeight;
+			endVal = 0;
+			endHeight = 0;
+			display = 'none';
+			BX('showProps').value = "N";
+			pFormCont.style.height = startHeight+'px';
+			el.innerHTML = show;
+		}
+
+		(new BX.easing({
+			duration : 700,
+			start : { opacity : startVal, height : startHeight},
+			finish : { opacity: endVal, height : endHeight},
+			transition : BX.easing.makeEaseOut(BX.easing.transitions.quart),
+			step : function(state){
+				pFormCont.style.height = state.height + "px";
+				pFormCont.style.opacity = state.opacity / 100;
+			},
+			complete : function(){
+					BX('sale_order_props').style.display = display;
+					BX('sale_order_props').style.height = '';
+			}
+		})).animate();
+	}
+</script>
+        <div style="display:none;">
+          <input size="" name="tmp_val" id="tmp_val" value="" class="search-suggest" type="text" autocomplete="off" onfocus="loc_sug_CheckThis(this, this.id);">
+          <input type="hidden" name="tmp" id="tmp" value="0">
+          <script type="text/javascript">
+
+	if (typeof oObject != "object")
+		window.oObject = {};
+
+	document.loc_sug_CheckThis = function(oObj, id)
+	{
+		try
+		{
+			if(SuggestLoadedSale)
+			{
+				window.oObject[oObj.id] = new JsSuggestSale(oObj, 'siteId:s1', '', '', 'submitForm()');
+				return;
+			}
+			else
+			{
+				setTimeout(loc_sug_CheckThis(oObj, id), 10);
+			}
+		}
+		catch(e)
+		{
+			setTimeout(loc_sug_CheckThis(oObj, id), 10);
+		}
+	}
+	
+	clearLocInput = function()
+	{				
+		var inp = BX("tmp_val");			
+		if(inp)
+		{
+			inp.value = "";
+			inp.focus();
+		}
+	}	
+</script>
+        </div>
+        <script type="text/javascript">
+	function fShowStore(id, showImages, formWidth, siteId)
+	{
+		var strUrl = '/bitrix/components/bitrix/sale.order.ajax/templates/.default' + '/map.php';
+		var strUrlPost = 'delivery=' + id + '&showImages=' + showImages + '&siteId=' + siteId;
+
+		var storeForm = new BX.CDialog({
+					'title': 'Пункты выдачи заказа',
+					head: '',
+					'content_url': strUrl,
+					'content_post': strUrlPost,
+					'width': formWidth,
+					'height':450,
+					'resizable':false,
+					'draggable':false
+				});
+
+		var button = [
+				{
+					title: 'Сохранить',
+					id: 'crmOk',
+					'action': function ()
+					{
+						GetBuyerStore();
+						BX.WindowManager.Get().Close();
+					}
+				},
+				BX.CDialog.btnCancel
+			];
+		storeForm.ClearButtons();
+		storeForm.SetButtons(button);
+		storeForm.Show();
+	}
+
+	function GetBuyerStore()
+	{
+		BX('BUYER_STORE').value = BX('POPUP_STORE_ID').value;
+		//BX('ORDER_DESCRIPTION').value = 'Пункт выдачи: '+BX('POPUP_STORE_NAME').value;
+		BX('store_desc').innerHTML = BX('POPUP_STORE_NAME').value;
+		BX.show(BX('select_store'));
+	}
+
+	function showExtraParamsDialog(deliveryId)
+	{
+		var strUrl = '/bitrix/components/bitrix/sale.order.ajax/templates/.default' + '/delivery_extra_params.php';
+		var formName = 'extra_params_form';
+		var strUrlPost = 'deliveryId=' + deliveryId + '&formName=' + formName;
+
+		if(window.BX.SaleDeliveryExtraParams)
+		{
+			for(var i in window.BX.SaleDeliveryExtraParams)
+			{
+				strUrlPost += '&'+encodeURI(i)+'='+encodeURI(window.BX.SaleDeliveryExtraParams[i]);
+			}
+		}
+
+		var paramsDialog = new BX.CDialog({
+			'title': 'Дополнительные параметры для доставки',
+			head: '',
+			'content_url': strUrl,
+			'content_post': strUrlPost,
+			'width': 500,
+			'height':200,
+			'resizable':true,
+			'draggable':false
+		});
+
+		var button = [
+			{
+				title: 'Сохранить',
+				id: 'saleDeliveryExtraParamsOk',
+				'action': function ()
+				{
+					insertParamsToForm(deliveryId, formName);
+					BX.WindowManager.Get().Close();
+				}
+			},
+			BX.CDialog.btnCancel
+		];
+
+		paramsDialog.ClearButtons();
+		paramsDialog.SetButtons(button);
+		//paramsDialog.adjustSizeEx();
+		paramsDialog.Show();
+	}
+
+	function insertParamsToForm(deliveryId, paramsFormName)
+	{
+		var orderForm = BX("ORDER_FORM"),
+			paramsForm = BX(paramsFormName);
+			wrapDivId = deliveryId + "_extra_params";
+
+		var wrapDiv = BX(wrapDivId);
+		window.BX.SaleDeliveryExtraParams = {};
+
+		if(wrapDiv)
+			wrapDiv.parentNode.removeChild(wrapDiv);
+
+		wrapDiv = BX.create('div', {props: { id: wrapDivId}});
+
+		for(var i = paramsForm.elements.length-1; i >= 0; i--)
+		{
+			var input = BX.create('input', {
+				props: {
+					type: 'hidden',
+					name: 'DELIVERY_EXTRA['+deliveryId+']['+paramsForm.elements[i].name+']',
+					value: paramsForm.elements[i].value
+					}
+				}
+			);
+
+			window.BX.SaleDeliveryExtraParams[paramsForm.elements[i].name] = paramsForm.elements[i].value;
+
+			wrapDiv.appendChild(input);
+		}
+
+		orderForm.appendChild(wrapDiv);
+
+		BX.onCustomEvent('onSaleDeliveryGetExtraParams',[window.BX.SaleDeliveryExtraParams]);
+	}
+</script>
+        <input type="hidden" name="BUYER_STORE" id="BUYER_STORE" value="">
+        <div class="bx_section">
+          <h4>Служба доставки</h4>
+          <div class="bx_block w100 vertical">
+            <div class="bx_element">
+              <input type="radio" id="ID_DELIVERY_ID_1" name="DELIVERY_ID" value="1" checked="" onclick="submitForm();">
+              <label for="ID_DELIVERY_ID_1" onclick="BX('ID_DELIVERY_ID_1').checked=true;submitForm();">
+              <div class="bx_logotype"><span style="background-image:url(/bitrix/components/bitrix/sale.order.ajax/templates/.default/images/logo-default-d.gif);"></span></div>
+              <div class="bx_description">
+                <div class="name"><strong>Доставка курьером</strong></div>
+                <span class="bx_result_price"> Стоимость: <b>500 руб.</b><br>
+                </span>
+                <p> Доставка осуществляется в течение дня в удобное для вас время.<br>
+                </p>
+              </div>
+              </label>
+              <div class="clear"></div>
+            </div>
+          </div>
+          <div class="bx_block w100 vertical">
+            <div class="bx_element">
+              <input type="radio" id="ID_DELIVERY_ID_2" name="DELIVERY_ID" value="2" onclick="submitForm();">
+              <label for="ID_DELIVERY_ID_2" onclick="BX('ID_DELIVERY_ID_2').checked=true;submitForm();">
+              <div class="bx_logotype"><span style="background-image:url(/bitrix/components/bitrix/sale.order.ajax/templates/.default/images/logo-default-d.gif);"></span></div>
+              <div class="bx_description">
+                <div class="name"><strong>Самовывоз</strong></div>
+                <span class="bx_result_price"> Стоимость: <b>0 руб.</b><br>
+                </span>
+                <p> Вы можете самостоятельно забрать заказ из нашего магазина.<br>
+                </p>
+              </div>
+              </label>
+              <div class="clear"></div>
+            </div>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="section">
+          <script type="text/javascript">
+		function changePaySystem(param)
+		{
+			if (BX("account_only") && BX("account_only").value == 'Y') // PAY_CURRENT_ACCOUNT checkbox should act as radio
+			{
+				if (param == 'account')
+				{
+					if (BX("PAY_CURRENT_ACCOUNT"))
+					{
+						BX("PAY_CURRENT_ACCOUNT").checked = true;
+						BX("PAY_CURRENT_ACCOUNT").setAttribute("checked", "checked");
+						BX.addClass(BX("PAY_CURRENT_ACCOUNT_LABEL"), 'selected');
+
+						// deselect all other
+						var el = document.getElementsByName("PAY_SYSTEM_ID");
+						for(var i=0; i<el.length; i++)
+							el[i].checked = false;
+					}
+				}
+				else
+				{
+					BX("PAY_CURRENT_ACCOUNT").checked = false;
+					BX("PAY_CURRENT_ACCOUNT").removeAttribute("checked");
+					BX.removeClass(BX("PAY_CURRENT_ACCOUNT_LABEL"), 'selected');
+				}
+			}
+			else if (BX("account_only") && BX("account_only").value == 'N')
+			{
+				if (param == 'account')
+				{
+					if (BX("PAY_CURRENT_ACCOUNT"))
+					{
+						BX("PAY_CURRENT_ACCOUNT").checked = !BX("PAY_CURRENT_ACCOUNT").checked;
+
+						if (BX("PAY_CURRENT_ACCOUNT").checked)
+						{
+							BX("PAY_CURRENT_ACCOUNT").setAttribute("checked", "checked");
+							BX.addClass(BX("PAY_CURRENT_ACCOUNT_LABEL"), 'selected');
+						}
+						else
+						{
+							BX("PAY_CURRENT_ACCOUNT").removeAttribute("checked");
+							BX.removeClass(BX("PAY_CURRENT_ACCOUNT_LABEL"), 'selected');
+						}
+					}
+				}
+			}
+
+			submitForm();
+		}
+	</script>
+          <div class="bx_section">
+            <h4>Платежная система</h4>
+            <div class="bx_block horizontal">
+              <div class="bx_element">
+                <input type="radio" id="ID_PAY_SYSTEM_ID_3" name="PAY_SYSTEM_ID" value="3" checked="checked" onclick="changePaySystem();">
+                <label for="ID_PAY_SYSTEM_ID_3" onclick="BX('ID_PAY_SYSTEM_ID_3').checked=true;changePaySystem();">
+                <div class="bx_logotype"> <span style="background-image:url(/upload/sale/paysystem/logotip/1eb/1eb427d76a8a8e6648c972a41b2a390f.gif);"></span> </div>
+                <div class="bx_description">
+                  <div class="clear"></div>
+                  <strong> Яндекс.Деньги </strong> </div>
+                </label>
+              </div>
+            </div>
+            <div class="bx_block horizontal">
+              <div class="bx_element">
+                <input type="radio" id="ID_PAY_SYSTEM_ID_4" name="PAY_SYSTEM_ID" value="4" onclick="changePaySystem();">
+                <label for="ID_PAY_SYSTEM_ID_4" onclick="BX('ID_PAY_SYSTEM_ID_4').checked=true;changePaySystem();">
+                <div class="bx_logotype"> <span style="background-image:url(/upload/sale/paysystem/logotip/aa2/aa201d4cbd0c2bd55c62cb7945c4a3c3.gif);"></span> </div>
+                <div class="bx_description">
+                  <div class="clear"></div>
+                  <strong> Банковские карты </strong> </div>
+                </label>
+              </div>
+            </div>
+            <div class="bx_block horizontal">
+              <div class="bx_element">
+                <input type="radio" id="ID_PAY_SYSTEM_ID_5" name="PAY_SYSTEM_ID" value="5" onclick="changePaySystem();">
+                <label for="ID_PAY_SYSTEM_ID_5" onclick="BX('ID_PAY_SYSTEM_ID_5').checked=true;changePaySystem();">
+                <div class="bx_logotype"> <span style="background-image:url(/upload/sale/paysystem/logotip/2fa/2fa824ebf2b7e4cef6e875001d47693f.gif);"></span> </div>
+                <div class="bx_description">
+                  <div class="clear"></div>
+                  <strong> Терминалы </strong> </div>
+                </label>
+              </div>
+            </div>
+            <div class="bx_block w100 vertical">
+              <div class="bx_element">
+                <input type="radio" id="ID_PAY_SYSTEM_ID_1" name="PAY_SYSTEM_ID" value="1" onclick="changePaySystem();">
+                <label for="ID_PAY_SYSTEM_ID_1" onclick="BX('ID_PAY_SYSTEM_ID_1').checked=true;changePaySystem();">
+                <div class="bx_logotype"> <span style="background-image:url(/upload/sale/paysystem/logotip/7d6/7d62a95fa1eb4e107df158251f6c23fe.gif);"></span> </div>
+                <div class="bx_description"> <strong>Наличные курьеру</strong>
+                  <p> Оплата наличными при получении заказа курьеру. </p>
+                </div>
+                </label>
+                <div class="clear"></div>
+              </div>
+            </div>
+            <div class="bx_block w100 vertical">
+              <div class="bx_element">
+                <input type="radio" id="ID_PAY_SYSTEM_ID_7" name="PAY_SYSTEM_ID" value="7" onclick="changePaySystem();">
+                <label for="ID_PAY_SYSTEM_ID_7" onclick="BX('ID_PAY_SYSTEM_ID_7').checked=true;changePaySystem();">
+                <div class="bx_logotype"> <span style="background-image:url(/upload/sale/paysystem/logotip/4ce/4ce28e35f27704d227ce6b7df05b90ce.gif);"></span> </div>
+                <div class="bx_description"> <strong>Сбербанк</strong>
+                  <p> Вы можете оплатить заказ в любом отделении Сбербанка. За услугу по переводу денег с Вас возьмут от 3 до 7% от стоимости заказа, в зависимости от региона. Перечисление денег займет порядка 10 дней. </p>
+                </div>
+                </label>
+                <div class="clear"></div>
+              </div>
+            </div>
+            <div class="bx_block w100 vertical">
+              <div class="bx_element">
+                <input type="radio" id="ID_PAY_SYSTEM_ID_2" name="PAY_SYSTEM_ID" value="2" onclick="changePaySystem();">
+                <label for="ID_PAY_SYSTEM_ID_2" onclick="BX('ID_PAY_SYSTEM_ID_2').checked=true;changePaySystem();">
+                <div class="bx_logotype"> <span style="background-image:url(/bitrix/components/bitrix/sale.order.ajax/templates/.default/images/logo-default-ps.gif);"></span> </div>
+                <div class="bx_description"> <strong>Наложенный платеж</strong>
+                  <p> Оплата с помощью наложенного платежа </p>
+                </div>
+                </label>
+                <div class="clear"></div>
+              </div>
+            </div>
+            <div style="clear: both;"></div>
+          </div>
+        </div>
+        <div class="bx_section" style="display:none">
+          <h4>Свойства, связанные с оплатой и доставкой</h4>
+          <br>
+        </div>
+        <div class="bx_ordercart">
+          <h4>Товары в заказе</h4>
+          <div class="bx_ordercart_order_table_container">
+            <table>
+              <thead>
+                <tr>
+                  <td class="margin"></td>
+                  <td class="item" colspan="2"> Товары </td>
+                  <td class="custom"> Скидка </td>
+                  <td class="custom"> Цена </td>
+                  <td class="custom"> Количество </td>
+                  <td class="custom"> Сумма </td>
+                  <td class="margin"></td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="margin"></td>
+                  <td class="itemphoto"><div class="bx_ordercart_photo_container"> <a href="/catalog/shtany/bryuki/">
+                      <div class="bx_ordercart_photo" style="background-image:url('/upload/resize_cache/iblock/5bb/110_110_1/5bb7b789434ebaa47cdd49b7f7b9c725.jpg')"></div>
+                      </a> </div></td>
+                  <td class="item" style="width:70%"><h2 class="bx_ordercart_itemtitle"> <a href="/catalog/shtany/bryuki/"> Брюки </a> </h2>
+                    <div class="bx_ordercart_itemart"> Цвет:&nbsp;<span>Черный<span><br>
+                      Размеры одежды :&nbsp;<span>S<span><br>
+                      </span></span></span></span></div></td>
+                  <td class="custom right"><span>Скидка:</span> 30% </td>
+                  <td class="price right"><div class="current_price">1 399.30 руб.</div>
+                    <div class="old_price right"> 1 999 руб. </div></td>
+                  <td class="custom right"><span>Количество:</span> 3&nbsp;шт </td>
+                  <td class="custom right"><span>Сумма:</span> 4 197.90 руб. </td>
+                </tr>
+                <tr>
+                  <td class="margin"></td>
+                  <td class="itemphoto"><div class="bx_ordercart_photo_container"> <a href="/catalog/kurtki/zhaket/">
+                      <div class="bx_ordercart_photo" style="background-image:url('/upload/resize_cache/iblock/56e/110_110_1/56e18d2ca194b6fe5be42dd33f685ee1.jpg')"></div>
+                      </a> </div></td>
+                  <td class="item" style="width:70%"><h2 class="bx_ordercart_itemtitle"> <a href="/catalog/kurtki/zhaket/"> Жакет </a> </h2>
+                    <div class="bx_ordercart_itemart"> Размеры одежды :&nbsp;<span>S<span><br>
+                      </span></span></div></td>
+                  <td class="custom right"><span>Скидка:</span> </td>
+                  <td class="price right"><div class="current_price">7 000 руб.</div>
+                    <div class="old_price right"> </div></td>
+                  <td class="custom right"><span>Количество:</span> 1&nbsp;шт </td>
+                  <td class="custom right"><span>Сумма:</span> 7 000 руб. </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="bx_ordercart_order_pay">
+            <div class="bx_ordercart_order_pay_right">
+              <table class="bx_ordercart_order_sum">
+                <tbody>
+                  <tr>
+                    <td class="custom_t1" colspan="6">Общий вес:</td>
+                    <td class="custom_t2">0 кг</td>
+                  </tr>
+                  <tr>
+                    <td class="custom_t1" colspan="6">Товаров на:</td>
+                    <td class="custom_t2">11 197.90 руб.</td>
+                  </tr>
+                  <tr>
+                    <td class="custom_t1" colspan="6">Доставка:</td>
+                    <td class="custom_t2">500 руб.</td>
+                  </tr>
+                  <tr>
+                    <td class="custom_t1 fwb" colspan="6">Итого:</td>
+                    <td class="custom_t2 fwb">11 697.90 руб.</td>
+                  </tr>
+                  <tr>
+                    <td class="custom_t1" colspan="6"></td>
+                    <td class="custom_t2" style="text-decoration:line-through; color:#828282;">12 997 руб.</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div style="clear:both;"></div>
+            </div>
+            <div style="clear:both;"></div>
+            <div class="bx_section">
+              <h4>Комментарии к заказу:</h4>
+              <div class="bx_block w100">
+							
+								<!-- class form-control -->
+                <textarea name="ORDER_DESCRIPTION" id="ORDER_DESCRIPTION" style="max-width:100%;min-height:120px" class="form-control"></textarea>
+								<!-- end -->
+								
+              </div>
+              <input type="hidden" name="" value="">
+              <div style="clear: both;"></div>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+      <input type="hidden" name="confirmorder" id="confirmorder" value="Y">
+      <input type="hidden" name="profile_change" id="profile_change" value="N">
+      <input type="hidden" name="is_ajax_post" id="is_ajax_post" value="Y">
+      <input type="hidden" name="json" value="Y">
+      <div class="bx_ordercart_order_pay_center">
+			
+				<!-- class btn btn-default -->
+				<a href="javascript:void();" onclick="submitForm('Y'); return false;" id="ORDER_CONFIRM_BUTTON" class="checkout btn btn-default">Оформить заказ</a>
+				<!-- end -->
+				
+			</div>
+    </form>
+    <div style="display:none;">
+      <div id="delivery_info__"><a href="javascript:void(0)" onclick="deliveryCalcProceed({'STEP':'1','DELIVERY':'','PROFILE':'','WEIGHT':'0','PRICE':'0','LOCATION':'0','LOCATION_ZIP':'','CURRENCY':'','INPUT_NAME':'','TEMP':'','ITEMS':'','EXTRA_PARAMS_CALLBACK':''})">Рассчитать стоимость</a></div>
+      <div id="wait_container__" style="display: none;"></div>
+    </div>
+  </div>
+</div>

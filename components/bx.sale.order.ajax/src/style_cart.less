@@ -1,0 +1,78 @@
+@import url("../../../template/css/less/components-import.less");
+@import url("bx.style_cart.less");
+
+.bx_ordercart .bx_ordercart_order_table_container {
+	
+	& {
+		border: 3px solid @gray-lightest;
+		font-size: 10.5pt;
+		
+		thead tr td {
+			background: @gray-lightest;
+			border-bottom: 0;
+		}
+		
+		tbody tr td {
+			font-size: 10.5pt;
+		}
+		
+		thead,
+		tbody {
+			tr td a {
+				color: @link-color;
+				font-size: 10.5pt;
+				
+				&:hover {
+					color: @link-hover-color;
+				}
+				
+				&.btn-default {
+					color: @darken-brand-primary;
+					
+					&:hover {
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+		
+	tbody tr td[colspan="2"] {
+		background: @gray-lightest;
+	}
+}
+
+.bx_ordercart .bx_ordercart_order_pay {
+	padding: 0;
+}
+
+.bx_order_make .bx_block {
+	padding: 0;
+}
+
+.bx_ordercart_order_pay_center {
+	span,
+	a {
+		line-height: 53px;
+	}
+	
+	.checkout{
+		position:relative;
+		top:-9px;
+		display:inline-block;
+		padding:0 18px;
+		border-radius:3px;
+		background: none;
+		color:#fff;
+		vertical-align:bottom;
+		text-decoration:none;
+		text-shadow:0 1px 0 #0075b6;
+		font-weight:bold;
+		line-height:36px;
+		
+		&:hover,
+		&:active {
+			background: none;
+		}
+	}
+}
