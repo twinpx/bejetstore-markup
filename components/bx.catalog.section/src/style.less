@@ -112,7 +112,7 @@
     margin: 0;
     padding: 0;
     width: 100%;
-    white-space: nowrap;
+    white-space: normal !important;
 }
 
 .bx-touch .bx_catalog_top_home .bx_item_detail_scu .bx_scu ul {
@@ -550,6 +550,7 @@
 		li {
 			display: inline-block;
 			height: auto;
+			margin-right: -3px;
 		}
 	}
 	
@@ -559,7 +560,6 @@
     padding: 0 !important;
     margin: 0 1px 12px 0;
     position: relative;
-		border: 1px solid #f0f0f0;
 		
 		i {
 			.bj-get-checkbox-u();
@@ -572,13 +572,13 @@
 	
 	.cnt {
     display: block;
+		border: 1px solid #f0f0f0;
 		
 		&_item {
 			width: 24px;
 			height: 24px;
 			display: block;
 			cursor: pointer;
-			border: 1px solid #f0f0f0;
 		}
 	}
 }
