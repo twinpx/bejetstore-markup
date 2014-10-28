@@ -1,0 +1,24 @@
+<link href="/components/bx.sale.personal.order.cancel/style.css" rel="stylesheet">
+
+<a href="/personal/order/index.php">В список заказов</a>
+<div class="bx_my_order_cancel">
+
+	<form method="post" action="/personal/order/cancel/6/?CANCEL=Y">
+		
+		<input type="hidden" name="CANCEL" value="Y">
+		<input type="hidden" name="sessid" id="sessid" value="fc56f95c2b1f4df3e8569752573db328">			<input type="hidden" name="ID" value="6">
+		
+		Вы уверены, что хотите отменить			
+		<a href="/personal/order/detail/6/">заказ #6</a>?
+		<b>Отмена заказа необратима.</b><br><br>
+		Укажите, пожалуйста, причину отмены заказа:<br>
+		
+		<div class="form-group">
+			<textarea name="REASON_CANCELED" class="form-control"></textarea>
+		</div>
+		
+		<input type="submit" name="action" value="Отменить заказ" class="btn btn-default">
+
+	</form>
+	
+</div>
