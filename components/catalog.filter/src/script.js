@@ -21,12 +21,6 @@
 					flag = true;
 				}
 			});
-			
-			if ( flag ) {
-				$form.find( "button[type=reset]" ).css({ opacity: 1 });
-			} else {
-				$form.find( "button[type=reset]" ).css({ opacity: 0 });
-			}
 		})
 		.each( function() {
 			if ( this.checked ) {
@@ -38,13 +32,6 @@
 			e.preventDefault();
 			
 			$( this ).hide().parent().find( ".bj-hidden__hidden" ).slideDown();
-		});
-		
-		$( ".bj-reset-button" ).click( function(e) {
-			var $checked = $( this ).closest( "form" ).find( "input:checked" );
-			setTimeout( function() {
-				$checked.trigger( "change" );
-			}, 0);
 		});
 		
 		!function range() {
