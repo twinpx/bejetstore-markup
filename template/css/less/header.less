@@ -69,7 +69,9 @@
 				}
 				
 				form {
-					display: inline;
+					display: inline-block;
+					width: 30px;
+					height: 26px;
 				}
 				
 				&__input {
@@ -85,10 +87,14 @@
 					.transition( all 0.3s ease-in );
 					.opacity( 0 );
 					color: #fff;
+					position: absolute;
+					top: 0;
+					left: 0;
+					z-index: 9;
 				}
 				
 				&.i-active &__input {
-					width: 100px;
+					width: 600px;
 					.opacity( 1 );
 				}
 			}
