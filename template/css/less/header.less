@@ -22,6 +22,16 @@
 				padding: 10px 0 0;
 				height: @header-top-height;
 				
+				/*.i-fixed & {
+					position: fixed;
+					top: 0;
+					left: 0;
+					width: 100%;
+					background-color: @body-bg;
+					border-bottom: 1px solid @gray-lightest;
+					z-index: 999;
+				}*/
+				
 				a {
 					line-height: @header-top-link-height;
 					display: inline-block;
@@ -99,7 +109,16 @@
 				}
 			}
 			
-			&__dropdown {				
+			&__dropdown {
+				
+				/*.i-fixed & {
+					position: fixed;
+					top: 60px;
+					left: 0;
+					width: 100%;
+					z-index: 999;
+				}*/
+				
 				article {
 					background-color: @darken-brand-primary;
 					font-size: @font-size-small;

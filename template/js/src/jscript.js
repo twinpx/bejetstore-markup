@@ -265,6 +265,79 @@
 		}
 	}
 	
+	/*function FloatFixedHeader( elem ) {
+		var self = this;
+		
+		init();
+		
+		function init() {
+			initVarsAndElems();
+			handleEvents();
+		}
+		
+		function initVarsAndElems() {
+			self.$elem = $( elem + ":eq(0)" );
+			self.$elem.data( "FloatFixedHeader", self );
+			self.$submenu = self.$elem.find( ".bj-page-header__submenu" );
+			self.$dropdown = self.$elem.find( ".bj-page-header__dropdown" );
+			
+			self.height = self.$submenu.outerHeight();
+			self.hTopBorder = parseInt( self.$submenu.offset().top, 10 ) -
+				parseInt( $( "body" ).offset().top, 10 );
+			self.scrolled = 0;
+		}
+		
+		function handleEvents() {
+			$(document).bind( "scroll", scrollWindow ).scroll();
+		}
+		
+		function fixSubmenu() {
+			var scrolled = getScrolled();
+			self.scrolled = scrolled;
+		
+			if ( scrolled > self.hTopBorder &&
+						!self.$elem.hasClass( "i-fixed" )) {
+		
+				self.$elem.addClass( "i-fixed" );
+				self.$submenu.after('<div class="bj-page-header-fixed" style="height: ' + self.height + 'px"></div>');
+				
+			} else if ( scrolled <= self.hTopBorder &&
+					self.$elem.hasClass( "i-fixed" )) {
+				
+				self.$submenu
+					.removeAttr( "style" )
+					.next( ".b-header-fixed" )
+					.remove();
+				
+				self.$elem.removeClass( "i-fixed" );
+			}
+		}
+		
+		function scrollWindow() {
+			if ( matchMedia ) {
+				var mq = window.matchMedia( "(min-width: 500px)" );
+				mq.addListener( WidthChange );
+				WidthChange(mq);
+			} else if ( $(document).width() >= 500 ) {
+				fixSubmenu();
+			}
+			
+			function WidthChange(mq) {
+				if ( mq.matches ) {
+					fixSubmenu();
+				} else {
+					self.$submenu.next( ".b-header-fixed" ).remove();
+					self.$submenu.removeClass( "i-fixed" ).removeAttr( "style" );
+				}
+			}
+			
+		}
+		
+		function getScrolled() {
+			return window.pageYOffset || document.documentElement.scrollTop;
+		}
+	}*/
+	
 	$(function() {
 		
 		$( ".bj-logo-space [title]" ).tooltip();
@@ -286,7 +359,9 @@
 		
 		textMore();
 		
-		new FloatPhone("#b-float-phone");
+		new FloatPhone( "#b-float-phone" );
+		
+		//new FloatFixedHeader( ".bj-page-header" );
 		
 		/*var hammertime = new Hammer( myElement, myOptions );
 		hammertime.on('pan', function(ev) {
