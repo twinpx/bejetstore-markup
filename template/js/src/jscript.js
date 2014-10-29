@@ -206,6 +206,65 @@
 		});
 	}
 	
+	function FloatPhone(elem) {
+		var self = this;
+		
+		init();
+		
+		function init() {
+			initVarsAndElems();
+			handleEvents();
+		}
+		
+		function initVarsAndElems() {
+			self.$elem = $(elem);
+			self.$elem.data("FloatPhone", self);
+			self.scrollEvent;
+			self.scrollIntervalEvent;
+			self.scrollIntervalId;
+			self.showTimeoutId;
+			self.showTime = 3000;
+		}
+		
+		function handleEvents() {
+			startTimeout();
+			$(window).bind("scroll", scrollWindow);
+		}
+		
+		function startTimeout() {
+			self.showTimeoutId = setTimeout( function() {
+				showPhone();
+			}, self.showTime );
+		}
+		
+		function scrollWindow(e) {
+			self.scrollEvent = e;
+			if ( self.scrollIntervalEvent ) return;
+			
+			self.scrollIntervalEvent = e;
+			clearTimeout( self.showTimeoutId );
+			hidePhone();
+			
+			self.scrollIntervalId = setInterval( function() {
+				if ( self.scrollIntervalEvent !== self.scrollEvent ) {
+					self.scrollIntervalEvent = self.scrollEvent;
+					return;
+				}
+				clearInterval( self.scrollIntervalId );
+				self.scrollIntervalEvent = undefined;
+				startTimeout();
+			}, 100);
+		}
+		
+		function showPhone() {
+			self.$elem.addClass( "i-visible" );
+		}
+		
+		function hidePhone() {
+			self.$elem.removeClass( "i-visible" );
+		}
+	}
+	
 	$(function() {
 		
 		$( ".bj-logo-space [title]" ).tooltip();
@@ -226,6 +285,8 @@
 		scrollToElemByUrl( ".bj-catalogue-filter", "set_filter" );
 		
 		textMore();
+		
+		new FloatPhone("#b-float-phone");
 		
 		/*var hammertime = new Hammer( myElement, myOptions );
 		hammertime.on('pan', function(ev) {
