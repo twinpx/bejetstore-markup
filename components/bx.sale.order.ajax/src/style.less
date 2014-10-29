@@ -50,3 +50,39 @@
 		border-bottom: 0;
 	}
 }
+
+.sale_order_full_table input[type=submit] {
+	display: inline-block;
+	margin-bottom: 0;
+	font-weight: 400;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	background-image: none;
+	border: 2px solid @darken-brand-primary;
+	white-space: nowrap;
+	padding: 6px 14px;
+	line-height: 1.72857143;
+	border-radius: 6px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+	text-shadow: none;
+	box-shadow: none;
+	font-size: @font-size-small;
+	border-radius: 0;
+	background: #fff;
+	color: @darken-brand-primary;
+	.bj-transition( all );
+	
+	&:hover,
+	&:active,
+	&:focus {
+		outline: none;
+		background: @brand-primary;
+		color: #fff;
+		border-color: @brand-primary;
+	}
+}
