@@ -1,5 +1,10 @@
 (function($) {
 	$(function() {
+	
+		$( ".bj-catalogue-filter-switch" ).click( function(e) {
+			e.preventDefault();
+			$( this ).hide().next( ".bj-catalogue-filter" ).slideDown();
+		});
 		
 		$( ".bj-checkbox input:checkbox" ).on( "change", function() {
 			var $this = $( this );
@@ -17,7 +22,6 @@
 			
 			$form.find( "input:checkbox" ).each( function() {
 				if ( this.checked ) {
-					console.log(this.checked);
 					flag = true;
 				}
 			});
