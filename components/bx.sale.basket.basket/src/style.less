@@ -16,14 +16,21 @@
 	
 	&:active a,
 	&.bx_active a {
-		border-color: @brand-primary !important;
-		border-width: 1px !important;
+		border: 1px solid @brand-primary !important;
 		background: @brand-primary;
 		color: #fff;
 		
 		&:hover {
 			color: #fff;
 		}
+	}
+}
+
+.bx-touch .bx_item_detail_size_small_noadaptive,
+.bx-touch .bx_item_detail_scu_small_noadaptive {
+	.bx_slide_right,
+	.bx_slide_left {
+		display: none;
 	}
 }
 
@@ -105,6 +112,10 @@
 		> table > tbody > tr {
 			border: 3px solid @gray-lightest;
 			margin-bottom: 20px;
+			
+			&:last-child {
+				border-bottom: 3px solid @gray-lightest !important;
+			}
 		}
 	}
 }
