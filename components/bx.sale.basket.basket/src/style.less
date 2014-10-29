@@ -4,6 +4,7 @@
 
 //size
 .bx_item_detail_size_small_noadaptive ul li {
+	min-width: 10% !important;
 	width: auto !important;
 	margin: 0 2px 2px 0;
 	
@@ -12,7 +13,21 @@
 		display: block;
 		padding: 1px 3px;
 	}
+	
+	&:active a,
+	&.bx_active a {
+		border-color: @brand-primary !important;
+		border-width: 1px !important;
+		background: @brand-primary;
+		color: #fff;
+		
+		&:hover {
+			color: #fff;
+		}
+	}
 }
+
+.bx_item_detail_size_small_noadaptive ul li:active a, .bx_item_detail_size_small_noadaptive ul li.bx_active a {}
 //end
 
 .bx_ordercart .bx_ordercart_order_table_container tbody td {
