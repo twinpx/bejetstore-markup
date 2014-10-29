@@ -1,6 +1,29 @@
 @import url("../../../template/css/less/components-import.less");
 @import url("bx.style.less");
 
+
+//size
+.bx_item_detail_size_small_noadaptive ul li {
+	width: auto !important;
+	margin: 0 2px 2px 0;
+	
+	a {
+		position: static;
+		display: block;
+		padding: 1px 3px;
+	}
+}
+//end
+
+.bx_ordercart .bx_ordercart_order_table_container tbody td {
+	&.item,
+	&.custom,
+	&.control,
+	&.price {
+		font-size: @font-size-base;
+	}
+}
+
 .bx_ordercart .bx_ordercart_order_table_container {
 	border: 3px solid @gray-lightest;
 	font-size: 10.5pt;
