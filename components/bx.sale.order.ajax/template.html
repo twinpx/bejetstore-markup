@@ -60,26 +60,19 @@
     <form action="/personal/order/make/" method="POST" name="ORDER_FORM" id="ORDER_FORM" enctype="multipart/form-data">
       <input type="hidden" name="sessid" id="sessid" value="e435cebb6689ab23d1213895b5694c3e">
       <div id="order_form_content">
-        <div class="section">
-          <h4>Тип плательщика</h4>
-					
-					<!-- new -->
-					<label class="bj-cf__size__i bj-checkbox i-checked">
-						<span class="bj-checkbox__u"></span>
-						<input type="radio" id="PERSON_TYPE_1" name="PERSON_TYPE" value="1" checked="checked" onclick="submitForm()">
-						Физическое лицо
-					</label>
-					
-					<label class="bj-cf__size__i bj-checkbox">
-						<span class="bj-checkbox__u"></span>
-						<input type="radio" id="PERSON_TYPE_2" name="PERSON_TYPE" value="2" onclick="submitForm()">
-						Юридическое лицо
-					</label>
-					<!-- end -->
-					
-          <div class="clear"></div>
-          <input type="hidden" name="PERSON_TYPE_OLD" value="1">
-        </div>
+			
+				<div class="section">
+					<h4>Тип плательщика</h4>
+								<div class="label left">
+							<input type="radio" id="PERSON_TYPE_1" name="PERSON_TYPE" value="1" checked="checked" onclick="submitForm()"> <label for="PERSON_TYPE_1">Физическое лицо</label><br>
+						</div>
+									<div class="label left">
+							<input type="radio" id="PERSON_TYPE_2" name="PERSON_TYPE" value="2" onclick="submitForm()"> <label for="PERSON_TYPE_2">Юридическое лицо</label><br>
+						</div>
+					<div class="clear"></div>
+					<input type="hidden" name="PERSON_TYPE_OLD" value="1">
+				</div>
+				
         <div class="section">
 				
 					<!-- new markup -->
