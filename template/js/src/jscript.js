@@ -359,7 +359,14 @@
 		
 		textMore();
 		
-		new FloatPhone( "#b-float-phone" );
+		if ( matchMedia ) {
+			if ( window.matchMedia( "(min-width: 500px)" ).matches ) {
+				new FloatPhone( "#b-float-phone" );
+			}
+		} else if ( $(document).width() >= 500 ) {
+			new FloatPhone( "#b-float-phone" );
+		}
+		
 		
 		//new FloatFixedHeader( ".bj-page-header" );
 		
