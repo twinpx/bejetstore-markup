@@ -35,7 +35,8 @@ module.exports = function (grunt) {
       js: {
         src: [
 					"template/js/src/html5shiv.js",
-					"template/js/plugins/hammer.js/hammer.js",
+					//"template/js/plugins/hammer.js/hammer.js",
+					"template/js/libs/jquery.ui.touch-punch.min.js",
 					"template/js/plugins/jquery.scrollTo/jquery.scrollTo.min.js",
 					"template/js/src/jscript.js"
 				],
