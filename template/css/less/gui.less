@@ -458,3 +458,27 @@ menu {
 	text-align: center;
 	line-height: 1.3;
 }
+
+.bj-hr-heading {
+	border-top: 1px solid @gray-lightest;
+	font-family: "Roboto Slab", "Times New Roman", serif;
+	font-size: 18pt;
+	font-weight: 600;
+	position: relative;
+	text-transform: uppercase;
+	
+	&__content {
+		position: absolute;
+		width: 100%;
+		text-align: center;
+		top: -21px;
+		left: 0;
+		display: block;
+		
+		span {
+			display: inline-block;
+			background: #fff;
+			padding: 0 5px;
+		}
+	}
+}

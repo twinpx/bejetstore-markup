@@ -34,8 +34,19 @@
 	color: @brand-secondary;
 }
 
-.bj-page-header__search__input,
+.bj-page-header__search__input {
+	background-color: @brand-secondary;
+}
+
 .bj-page-header__dropdown article,
 .bj-page-header__dropdown .up {
-	background-color: @brand-secondary;
+	background-color: @brand-primary;
+}
+
+.bx_item_detail .bx_item_slider .bx_slide ul li {
+	&:active .cnt,
+	&.bx_active .cnt,
+	&.bx_active:hover .cnt {
+		border-color: @brand-secondary !important;
+	}
 }

@@ -90,7 +90,7 @@
 					line-height: 20px;
 					padding: 3px 10px 3px 30px;
 					background-color: @darken-brand-primary;
-					border-color: darken( @brand-primary, 40% );
+					border: none;
 					display: inline-block;
 					vertical-align: top;
 					margin-top: 8px;
@@ -101,11 +101,19 @@
 					top: 0;
 					left: 0;
 					z-index: 9;
+					
+					&:focus {
+						box-shadow: none;
+					}
 				}
 				
 				&.i-active &__input {
-					width: 600px;
+					width: 690px;
 					.opacity( 1 );
+					
+					@media( max-width: 1200px ) {width: 620px;}
+					@media( max-width: 1125px ) {width: 550px;}
+					@media( max-width: 1065px ) {width: 490px;}
 				}
 			}
 			

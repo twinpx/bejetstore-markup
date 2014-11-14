@@ -1,89 +1,196 @@
-.blog-comment {
-    margin: 0;
-    padding-top: 0.7em;
+/* Start:/bitrix/templates/bejetstore_purple_white/components/bitrix/catalog.comments/.default/themes/green/style.css*/
+/* catalog_comments */
+.bx_soc_comments_div.bx_important.bx_green .bx_bt_button  				{
+	background: #99D23E;
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod?EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top, #99d23e 0%, #63aa28 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#99D23E), color-stop(100%,#63AA28));
+	background: -webkit-linear-gradient(top, #99D23E 0%,#63AA28 100%);
+	background: -o-linear-gradient(top, #99d23e 0%,#63aa28 100%);
+	background: -ms-linear-gradient(top, #99d23e 0%,#63aa28 100%);
+	background: linear-gradient(to bottom, #99D23E 0%,#63AA28 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99d23e', endColorstr='#63aa28',GradientType=0 );
+
+	color:#fff;
+	text-shadow: 0 1px 0 #5D8634;
+	display:inline-block;
+	border-radius:3px;
+	text-align:center;
+	text-decoration:none;
+	font-size:14px;
+	cursor:pointer;
 }
-.blog-comment-cont {
+.bx_soc_comments_div.bx_important.bx_green .bx_bt_button:hover  		{
+	background: #A8D95B;
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod?EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top, #a8d95b 0%, #7ab748 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#A8D95B), color-stop(100%,#7AB748));
+	background: -webkit-linear-gradient(top, #A8D95B 0%,#7AB748 100%);
+	background: -o-linear-gradient(top, #a8d95b 0%,#7ab748 100%);
+	background: -ms-linear-gradient(top, #a8d95b 0%,#7ab748 100%);
+	background: linear-gradient(to bottom, #A8D95B 0%,#7AB748 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a8d95b', endColorstr='#7ab748',GradientType=0 );
 }
-.blog-comment-info {
-    display: block;
+.bx_soc_comments_div.bx_important.bx_green .bx_bt_button:active  		{
+	box-shadow: none;
+	background:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod?EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top, #63aa28 0%, #6fb32d 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#63AA28), color-stop(100%,#6FB32D));
+	background: -webkit-linear-gradient(top, #63AA28 0%,#6FB32D 100%);
+	background: -o-linear-gradient(top, #63aa28 0%,#6fb32d 100%);
+	background: -ms-linear-gradient(top, #63aa28 0%,#6fb32d 100%);
+	background: linear-gradient(to bottom, #63AA28 0%,#6FB32D 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#63aa28', endColorstr='#6fb32d',GradientType=0 );
 }
+/* End */
+
+/*comment*/
+.blog-comment {margin:0; padding-top: 0.7em;}
+.blog-comment-cont{}
+.blog-comment-info {display:block;}
+.blog-comment-content {display:block; overflow: hidden; padding-top: 0.5em;}
+.blog-comment-meta {font-size:0.85em; padding-top: 0.5em; padding-bottom: 0.5em;}
+.blog-comment-date {font-size:0.85em; display:inline;}
+.blog-comment-author-info {display:inline;}
+.blog-comment-avatar {float:left; margin-right: 0.5em; width: 30px; height: 30px; border:1px solid #c4c4c4; background-color: #eceaec;}
+.blog-comment-avatar img{}
+.blog-comment-meta a { text-decoration: none !important;}
+.blog-comment-meta a:hover {text-decoration: underline !important;}
+.blog-comment-link, .blog-comment-delete, .blog-comment-parent, .blog-comment-answer, .blog-comment-edit, .blog-comment-show, .blog-comment-hide {display:inline-block;}
+.blog-add-comment {text-align:center; padding-top: 0em; padding-bottom: 1.5em;}
+.blog-comment-nav {padding-bottom: 0.6em; padding-left: 0.7em;}
+
+/*comment-form*/
+div.blog-comment-form { margin-bottom:0.7em; margin-top:0.7em; width:80%;}
+div.blog-comment-field-text  {width: 100%;}
+div.blog-comment-field-text textarea { width: 99.9%; }
+div.blog-comment-field-tags { display: none; }
+div.blog-comment-field-tags input { width:80%; }
+div.blog-comment-field-captcha input { width: 180px;}
+div.blog-comment-field-settings input { width:1.55em; height:1.55em; margin:0 0 0 -0.25em; vertical-align: middle; font-size:1em; }
+div.blog-comment-field-settings label { vertical-align: middle; }
+div.blog-comment-fields { padding:0.8em; zoom:1;}
+div.blog-comment-field {}
+div.blog-comment-field-title input, div.blog-comment-field-desc input { width: 80%;}
+div.blog-comment-field-user {width: 100%; padding-bottom: 5px; }
+div.blog-comment-field-author, div.blog-comment-field-email { float:left; width:47%;}
+div.blog-comment-field-text {padding-bottom: 0.2em;}
+div.blog-comment-field-user-sep { width:5%; float: left; }
+div.blog-comment-field-author input, div.blog-comment-field-email input { width:100%; }
+div.blog-comment-field-bbcode {padding-top: 0.7em;}
+div.blog-comment-field-captcha-image{padding-top: 0.4em;}
+div.blog-comment-buttons { margin-top: 1em; padding-bottom: 0.4em;}
+div.blog-comment-buttons input { padding:0 0.5em; font-size:1.184em;}
+
+.blog-post-meta, .blog-comment-meta, .blog-comment-nav  {color: #969696;}
+.blog-post-tag a, .blog-comment-meta a , .blog-mainpage-meta a {color:#969696 !important;}
+
+.blog-post-date, .blog-comment-date {color: #767676;}
+div.blog-post-date span.blog-post-time, div.blog-post-date span.blog-post-day {display:none;}
+div.blog-post-edit-form, div.blog-comment-fields {background-color: #f1f1f1;}
+div.blog-post-image-item-border {border-color:#D8D8D8;}
+
+/* Start:/bitrix/templates/bejetstore_purple_white/components/bitrix/catalog.comments/.default/style.css*/
+
+.item_comments{
+	display: block;
+	padding-left: 0;
+}
+.item_comments li{
+	display: block;
+	padding-bottom: 10px;
+}
+.item_comments_username{
+	display: inline-block;
+	color: #5d90bd;
+	font-size: 14px;
+}
+.item_comments_date{
+	display: inline-block;
+	color: #b8b8b8;
+	font-size: 14px;
+	margin-left: 10px;
+}
+.item_comments_container p{
+	margin-top: 5px;
+	color: #3f3f3f;
+	font-size: 14px;
+}
+
+div.blog-comment-form {width: 100% !important;}
+
+div.blog-comment .blog-author {
+    font-size: 0.85em;
+}
+
 .blog-comment-content {
-    display: block;
-    overflow: hidden;
-    padding-top: 0.5em;
-}
-.blog-comment-meta {
-    font-size: 0.85em;
-    padding-bottom: 0.5em;
-    padding-top: 0.5em;
-}
-.blog-comment-date {
-    display: inline;
-    font-size: 0.85em;
-}
-.blog-comment-author-info {
-    display: inline;
-}
-.blog-comment-avatar {
-    background-color: #eceaec;
-    border: 1px solid #c4c4c4;
-    float: left;
-    height: 30px;
-    margin-right: 0.5em;
-    width: 30px;
-}
-.blog-comment-avatar img {
-}
-.blog-comment-meta a {
-    text-decoration: none !important;
-}
-.blog-comment-meta a:hover {
-    text-decoration: underline !important;
-}
-.blog-comment-link, .blog-comment-delete, .blog-comment-parent, .blog-comment-answer, .blog-comment-edit, .blog-comment-show, .blog-comment-hide {
-    display: inline-block;
-}
-.blog-add-comment {
-    padding-bottom: 1.5em;
-    padding-top: 0;
-    text-align: center;
-}
-.blog-comment-nav {
-    padding-bottom: 0.6em;
-    padding-left: 0.7em;
+    font-size: 13px;
+    overflow: hidden!important;
+    padding-top: 0 !important;
 }
 
-.blog-author {
-    display: inline;
-    font-weight: bold;
-    margin: 0;
-    padding: 0;
-}
-.blog-author-icon {
-    background-repeat: no-repeat;
-    display: block;
-    float: left;
-    height: 16px;
-    line-height: 1em;
-    padding-right: 0.2em;
-    width: 16px;
+div.blog-comment-buttons input {
+    font-size: 13px !important;
+    padding: 0 3px !important;
 }
 
-div.blog-comment-new .blog-comment-date {
-    background-color: #fff4ca;
-    padding: 2px 4px 3px;
-}
-.blog-post-date, .blog-comment-date {
-    color: #767676;
-}
-.blog-vert-separator {
-	color: @body-bg;
+.blog-post-rating {
+    padding: 10px 0 0 0;
 }
 
-div.blog-comment-line {
-    background-color: #ededed;
-    background-image: url("/bitrix/components/bitrix/blog/templates/.default/images/line-start.gif");
-    background-position: left center;
-    background-repeat: no-repeat;
-    height: 1px;
+@media (max-width:540px){
+	.bx_soc_comments_div .bx-catalog-tab-list li a{
+		font-size:11px;
+	}
 }
+
+.bx_soc_comments_div.bx_important .bx_medium.bx_bt_button,
+.bx_soc_comments_div.bx_important .bx_medium.bx_bt_button_type_2	{
+	padding:0 13px;
+	height:25px;
+	font-weight:bold;
+	line-height:25px;
+}
+.bx_soc_comments_div.bx_important .bx_medium.bx_bt_button  	{
+	height:27px;
+	line-height:27px;
+}
+.bx_soc_comments_div.bx_important .bx_medium.bx_bt_button:hover  {}
+.bx_soc_comments_div.bx_important .bx_medium.bx_bt_button:active {}
+.bx_soc_comments_div.bx_important .bx_medium.bx_bt_button_type_2 		 {font-weight:bold}
+.bx_soc_comments_div.bx_important .bx_medium.bx_bt_button_type_2:hover {}
+.bx_soc_comments_div.bx_important .bx_medium.bx_bt_button_type_2:active{}
+
+.bx_soc_comments_div.bx_important .blog-comment-nav {
+
+}
+
+.bx_soc_comments_div.bx_important .blog-comment-nav a,
+.bx_soc_comments_div.bx_important .blog-comment-nav a:link,
+.bx_soc_comments_div.bx_important .blog-comment-nav a:visited,
+.bx_soc_comments_div.bx_important .blog-comment-info a,
+.bx_soc_comments_div.bx_important .blog-comment-info a:link,
+.bx_soc_comments_div.bx_important .blog-comment-info a:visited {
+	text-decoration: none;
+	color: #969696 !important;
+}
+
+.bx_soc_comments_div.bx_important .blog-comment-nav a:hover,
+.bx_soc_comments_div.bx_important .blog-comment-nav a:active,
+.bx_soc_comments_div.bx_important .blog-comment-info a:hover,
+.bx_soc_comments_div.bx_important .blog-comment-info a:active {
+	text-decoration: underline;
+	color: #969696 !important;
+}
+
+.bx_soc_comments_div.bx_important .blog-comment-info a,
+.bx_soc_comments_div.bx_important .blog-comment-info a:link,
+.bx_soc_comments_div.bx_important .blog-comment-info a:visited {
+	font-size: 0.85em;
+}
+
+.bx_soc_comments_div.bx_important .blog-comment-info a:hover,
+.bx_soc_comments_div.bx_important .blog-comment-info a:active {
+	font-size: 0.85em;
+}
+/* End */

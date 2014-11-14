@@ -340,7 +340,7 @@
 	
 	$(function() {
 		
-		$( ".bj-logo-space [title]" ).tooltip();
+		$( ".bj-logo-space [data-toggle='tooltip']" ).tooltip();
 		
 		$( ".bj-sorting [title]" ).tooltip();
 		
