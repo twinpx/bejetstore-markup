@@ -1,3 +1,45 @@
+/*popover*/
+.popover {
+  background-color: @popover-bg;
+  border: 1px solid @popover-border-color;
+}
+
+.popover-title {
+  background-color: @popover-title-bg;
+  border-bottom: 1px solid darken(@popover-title-bg, 5%);
+}
+
+// Arrows
+.popover {
+  &.top > .arrow {
+    border-top-color: @popover-arrow-outer-color;
+    &:after {
+      border-top-color: @popover-arrow-color;
+    }
+  }
+  &.right > .arrow {
+    border-right-color: @popover-arrow-outer-color;
+    &:after {
+      border-right-color: @popover-arrow-color;
+    }
+  }
+  &.bottom > .arrow {
+    border-bottom-color: @popover-arrow-outer-color;
+    &:after {
+      border-bottom-color: @popover-arrow-color;
+    }
+  }
+
+  &.left > .arrow {
+    border-left-color: @popover-arrow-outer-color;
+    &:after {
+      border-left-color: @popover-arrow-color;
+    }
+  }
+
+}
+
+
 /* scaffolding.less */
 a {
   color: @link-color;
@@ -109,26 +151,14 @@ a {
     > a,
     > span {
       color: @pagination-color;
+      
+      &:hover,
+      &:focus {
+        background-color: @pagination-active-bg;
+        border-color: @pagination-active-border;
+      }
 		}
 	}
-
-  > li > a,
-  > li > span {
-    &:hover,
-    &:focus {
-      color: @pagination-hover-color;
-    }
-  }
-
-  > .active > a,
-  > .active > span {
-    &,
-    &:hover,
-    &:focus {
-      background-color: @pagination-active-bg;
-      border-color: @pagination-active-border;
-    }
-  }
 }
 
 /* panels.less */

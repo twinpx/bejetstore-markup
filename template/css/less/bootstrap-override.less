@@ -1,3 +1,8 @@
+//grid
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+  display: block;
+}
+
 .text-muted {
 	color: @gray;
 }
@@ -25,42 +30,58 @@
 	
 	a,
 	span {
-		border: 0 !important;
-		font-size: 13.5pt;
-		line-height: 39px !important;
-		width: 39px;
+		font-size: @font-size-small;
+		line-height: 34px !important;
+		width: 34px;
 		padding: 0 !important;
 		border-radius: 0 !important;
 		display: inline-block;
 		text-align: center;
+    
+    &:hover {
+      color: #fff !important;
+    }
 	}
 	
 	.active {
 		a,
 		span {
-			
-			&,
+
+      &,
 			&:hover,
 			&:focus {
-				color: #d5d5d5;
-				border: 1px solid #d5d5d5 !important;
+				color: #000 !important;
+        font-weight: bold;
 				background: none;
-				line-height: 37px !important;
-				width: 37px;
+        border-color: #ddd;
 			}
 		}
 	}
+  
+  &-prev a {
+    border-radius: 4px 0 0 4px !important;
+    font-stretch: condensed;
+  }
+  
+  &-next a {
+    border-radius: 0 4px 4px 0 !important;
+    font-stretch: condensed;
+  }
 }
 
 .col-sm-6 > .pagination {
 	margin: 0;
 	float: right;
+	
+	@media ( max-width: 540px ) {
+		float: none;
+	}
 }
 
 .pagination a,
 .pagination span,
 .nav a {
-	.bg-transition();
+	.bj-transition( all );
 }
 
 //label
@@ -79,6 +100,7 @@
 //breadcrumb
 .breadcrumb {
 	font-size: 9pt;
+  margin-bottom: 5px;
 }
 
 //panel
@@ -130,8 +152,12 @@
 			position: absolute;
 			top: 50%;
 			left: 0;
-			margin: -10px 0 0 0;
+			margin: -64px 0 0 0;
 			line-height: 20px;
+      
+      #news-carousel & {
+        margin-top: -12px;
+      }
 		}
 		
 		&.right span {
@@ -214,7 +240,6 @@
 				&:hover,
 				&:active,
 				&:focus {
-					border-top: 1px solid @gray-lightest;
 					border-bottom: 1px solid @gray-lightest;
 				}
 			}
@@ -224,7 +249,6 @@
 				&:active,
 				&:focus {
 					border: none;
-					border-top: 1px solid @gray-lightest;
 					border-bottom: 1px solid #000;
 				}
 		  }

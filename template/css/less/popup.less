@@ -1,4 +1,5 @@
 .popup-window-titlebar {
+	
 	.popup-window-top-row .popup-window,
 	&-light .popup-window-top-row .popup-window {
 		&-left-column,
@@ -7,6 +8,21 @@
 			background: @gray-lightest;
 			border-bottom: none;
 		}
+	}
+}
+
+.popup-window-center-column .popup-window-titlebar {
+	border-top: 1px solid #f2f2f2;
+	font-family: "Roboto Slab","Times New Roman",serif;
+	font-size: 18pt;
+	font-weight: 600;
+	text-transform: uppercase;
+	text-align: center;
+	line-height: 70px;
+	
+	div {
+		margin-right: 60px !important;
+		margin-left: 60px !important;
 	}
 }
 
@@ -32,6 +48,8 @@
 	}
 	
 	&-buttons {
+		margin-top: 30px;
+		margin-bottom: 30px;
 	
 		.col-sm-4 {
 			width: auto !important;

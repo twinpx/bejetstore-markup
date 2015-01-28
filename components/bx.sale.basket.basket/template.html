@@ -1,17 +1,20 @@
 <link href="/components/bx.sale.basket.basket/style.css" rel="stylesheet">
 
+<div class="bj-panel"><b>Ваша корзина пуста</b></div>
+
 <div id="warning_message"></div>
 
 <form method="post" action="/personal/cart/" name="basket_form" id="basket_form">
   <div id="basket_form_container">
     <div class="bx_ordercart">
-      <div class="bx_sort_container"> <span>Товары в корзине:</span> <a href="javascript:void(0)" id="basket_toolbar_button" class="current" onclick="showBasketItemsList()">Готовые к заказу
-        <div id="normal_count" class="flat" style="display:none">&nbsp;(2)</div>
-        </a> <a href="javascript:void(0)" id="basket_toolbar_button_delayed" onclick="showBasketItemsList(2)" style="display:none">Отложенные
+      <div class="bx_sort_container"> <span>Товары в корзине:</span>
+				<a href="javascript:void(0)" id="basket_toolbar_button" class="current" onclick="showBasketItemsList()">Готовые к заказу
+					<div id="normal_count" class="flat">&nbsp;(2)</div>
+        </a> <a href="javascript:void(0)" id="basket_toolbar_button_delayed" onclick="showBasketItemsList(2)">Отложенные
         <div id="delay_count" class="flat">&nbsp;(0)</div>
-        </a> <a href="javascript:void(0)" id="basket_toolbar_button_subscribed" onclick="showBasketItemsList(3)" style="display:none">Ожидаемые
+        </a> <a href="javascript:void(0)" id="basket_toolbar_button_subscribed" onclick="showBasketItemsList(3)">Ожидаемые
         <div id="subscribe_count" class="flat">&nbsp;(0)</div>
-        </a> <a href="javascript:void(0)" id="basket_toolbar_button_not_available" onclick="showBasketItemsList(4)" style="display:none">Отсутствуют
+        </a> <a href="javascript:void(0)" id="basket_toolbar_button_not_available" onclick="showBasketItemsList(4)">Отсутствуют
         <div id="not_available_count" class="flat">&nbsp;(0)</div>
         </a> </div>
       <div id="basket_items_list">
@@ -230,9 +233,9 @@
           </div>
           <div style="clear:both;"></div>
 					
-					<!-- add btn btn-default classes -->
-          <div class="bx_ordercart_order_pay_center"> <a href="javascript:void(0)" onclick="checkOut();" class="checkout btn btn-default">Оформить заказ</a> </div>
-					<!-- end -->
+					<div class="bx_ordercart_order_pay_center">
+						<a href="javascript:void(0)" onclick="checkOut();" class="checkout">Оформить заказ</a>
+					</div>
 					
         </div>
       </div>

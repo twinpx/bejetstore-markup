@@ -1,5 +1,6 @@
 body {
 	font-weight: 300;
+  color: #666666;
 }
 
 button:focus {
@@ -26,6 +27,11 @@ h1, .h1 {
 	font-family: "Roboto Slab", Arial;
 	font-weight: 400;
 	font-size: 36pt;
+  margin-top: 0;
+	
+	&.i-small {
+		font-size: 24pt;
+	}
 	
 	@media ( max-width: @screen-xs-max ) {
 		font-size: 18pt;
@@ -39,6 +45,7 @@ h3, .h3 {
 }
 
 h3, .h3 {
+  font-size: 10.5pt;
 	font-weight: 700;
 }
 
@@ -109,12 +116,12 @@ a:focus {
 hr {	
 	border: 0;
 	height: 1px;
-	margin-bottom: ceil( @line-height-computed * 0.75 );
-	margin-top: ceil( @line-height-computed * 0.75 );
+	margin-bottom: @grid-padding;
+	margin-top: @grid-padding;
 	
 	@media (max-width: @screen-xs-max) {
-		margin-bottom: ceil( @line-height-computed * 0.5 );
-		margin-top: ceil( @line-height-computed * 0.5 );
+		margin-bottom: ceil( @grid-padding * 0.5 );
+		margin-top: ceil( @grid-padding * 0.5 );
 	}
 	
 	&.clearfix {
@@ -122,12 +129,12 @@ hr {
 	}
 	
 	&.i-size-L {
-		margin-bottom: ceil( @line-height-computed * 1.5 );
-		margin-top: ceil( @line-height-computed * 1.5 );
+		margin-bottom: ceil( @grid-padding * 2.5 );
+		margin-top: ceil( @grid-padding * 2.5 );
 	
 		@media (max-width: @screen-xs-max) {
-			margin-bottom: @line-height-computed;
-			margin-top: @line-height-computed;
+			margin-bottom: @grid-padding;
+			margin-top: @grid-padding;
 		}
 	}
 	
@@ -384,7 +391,22 @@ menu {
 				white-space: nowrap;
 				word-wrap: break-word;
 				margin-right: 10px;
+        display: inline-block;
+        vertical-align: top;
+        max-width: 95%;
+        
+        &:hover {
+          text-decoration: none;
+        }
 			}
+      
+      &__text {
+        display: inline-block;
+        vertical-align: top;
+        overflow: hidden;
+        max-width: 100%;
+        text-overflow: ellipsis;
+      }
 		}
 		
 		.bj-hr {
@@ -462,23 +484,24 @@ menu {
 .bj-hr-heading {
 	border-top: 1px solid @gray-lightest;
 	font-family: "Roboto Slab", "Times New Roman", serif;
-	font-size: 18pt;
+	font-size: 13.5pt;
 	font-weight: 600;
 	position: relative;
 	text-transform: uppercase;
+  margin: 10px 0;
 	
 	&__content {
 		position: absolute;
 		width: 100%;
 		text-align: center;
-		top: -21px;
+		top: -17px;
 		left: 0;
 		display: block;
 		
 		span {
 			display: inline-block;
 			background: #fff;
-			padding: 0 5px;
+			padding: 0 8px;
 		}
 	}
 }

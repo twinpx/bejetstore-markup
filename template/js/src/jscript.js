@@ -1,4 +1,11 @@
 (function($) {
+
+  function h1NavText() {
+    var $h1 = $( '.col-sm-6 > h1' );
+    if ( $h1.text().length >= 25 ) {
+      $h1.addClass( 'i-small' )
+    }
+  }
 	
 	function textMore() {
 		var $link = $( ".bj-text-more a" );
@@ -358,6 +365,8 @@
 		scrollToElemByUrl( ".bj-catalogue-filter", "set_filter" );
 		
 		textMore();
+    
+    h1NavText();
 		
 		if ( matchMedia ) {
 			if ( window.matchMedia( "(min-width: 500px)" ).matches ) {

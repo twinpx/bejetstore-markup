@@ -4,12 +4,12 @@
 			background-color: @brand-primary;
 			color: #fff;
 			padding-top: @line-height-computed * 3;
-			padding-bottom: @line-height-computed * 3;
+			padding-bottom: @line-height-computed * 3 + 75px;
 			
 			@media (max-width: @screen-xs-max) {
 				font-size: @font-size-large;
 				padding-top: ceil( @line-height-computed * 1.5 );
-				padding-bottom: ceil( @line-height-computed * 2.2 );
+				padding-bottom: ceil( @line-height-computed * 2.2 ) + 55px;
 			}
 			
 			a {
@@ -28,6 +28,13 @@
 			
 			.bj-phone {
 				text-align: left;
+				line-height: 33px;
+				
+				.glyphicon {
+					width: 24px;
+					line-height: 24px;
+					margin-right: ceil( @line-height-computed * 0.5 );
+				}
 			}
 		}
 	}
@@ -87,3 +94,75 @@
 		white-space: nowrap;
 	}
 }
+
+/*.bx-btn-border {
+	background-position: right 5px;
+	border: 1px solid #d4d4d4;
+	height: 29px !important;
+	line-height: 29px !important;
+}
+.bx-btn-black {
+	background-image: url("/bitrix/images/main/composite/bx-black-logo.png");
+	color: #000 !important;
+}
+.bx-composite-btn-fixed {
+	position: absolute;
+	right: 15px;
+	top: -45px;
+	z-index: 10;
+}
+.bx-composite-btn {
+	background: url("/bitrix/images/main/composite/bx-white-logo.png") no-repeat scroll right 5px #e94524;
+	border-radius: 15px;
+	color: #ffffff !important;
+	display: inline-block;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif !important;
+	font-size: 12px !important;
+	font-weight: bold !important;
+	height: 31px !important;
+	line-height: 30px;
+	padding: 0 42px 0 17px !important;
+	text-decoration: none !important;
+	vertical-align: middle !important;
+}*/
+
+.bj-footer-bitrix-btn {
+	position: relative;
+	padding: 0;
+	
+	&__inner {
+		position: absolute;
+		top: -75px;
+		left: 0;
+		width: 100%;
+			
+		@media (max-width: @screen-xs-max) {
+			top: -55px;
+		}
+		
+		div {
+			position: relative;
+			border-top: 1px solid #fff;
+			margin: 0 15px;
+		}
+		
+		a {
+			position: absolute;
+			right: 0;
+			top: -15px;
+			z-index: 10;
+			
+			&:before {
+				content: " ";
+				position: absolute;
+				top: 0;
+				left: -30px;
+				display: block;
+				width: 30px;
+				height: 30px;
+				background: @brand-primary;
+			}
+		}
+	}
+}
+

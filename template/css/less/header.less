@@ -1,4 +1,16 @@
 .bj {
+
+	&-info-icon {
+		background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAKBJREFUeNpi+P//PwMR2BiI7/6HgN1ALIhLLQORBp75jwo6cKllYqA2oLaXGcH+piKgupcJGRgKxOVAvBsUOlAcSm4Ypv3HDpTwhTehyABpfodk2DtCEUjIy/fQ+HsoDUNjIBZE4p+l1EAXAi4my4VU9zKy695TYiAo7JRICT9CBqKHH8UGGg96A5XQ+O+A+C4lBs5Ci+EKIDYhZCBAgAEAS+9UPNmM7vsAAAAASUVORK5CYII=") no-repeat center center;
+		width: 40px;
+		line-height: 40px;
+		
+		&:before {
+			content: " ";
+			display: inline-block;
+		}
+	}
+	
 	&-page {
 		&-header {
 		
@@ -48,7 +60,9 @@
 				background-color: @body-bg;
 				.bg-transition();
 				
-				&:hover {
+				&:hover,
+				&:active,
+				&:focus {
 					background-color: @gray-lightest;
 			
 					.bj-icon.i-menu {
@@ -86,9 +100,9 @@
 				
 				&__input {
 					width: 30px;
-					height: 26px;
+					height: 32px;
 					line-height: 20px;
-					padding: 3px 10px 3px 30px;
+					padding: 6px 10px 6px 32px;
 					background-color: @darken-brand-primary;
 					border: none;
 					display: inline-block;
@@ -98,8 +112,8 @@
 					.opacity( 0 );
 					color: #fff;
 					position: absolute;
-					top: 0;
-					left: 0;
+					top: -4px;
+					left: -2px;
 					z-index: 9;
 					
 					&:focus {
@@ -135,7 +149,7 @@
 					position: absolute;
 					top: 0;
 					left: 0;
-					z-index: 200;
+					z-index: 1000;
 					width: 100%;
 					display: none;
 				}
@@ -220,6 +234,7 @@
 		font-size: 18pt;
 		display: inline-block;
 		vertical-align: top;
+		margin-right: 10px;
 		
 		@media (max-width: @screen-xs-max) {
 			display: inline-block;
@@ -308,15 +323,31 @@
 	&-phone {
 		line-height: @header-top-link-height;
 		text-align: right;
+		white-space: nowrap;
+		padding-left: 0;
 		
 		.glyphicon {
-			margin-right: @padding-base-horizontal;
+			margin-right: @padding-base-horizontal / 2;
+			width: 40px;
+			line-height: 40px;
+			text-align: center;
 		}
 		
-		span {
+		&__num {
 			display: inline-block;
 			vertical-align: top;
 			line-height: @header-top-link-height;
+			white-space: nowrap;
+			position: relative;
+		}
+		
+		&__time {
+			font-size: 7pt;
+			margin-top: -20px;
+			white-space: nowrap;
+			position: absolute;
+			top: 37px;
+			left: 0;
 		}
 	}
 	

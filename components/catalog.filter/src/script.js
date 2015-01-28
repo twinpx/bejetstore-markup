@@ -55,7 +55,7 @@
 				values: [ $inputMin.val(), $inputMax.val() ],
 				step: step,
 				slide: function( event, ui ) {
-					$value.text( ui.values[ 0 ] + " \u2014 " + ui.values[ 1 ] );
+					$value.text( ui.values[ 0 ] + " - " + ui.values[ 1 ] );
 					$inputMin.val( ui.values[ 0 ] );
 					$inputMax.val( ui.values[ 1 ] );
 				}
