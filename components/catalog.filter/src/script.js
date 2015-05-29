@@ -32,34 +32,40 @@
 			}
 		});
 		
-		$( ".bj-hidden-link" ).click( function (e) {
-			e.preventDefault();
-			
-			$( this ).hide().parent().find( ".bj-hidden__hidden" ).slideDown();
-		});
-		
 		!function range() {
-			var $range = $( ".bj-catalogue-filter .bj-range" ),
+      $( ".bj-catalogue-filter .bj-range" ).each( function() {
+        var $range = $( this ),
 					$inputMin = $range.find( ".bj-range__input-min" ),
 					$inputMax = $range.find( ".bj-range__input-max" ),
-					$value = $range.find( ".bj-range__value" ),
+					value = {
+            min: $range.find( ".bj-range__min" ),
+            max: $range.find( ".bj-range__max" )
+          },
 					$slider = $range.find( ".bj-range__slider" ),
 					step = +$inputMin.attr( "step" ) || +$inputMax.attr( "step" ) || 0,
 					min = +$inputMin.attr( "min" ) || 100,
 					max = +$inputMax.attr( "max" ) || 3000;
+          
+        $inputMin[0].disabled = "disabled";
+        $inputMax[0].disabled = "disabled";
 			
-			$slider.slider({
-				range: true,
-				min: min,
-				max: max,
-				values: [ $inputMin.val(), $inputMax.val() ],
-				step: step,
-				slide: function( event, ui ) {
-					$value.text( ui.values[ 0 ] + " - " + ui.values[ 1 ] );
-					$inputMin.val( ui.values[ 0 ] );
-					$inputMax.val( ui.values[ 1 ] );
-				}
-			});
+        $slider.slider({
+          range: true,
+          min: min,
+          max: max,
+          values: [ $inputMin.val(), $inputMax.val() ],
+          step: step,
+          slide: function( event, ui ) {
+            value.min.text( ui.values[0] );
+            value.max.text( ui.values[1] );
+            $inputMin.val( ui.values[0] );
+            $inputMax.val( ui.values[1] );
+            $inputMin[0].disabled = undefined;
+            $inputMax[0].disabled = undefined;
+          }
+        });
+      });
+			
 		}();
 		
 	});

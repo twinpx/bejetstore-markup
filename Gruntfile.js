@@ -35,6 +35,7 @@ module.exports = function (grunt) {
       js: {
         src: [
 					"template/js/src/html5shiv.js",
+					"template/js/src/jquery.cookie.js",
 					//"template/js/plugins/hammer.js/hammer.js",
 					"template/js/libs/jquery.ui.touch-punch.min.js",
 					"template/js/plugins/jquery.scrollTo/jquery.scrollTo.min.js",
@@ -164,7 +165,19 @@ module.exports = function (grunt) {
 					file: 'pink_blue',
 					brandPrimary: '#eda1cf',
 					brandSecondary: '#a3add7'
-				}
+				},
+				{
+					name: 'purpleWhite',
+					file: 'purple_white',
+					brandPrimary: '#a3add7',
+					brandSecondary: '#5c6eb8'
+				}/*,
+				{
+					name: 'asobio',
+					file: 'asobio',
+					brandPrimary: '#006eb9',
+					brandSecondary: '#5b5b5b'
+				},*/
 			]
 		}
 		

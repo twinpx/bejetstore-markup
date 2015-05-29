@@ -1,4 +1,44 @@
 .bj {
+  
+  &-advantage {
+    
+    h4 {
+      font-size: @font-size-large;
+      font-weight: normal;
+      padding-left: 80px;
+      background-repeat: no-repeat;
+      background-position: 0 center;
+      line-height: 70px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-top: 0;
+      
+      &.i-price {
+        background-image: data-uri( 'img/price.png' );
+      }
+      
+      &.i-quality {
+        background-image: data-uri( 'img/quality.png' );
+      }
+      
+      &.i-delivery {
+        background-image: data-uri( 'img/delivery.png' );
+      }
+      
+      span {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 1.2;
+      }
+    }
+    
+    p {
+      max-width: 300px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+  
 	&-index-banners {
 		img {
 			.center-block();

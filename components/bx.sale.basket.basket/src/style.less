@@ -2,27 +2,59 @@
 @import url("bx.style.less");
 
 //size
+.bx_item_detail_size_small_noadaptive .bx_size {
+  padding-bottom: 2px;
+}
+
+.bx_item_detail_scu_small_noadaptive .bx_scu ul li {
+  display: inline-block;
+  float: none;
+}
+
 .bx_item_detail_size_small_noadaptive ul li {
-	min-width: 27px !important;
-	width: auto !important;
-	margin: 0 2px 2px 0;
-	
-	a {
-		position: static;
-		display: block;
-		padding: 1px 3px;
-	}
-	
-	&:active a,
-	&.bx_active a {
-		border: 1px solid @brand-primary;
-		background: @brand-primary;
-		color: #fff;
-		
-		&:hover {
-			color: #fff;
-		}
-	}
+  display: inline-block;
+  float: none;
+
+  &.sku_prop {
+    min-width: 27px !important;
+    width: auto !important;
+    margin: 0 2px 2px 0;
+    
+    a {
+      position: static;
+      display: block;
+      padding: 1px 3px;
+      border: none;
+      background: transparent;
+    }
+    
+    &:active,
+    &.bx_active {
+      
+      &:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        bottom: -4px;
+        background: #000;
+        width: 100%;
+        left: 0;
+        height: 2px;
+      }
+    
+      a {
+        border: none;
+        background: #fff !important;
+        color: #333;
+        
+        &:hover {
+          color: #333;
+        }
+      }
+      
+    }
+  }
+  
 }
 
 .bx-touch .bx_item_detail_size_small_noadaptive,
@@ -31,6 +63,11 @@
 	.bx_slide_left {
 		display: none;
 	}
+  
+  a {
+    border: none !important;
+    background: transparent;
+  }
 }
 
 .bx_item_detail_size_small_noadaptive ul li:active a, .bx_item_detail_size_small_noadaptive ul li.bx_active a {}
@@ -187,6 +224,16 @@
 }
 
 @media (max-width:530px){
+
+  td.custom .some-class select {
+    width: 70px;
+    margin-right: 5px;
+  }
+
+  .bx-touch .bx_ordercart .bx_ordercart_order_table_container table tbody tr td {
+    text-align: center;
+  }
+  
 	.bx-touch .bx_ordercart .bx_ordercart_order_table_container table.counter tbody tr td {
 		display:table-cell;
 	}
@@ -207,4 +254,27 @@
 	.bx-touch .bx_ordercart .bx_sort_container a {
 		margin: 5px 10px 5px 0;
 	}
+}
+
+.bx_item_detail_scu_small_noadaptive .bx_scu {
+  padding-bottom: 2px;
+  
+  ul li {
+  
+    &:active,
+    &.bx_active {
+      
+      &:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        bottom: 0px;
+        background: #000;
+        width: 100%;
+        left: 0;
+        height: 2px;
+      }
+      
+    }
+  }
 }

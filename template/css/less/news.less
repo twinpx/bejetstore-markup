@@ -1,23 +1,17 @@
 .bj-news {
-	&-line {
-		white-space: nowrap;
-			overflow: hidden;
-			text-overflow: ellipsis;
-		
-		@media (max-width: @screen-xs-max) {
-			text-align: center;
-			line-height: 22px;
-		}
-		
-		&__date {
-			margin-right: 35px;
-			
-			@media (max-width: @screen-xs-max) {
-				display: block;
-				margin-bottom: 7px;
-			}
-		}
-	}
+  
+  @media (max-width: @screen-xs-max) {
+    
+    &-line {
+      text-align: center;
+      
+      &__date {
+        display: block;
+        margin-bottom: 7px;
+      }
+    }
+    
+  }
 	
 	&-block {
 		.bj-date {
