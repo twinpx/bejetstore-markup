@@ -113,7 +113,7 @@ a:focus {
 	}
 }
 
-hr {	
+hr {
 	border: 0;
 	height: 1px;
 	margin-bottom: @grid-padding;
@@ -126,6 +126,11 @@ hr {
 	
 	&.clearfix {
 		clear: both;
+	}
+	
+	&.i-size-M {
+		margin-bottom: ceil( @grid-padding * 1.5 );
+		margin-top: ceil( @grid-padding * 1.5 );
 	}
 	
 	&.i-size-L {
@@ -329,6 +334,18 @@ menu {
 			
 			.bj-page-header__top & {
 				background-image: data-uri( 'img/catalog-hover.png' );
+			}
+		}
+		
+		&.i-looks {
+			background: data-uri( 'img/looks.png' ) no-repeat center center;
+			
+			&:hover {
+				background-image: data-uri( 'img/looks-hover.png' );
+			}
+			
+			.bj-page-header__top & {
+				background-image: data-uri( 'img/looks-hover.png' );
 			}
 		}
 	}

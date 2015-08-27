@@ -33,6 +33,7 @@
 				background-color: @body-bg;
 				padding: 10px 0 0;
 				height: @header-top-height;
+        overflow: hidden;
 				
 				/*.i-fixed & {
 					position: fixed;
@@ -51,6 +52,7 @@
 			}
 			
 			&__menu-link,
+			&__looks-link,
 			&__sales-link {
 				line-height: @header-top-height !important;
 				height: @header-top-height !important;
@@ -68,13 +70,15 @@
 					.bj-icon.i-menu {
 						background-image: data-uri( 'img/catalog-hover.png' );
 					}
+			
+					.bj-icon.i-looks {
+						background-image: data-uri( 'img/looks-hover.png' );
+					}
 				}
 			}
 			
-			&__menu-link .bj-icon {
-				margin: 0 0 0 25px;
-			}
-			
+			&__menu-link .bj-icon,
+			&__looks-link .bj-icon,
 			&__sales-link .bj-icon {
 				margin: 0 25px 0 0;
 			}
