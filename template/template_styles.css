@@ -995,6 +995,13 @@ form .bj-checkbox {
 .bj-page-header__sales-link .bj-icon {
   margin: 0 25px 0 0;
 }
+@media (max-width: 360px) {
+  .bj-page-header__menu-link .bj-icon,
+  .bj-page-header__looks-link .bj-icon,
+  .bj-page-header__sales-link .bj-icon {
+    margin-right: 10px;
+  }
+}
 .bj-page-header__search {
   position: relative;
   display: inline-block;
