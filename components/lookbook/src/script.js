@@ -1,7 +1,7 @@
 (function($) {
 	$(function() {
   
-    var marginTop = 27;
+    var marginTop = 20;
     
     appendGreyBlock();
     

@@ -1,12 +1,12 @@
 @import url("../../../template/css/less/components-import.less");
 
 .bj-lookbook {
-  margin-top: -27px;
+  //margin-top: -20px;
     
   &__after {
     display: block;
     background-color: #f1f1f1;
-    margin-top: 27px;
+    margin-top: 20px;
     
     @media (max-width: @screen-xs-max) {
       & {
@@ -16,7 +16,7 @@
   }
   
   &__i {
-    margin-top: 27px;
+    margin-top: 20px;
   }
   
   &__img {
@@ -40,11 +40,6 @@
   
   &__desc {
     line-height: 18px;
-    
-    h4 {
-      font-size: 13.5pt;
-      font-weight: normal;
-    }
   }
   
   &__cover {
@@ -95,5 +90,12 @@
     background-color: transparent;
     color: #fff;
     padding: 12px 30px;
+    
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: #fff;
+      color: #000;
+    }
   }
 }
