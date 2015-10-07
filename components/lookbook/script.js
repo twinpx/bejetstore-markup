@@ -19,7 +19,7 @@
         var dif = $col.parent().height() - $col.height();
         
         if ( dif > marginTop ) {
-          $col.append( '<div class="bj-lookbook__after" style="height: ' + ( dif - marginTop ) + 'px;"></div>' );
+          $col.append( '<div class="bj-lookbook__after" style="height: ' + dif + 'px;"></div>' );
         }
       });
     }
