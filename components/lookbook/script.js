@@ -5,12 +5,12 @@
     
     appendGreyBlock();
     
-    cutH3();
+    cutH();
     
     $( window ).resize( function() {
       $( '.bj-lookbook__after' ).remove();
       appendGreyBlock();
-      cutH3();
+      cutH();
     });
     
     function appendGreyBlock() {
@@ -24,19 +24,19 @@
       });
     }
     
-    function cutH3() {
-      $( '.bj-lookbook__cover h3' ).each( function() {
-        var $h3 = $( this );
+    function cutH() {
+      $( '.bj-lookbook__cover h2' ).each( function() {
+        var $h2 = $( this );
         
-        if ( !$h3.data( 'heading' )) {
-          $h3.data( 'heading', $h3.text());
+        if ( !$h2.data( 'heading' )) {
+          $h2.data( 'heading', $h2.text());
         }
         
         setTimeout( function() {
           cutLine({
-            text: $h3.data( 'heading' ),
+            text: $h2.data( 'heading' ),
             height: 54,
-            $container: $h3
+            $container: $h2
           })
         }, 100);
       });

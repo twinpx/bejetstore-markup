@@ -1,12 +1,11 @@
 @import url("../../../template/css/less/components-import.less");
 
 .bj-lookbook {
-  margin-top: -27px;
     
   &__after {
     display: block;
     background-color: #f1f1f1;
-    margin-top: 27px;
+    margin-top: 20px;
     
     @media (max-width: @screen-xs-max) {
       & {
@@ -15,11 +14,16 @@
     }
   }
   
+  &__col {
+    margin-top: -20px;
+  }
+  
   &__i {
-    margin-top: 27px;
+    margin-top: 20px;
   }
   
   &__img {
+    display: block;
     position: relative;
     overflow: hidden;
     
@@ -38,16 +42,12 @@
     }   
   }
   
-  &__desc {
+  /*&__desc {
     line-height: 18px;
-    
-    h4 {
-      font-size: 13.5pt;
-      font-weight: normal;
-    }
-  }
+  }*/
   
   &__cover {
+    display: block;
     .opacity(0);
     .transition( opacity 0.8s ease );
     position: absolute;
@@ -66,12 +66,12 @@
         .translate3d( 0; 0; 0 );
       }
     
-      h3 {
+      h2 {
         .translate3d( 0; 0; 0 );
       }
     }
     
-    h3 {
+    h2 {
       padding: 25px;
       margin: 0;
       color: #fff;
@@ -81,19 +81,33 @@
   }
   
   &__info {
+    display: block;
     position: absolute;
     bottom: 25px;
     left: 0;
     width: 100%;
     .translate3d( 0; 50px; 0 );
     .transition( all 0.5s ease );
+    
+    span {
+      display: block;
+    }
   }
   
   .btn-default {
+    display: inline-block;
     border-width: 2px;
     border-color: #fff;
     background-color: transparent;
     color: #fff;
     padding: 12px 30px;
+    
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: #fff;
+      color: #000;
+      border-color:#fff
+    }
   }
 }
