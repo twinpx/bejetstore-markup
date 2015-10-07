@@ -1595,14 +1595,17 @@ form .bj-checkbox {
   font-size: 22pt;
   padding: 20px;
   margin-bottom: 0;
+  word-wrap: break-word;
+  box-sizing: content-box;
+  width: 340px;
 }
 .popup-window-td-img {
   vertical-align: middle;
-  width: 40%;
+  width: 253px;
 }
 .popup-window-td-text {
   vertical-align: top;
-  width: 60%;
+  width: 380px;
 }
 .popup-window-close-icon {
   margin: 0;
@@ -1628,7 +1631,7 @@ form .bj-checkbox {
 }
 .popup-window-content table {
   width: 100%;
-  min-height: 362px;
+  height: 362px;
 }
 .popup-window-content img {
   width: 100% !important;
