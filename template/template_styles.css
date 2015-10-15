@@ -398,6 +398,9 @@ a:focus {
   font-weight: 700;
   line-height: 56px;
 }
+.btn-width-100 {
+  width: 100%;
+}
 @media (max-width: 360px) {
   .hidden-xxs {
     display: none;
