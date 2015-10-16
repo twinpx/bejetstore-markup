@@ -318,6 +318,7 @@ h4,
 h5,
 .h5 {
   display: block;
+  word-wrap: break-word;
 }
 h1:first-child,
 .h1:first-child,
@@ -397,9 +398,6 @@ a:focus {
   font-size: 13.5pt;
   font-weight: 700;
   line-height: 56px;
-}
-.btn-width-100 {
-  width: 100%;
 }
 @media (max-width: 360px) {
   .hidden-xxs {
