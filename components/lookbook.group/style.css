@@ -7,6 +7,10 @@
   display: block;
   background-color: #f1f1f1;
   margin-top: 20px;
+  height: 0;
+  -webkit-transition: height 0.5s ease;
+  -o-transition: height 0.5s ease;
+  transition: height 0.5s ease;
 }
 .bx-touch .bj-lookbook__after {
   display: none;
@@ -25,13 +29,16 @@
 .bj-lookbook__img img {
   width: 100%;
   height: auto;
-  -webkit-transition: all 60s ease;
-  -o-transition: all 60s ease;
-  transition: all 60s ease;
+  -webkit-transition: all 60s linear;
+  -o-transition: all 60s linear;
+  transition: all 60s linear;
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   -o-transform: scale(1);
   transform: scale(1);
+  /*&.i-show {
+        .opacity(1);
+      }*/
 }
 .bj-lookbook__img:hover img {
   -webkit-transform: scale(4);

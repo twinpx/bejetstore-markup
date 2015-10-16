@@ -6,6 +6,8 @@
     display: block;
     background-color: #f1f1f1;
     margin-top: 20px;
+    height: 0;
+    .transition( height 0.5s ease );
     
     .bx-touch & {
       display: none;
@@ -28,8 +30,13 @@
     img {
       width: 100%;
       height: auto;
-      .transition( all 60s ease );
+      .transition( all 60s linear );
       .scale(1);
+      //.opacity(0);
+      
+      /*&.i-show {
+        .opacity(1);
+      }*/
     }
     
     &:hover {

@@ -2,8 +2,32 @@
 	$(function() {
   
     var marginTop = 20;
+    var imgSize = $( '.bj-lookbook img' ).length;
+    var imgCounter = 0;
     
-    appendGreyBlock();
+    $( '.bj-lookbook img' ).each( function() {
+      var $img = $( this );
+      if ( $img[0].complete ) {
+        imgShow( $img );
+        if ( ++imgCounter === imgSize ) {
+          appendGreyBlock();
+        }
+      } else {
+        $img.load( function() {
+          imgShow( $img );
+          if ( ++imgCounter === imgSize ) {
+            appendGreyBlock();
+          }
+        });
+      }
+      //if($.browser.msie === true && ($.browser.version === "9.0" || $.browser.version === "10.0")) $img.attr({src: $img.attr("src")});//for IE9, 10
+      
+      
+    });
+    
+    function imgShow( $img ) {
+       $img.addClass( 'i-show' );
+    }
     
     cutH();
     
