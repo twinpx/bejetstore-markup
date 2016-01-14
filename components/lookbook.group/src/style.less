@@ -1,6 +1,13 @@
-@import url("../../../template/css/less/components-import.less");
+﻿@import url("../../../template/css/less/components-import.less");
 
 .bj-lookbook {
+
+  hr.i-size-L {
+  
+    .bx-touch & {
+      margin: 25px 0;
+    }
+  }
     
   &__after {
     display: block;
@@ -39,7 +46,7 @@
       }*/
     }
     
-    &:hover {
+    .bx-no-touch &:hover {
       
       img {
         .scale(4);
@@ -47,9 +54,13 @@
     }   
   }
   
-  /*&__desc {
-    line-height: 18px;
-  }*/
+  &__desc {
+    //line-height: 18px;
+    
+    h2 {
+      margin-bottom: 10px;
+    }
+  }
   
   &__cover {
     display: block;
@@ -110,7 +121,7 @@
       color: #333;
       font-weight: 400;
       
-      .text-large {
+      .i-new-price {
         color: #c75454;
       }
     }

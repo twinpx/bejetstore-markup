@@ -171,6 +171,12 @@ module.exports = function (grunt) {
 					file: 'purple_white',
 					brandPrimary: '#a3add7',
 					brandSecondary: '#5c6eb8'
+				},
+				{
+					name: 'blackBalck',
+					file: 'black_black',
+					brandPrimary: '#000000',
+					brandSecondary: '#000000'
 				}/*,
 				{
 					name: 'asobio',
