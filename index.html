@@ -1,15 +1,66 @@
-<!--#set var="page" value="index" -->
+﻿<!--#set var="page" value="index" -->
 <!--#set var="auth" value="true" -->
 <!DOCTYPE html>
 <html class="bx-no-touch">
 <head>
 <!--#include virtual="/blocks/meta.html"-->
-<title>������� | Bejet Store</title>
+<title>Главная | Bejet Store</title>
 </head>
 
 <body>
-	
-	<!--#include virtual="/blocks/header.html"-->
+    
+    <ul id="sideNavPanel" class="side-nav fixed" style="left: -310px; visibility: hidden">
+      <li class="logo">
+        <!--#if expr="$page='index'" -->
+          <span class="bj-logo"><img src="/upload/logo.png" title="Logo"></span>
+        <!--#else -->
+          <a href="/" class="bj-logo"><img src="/upload/logo.png" title="Logo"></a>
+        <!--#endif -->
+      </li>
+      <li class="no-padding">
+        <div class="media">
+          <div class="media-body">
+            <ul>
+              <li><a href="">Максим Савельев</a></li>
+              <li><a href="">Выйти</a></li>
+            </ul>
+          </div>
+          <div class="media-right">
+            <a href="/profile/"><img src="/upload/userpic.png" alt=""></a>
+          </div>
+        </div>
+        
+      </li>
+      <li class="no-padding">
+        <ul>
+          <li><a href="">Корзина <span class="badge">1</span></a></li>
+          <li><a href="">Мои заказы</a></li>
+          <li><a href="">Подписка</a></li>
+        </ul>
+      </li>
+      <li class="no-padding">
+        <ul>
+          <li><a href="">Войти</a></li>
+          <li><a href="">Зарегистрироваться</a></li>
+          <li><a href="">Корзина</a></li>
+          <li><a href="">Каталог</a></li>
+          <li><a href="">Lookbook</a></li>
+          <li><a href="">Акции</a></li>
+          <li><a href="">Поиск</a></li>
+          <li><a href="">О магазине</a></li>
+          <li><a href="">Новости</a></li>
+          <li><a href="">Контакты</a></li>
+          <li><a href="">Вакансии</a></li>
+          <li><a href="">Как купить</a></li>
+          <li><a href="">Оплата</a></li>
+          <li><a href="">Доставка</a></li>
+          <li><a href="">Гарантия</a></li>
+          <li><a href="">Журнал</a></li>
+        </ul>
+      </li>
+    </ul>
+    
+  <!--#include virtual="/blocks/header.html"-->
 	
 	<div class="bj-page-content container-fluid">
   

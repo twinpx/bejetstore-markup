@@ -1,5 +1,14 @@
 !function(a) {
 
+  //materialize sideNav
+  setTimeout( function() {
+    $( '#sideNavPanel' ).css({ left: '-310px', visibility: 'visible' });
+  }, 100);
+  
+  $('#nav-button').sideNav({
+    menuWidth: 300
+  });
+
   //load mobile banners
   /*(function () {
     var mobile, cookie;

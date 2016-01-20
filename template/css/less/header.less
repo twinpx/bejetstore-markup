@@ -13,18 +13,31 @@
 	
 	&-page {
 		&-header {
+      
+			.glyphicon-align-justify {
+        @media (max-width: @screen-xs-max) {
+          float: right;
+          margin: 0 15px 0 0;
+        }
+      }
 		
 			&__top {
 				background-color: @brand-primary;
 				color: #fff;
 				padding: 10px 0 0;
 				height: @header-top-height;
+        
+        .row {
+          position: relative;
+        }
 				
 				a {
 					&,
 					&:hover,
-					&:active {
+					&:active,
+          &:focus {
 						color: #fff;
+            text-decoration: none;
 					}
 				}
 			}
@@ -34,6 +47,17 @@
 				padding: 10px 0 0;
 				height: @header-top-height;
         overflow: hidden;
+        
+        .row {
+          margin-left: 0;
+          margin-right: 0;
+        }
+        
+        .col-md-2,
+        .col-md-6 {
+          padding-left: 0;
+          padding-right: 0;
+        }
 				
 				/*.i-fixed & {
 					position: fixed;
@@ -80,7 +104,7 @@
 			&__menu-link .bj-icon,
 			&__looks-link .bj-icon,
 			&__sales-link .bj-icon {
-				margin: 0 25px 0 0;
+				margin: 0 10% 0 0;
         
         @media( max-width: @screen-xxs-width ) {
           margin-right: 10px;
@@ -91,6 +115,7 @@
 				position: relative;
 				display: inline-block;
 				line-height: 40px;
+        margin-right: 33px;
 				
 				.glyphicon {
 					cursor: pointer;
@@ -177,10 +202,11 @@
 				h3, .h3 {
 					color: #fff;
 				}
-				
-				h3 {
-					text-transform: uppercase;
-				}
+        
+        a:hover {
+					.opacity( 0.5 );
+          text-decoration: none;
+        }
 				
 				menu {
 					padding: 0;
@@ -280,11 +306,11 @@
 				}
 				
 				&.bj-cart-icon {
-					margin-right: 30px;
+					margin-right: 20px;
 					
-					@media (max-width: @screen-sm-max) {
+					@media (max-width: @screen-xs-max) {
 						float: right;
-						margin: 0 10px 0 0;
+						margin: 0 48px 0 0;
 					}
 				}
 				
@@ -321,6 +347,7 @@
 	
 	&-top {
 		&-nav {
+      display: inline-block;
 			
 			a {
 				display: inline-block;
@@ -331,7 +358,6 @@
 		}
 		
 		&-subnav {
-			text-align: center;
       
       &:before {
         content: ' ';
@@ -341,6 +367,7 @@
         height: 40px;
         background: data-uri( 'img/tags.png' ) no-repeat center center;
         margin-right: -9px;
+        margin-left: 10px;
       }
 			
 			a {
@@ -355,6 +382,13 @@
 		text-align: right;
 		white-space: nowrap;
 		padding-left: 0;
+    
+    @media (max-width: @screen-xs-max) {
+      width: 40px;
+      position: absolute;
+      right: 8px;
+      top: 0;
+    }
 		
 		.glyphicon {
 			margin-right: @padding-base-horizontal / 2;
@@ -405,8 +439,36 @@
 		&__num {
 			display: inline-block;
 			vertical-align: middle;
+      margin-left: -9px;
+      font-size: 8pt;
 		}
 	}
+  
+  &-nav-button {
+		.glyphicon {
+			.ib();
+      
+      &:before {
+        .ib();
+        width: 40px;
+        height: 40px;
+        background: data-uri( 'img/navigation-menu.gif' ) no-repeat center center;
+        content: ''
+      }
+		}
+	}
+}
+
+.bj-page-header .glyphicon-user,
+.bj-page-header .glyphicon-shopping-cart,
+.bj-page-header .glyphicon-search,
+.bj-page-header .glyphicon-align-justify,
+.bj-page-header .glyphicon-earphone,
+.bj-top-nav a {
+  &:hover {
+    .transition( all 0.3s ease-out );
+    .opacity( 0.5 );
+  }
 }
 
 #bx-panel {
