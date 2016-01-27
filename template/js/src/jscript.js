@@ -243,11 +243,11 @@
 
       //materialize sideNav
       setTimeout( function() {
-        $( '#sideNavPanel' ).css({ left: '-310px', visibility: 'visible' });
+        $( '#sideNavPanel' ).css({ left: '-300px', visibility: 'visible' });
       }, 100);
       
       $('#nav-button').sideNav({
-        menuWidth: 300
+        menuWidth: 290
       });
     
       //load mobile banners
