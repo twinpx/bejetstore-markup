@@ -1,6 +1,28 @@
 @import url("../../../template/css/less/components-import.less");
 @import url( "bx.style.less" );
 
+
+/*No scu*/
+.bj-ce-no-scu {
+
+  .bx-no-touch .bx_catalog_top_home &.bx_catalog_item:hover .bx_catalog_item_container {
+    border-color: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    -webkit-animation: none;
+    animation: none;
+  }
+  
+  .bx-no-touch .bx_catalog_top_home &.bx_catalog_item:hover .bx_catalog_item_controls {
+    display: none !important;
+  }
+  
+  .bx-no-touch .bx_catalog_top_home &.bx_catalog_item:hover .bx_catalog_item_controls, .bx-no-touch .bx_catalog_top_home &.bx_catalog_item:hover .bx_catalog_item_articul, .bx-no-touch .bx_catalog_top_home &.bx_catalog_item:hover .bx_catalog_item_scu {
+    display: none !important;
+  }
+}
+/*_No scu_*/
+
 .bx-no-touch .bx_catalog_top_home .bx_catalog_item .bx_catalog_item_container {
   border: 1px solid transparent;
 }

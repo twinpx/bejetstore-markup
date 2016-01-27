@@ -990,6 +990,23 @@
   border-image: url('/bitrix/components/bitrix/catalog.top/templates/.default/section/themes/blue/images/x2border_active.png') 2 fill stretch;
 }
 /* End */
+/*No scu*/
+.bx-no-touch .bx_catalog_top_home .bj-ce-no-scu.bx_catalog_item:hover .bx_catalog_item_container {
+  border-color: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  -webkit-animation: none;
+  animation: none;
+}
+.bx-no-touch .bx_catalog_top_home .bj-ce-no-scu.bx_catalog_item:hover .bx_catalog_item_controls {
+  display: none !important;
+}
+.bx-no-touch .bx_catalog_top_home .bj-ce-no-scu.bx_catalog_item:hover .bx_catalog_item_controls,
+.bx-no-touch .bx_catalog_top_home .bj-ce-no-scu.bx_catalog_item:hover .bx_catalog_item_articul,
+.bx-no-touch .bx_catalog_top_home .bj-ce-no-scu.bx_catalog_item:hover .bx_catalog_item_scu {
+  display: none !important;
+}
+/*_No scu_*/
 .bx-no-touch .bx_catalog_top_home .bx_catalog_item .bx_catalog_item_container {
   border: 1px solid transparent;
 }
