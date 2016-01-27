@@ -1,46 +1,67 @@
-<div id="bx-panel" style="height: 20px; background: #eee; position: static; z-index: 1001; width: 100%;"></div>
+п»ї<div id="bx-panel" style="height: 20px; background: #eee; position: static; z-index: 1001; width: 100%;"></div>
 
 <header class="bj-page-header">
 	<section class="bj-page-header__top">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-md-5 col-xs-12 bj-logo-space">
+				<div class="col-sm-10 col-xs-12 bj-logo-space">
 					<!--#if expr="$page='index'" -->
 						<span class="bj-logo"><img src="/upload/logo.png" title="Logo"></span>
 					<!--#else -->
 						<a href="/" class="bj-logo"><img src="/upload/logo.png" title="Logo"></a>
 					<!--#endif -->
 					
-					<a href="/info/" class="visible-xs-inline-block visible-sm-inline-block bj-logo-space__icon bj-info-icon"></a>
-					
 					<!--#include virtual="/blocks/page/header/user.html"-->
 					
 					<span id="sale-basket-basket-line-container">
 						<a href="/personal/cart/" class="bj-logo-space__icon bj-cart-icon">
-							<span class="glyphicon glyphicon-shopping-cart" data-toggle="tooltip" data-placement="bottom" title="Корзина"></span>
+							<span class="glyphicon glyphicon-shopping-cart" data-toggle="tooltip" data-placement="bottom" title="РљРѕСЂР·РёРЅР°"></span>
 							<span class="bj-cart-icon__num">99</span>
 						</a>
 					</span>
-					<span class="bj-page-header__search hidden-sm hidden-xs">
-						<span class="glyphicon glyphicon-search hidden-sm hidden-xs" data-toggle="tooltip" data-placement="bottom" title="Поиск"></span>
+					<span class="bj-page-header__search hidden-xs">
+						<span class="glyphicon glyphicon-search hidden-xs" data-toggle="tooltip" data-placement="bottom" title="РџРѕРёСЃРє"></span>
 						<form action="/search/">
 							<input type="search" value="" class="bj-page-header__search__input form-control">
 						</form>
 					</span>
-				</div>
-				<div class="col-md-5 hidden-sm hidden-xs">
-					<nav class="bj-top-nav">
-						<a href="/catalogue/sales/">Акции</a>
-						<a href="/delivery/">Доставка</a>
-						<a href="/about/">О магазине</a>
+          
+          <a href="#" data-activates="sideNavPanel" id="nav-button" class="bj-nav-button">
+            <span class="glyphicon glyphicon-align-justify" data-toggle="tooltip" data-placement="bottom" title="РњРµРЅСЋ"></span>
+          </a>
+          
+					<nav class="bj-top-nav hidden-sm hidden-xs">
+						<a href="/catalogue/sales/">Р–СѓСЂРЅР°Р»</a>
+						<a href="/delivery/">Р”РѕСЃС‚Р°РІРєР°</a>
+						<a href="/catalogue/">РљР°С‚Р°Р»РѕРі</a>
 					</nav>
 				</div>
-				<div class="col-md-2 hidden-sm hidden-xs bj-phone">
-					<span class="glyphicon glyphicon-earphone"></span>
-					<span class="bj-phone__num">
+				<div class="col-sm-2 bj-phone">
+					<span class="bj-phone__num hidden-xs">
 						 800 200 30 30
-						 <span class="bj-phone__time">c 8:00 до 23:00</span>
+						 <!--<span class="bj-phone__time">c 8:00 РґРѕ 23:00</span>-->
 					</span>
+					<a href="#" class="glyphicon glyphicon-earphone hidden-xs" data-toggle="modal" data-target="#myModal"></a>
+					<a href="tel:555-555-5555" class="glyphicon glyphicon-earphone visible-xs-block"></a>
+          
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h2 class="modal-title text-center" id="myModalLabel">РќР°С€ С‚РµР»РµС„РѕРЅ</h2>
+                </div>
+                <div class="modal-body text-center">
+                  <div class="bj-text-x-large">8 (495) 212 85 06</div>
+                  <div class="small">СЃ 8:00 РґРѕ 20:00. РџРѕРЅРµРґРµР»СЊРЅРёРє-РџСЏС‚РЅРёС†Р°</div>
+                </div>
+                <div class="modal-footer text-center">
+                  <button type="button" class="btn btn-default">Р—Р°РєР°Р·Р°С‚СЊ Р·РІРѕРЅРѕРє</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
 				</div>
 			</div>
 		</div>
@@ -49,108 +70,206 @@
 		<div class="i-relative container-fluid">
 			<article>
 				<div class="row">
-					<div class="col-md-3">
-						<h3><a href="/catalogue/group/">ЖЕНСКАЯ ОДЕЖДА</a></h3>
+					<div class="col-md-3 col-sm-6">
+						<h3><a href="/catalogue/group/">РњСѓР¶С‡РёРЅР°Рј</a></h3>
 						<menu>
-							<li><a href="/catalogue/group/group/">Белье</a></li>
-							<li><a href="/catalogue/group/group/">Блузы</a></li>
-							<li><a href="/catalogue/group/group/">Брюки</a></li>
-							<li><a href="/catalogue/group/group/">Джемперы/Свитера</a></li>
-							<li><a href="/catalogue/group/group/">Кардиганы</a></li>
-							<li><a href="/catalogue/group/group/">Куртки/Пальто</a></li>
-							<li><a href="/catalogue/group/group/">Футболки/Фуфайки/Топы</a></li>
-							<li><a href="/catalogue/group/group/">Юбки</a></li>
-							<li><a href="/catalogue/group/group/">Платья</a></li>
-							<li><a href="/catalogue/group/group/">Обувь</a></li>
-							<li><a href="/catalogue/group/group/">Перчатки/Варежки</a></li>
-							<li><a href="/catalogue/group/group/">Колготки/Лосины/Носки</a></li>
-							<li><a href="/catalogue/group/group/">Головные уборы/Шарфы</a></li>
-							<li><a href="/catalogue/group/group/">Джинсы</a></li>
-							<li><a href="/catalogue/group/group/">Шорты</a></li>
-							<li><a href="/catalogue/group/group/">Комбинезоны</a></li>
+							<li><a href="/catalogue/group/group/">Р‘РµР»СЊРµ</a></li>
+							<li><a href="/catalogue/group/group/">Р‘Р»СѓР·С‹</a></li>
+							<li><a href="/catalogue/group/group/">Р‘СЂСЋРєРё</a></li>
+							<li><a href="/catalogue/group/group/">Р”Р¶РµРјРїРµСЂС‹/РЎРІРёС‚РµСЂР°</a></li>
+							<li><a href="/catalogue/group/group/">РљР°СЂРґРёРіР°РЅС‹</a></li>
+							<li><a href="/catalogue/group/group/">РљСѓСЂС‚РєРё/РџР°Р»СЊС‚Рѕ</a></li>
 						</menu>
 					</div>
-					<div class="col-md-3">
-						<h3><a href="/catalogue/group/">Мужская ОДЕЖДА</a></h3>
+					<div class="col-md-3 col-sm-6">
+						<h3><a href="/catalogue/group/">Р–РµРЅС‰РёРЅР°Рј</a></h3>
 						<menu>
-							<li><a href="/catalogue/group/group/">Белье</a></li>
-							<li><a href="/catalogue/group/group/">Блузы</a></li>
-							<li><a href="/catalogue/group/group/">Брюки</a></li>
-							<li><a href="/catalogue/group/group/">Джемперы/Свитера</a></li>
-							<li><a href="/catalogue/group/group/">Кардиганы</a></li>
-							<li><a href="/catalogue/group/group/">Куртки/Пальто</a></li>
-							<li><a href="/catalogue/group/group/">Футболки/Фуфайки/Топы</a></li>
-							<li><a href="/catalogue/group/group/">Юбки</a></li>
-							<li><a href="/catalogue/group/group/">Платья</a></li>
-							<li><a href="/catalogue/group/group/">Обувь</a></li>
-							<li><a href="/catalogue/group/group/">Перчатки/Варежки</a></li>
-							<li><a href="/catalogue/group/group/">Колготки/Лосины/Носки</a></li>
-							<li><a href="/catalogue/group/group/">Головные уборы/Шарфы</a></li>
-							<li><a href="/catalogue/group/group/">Джинсы</a></li>
-							<li><a href="/catalogue/group/group/">Шорты</a></li>
-							<li><a href="/catalogue/group/group/">Комбинезоны</a></li>
-							<li><a href="/catalogue/group/group/">Джинсы</a></li>
-							<li><a href="/catalogue/group/group/">Шорты</a></li>
-							<li><a href="/catalogue/group/group/">Комбинезоны</a></li>
+							<li><a href="/catalogue/group/group/">Р’РµСЂС…РЅСЏСЏ РѕРґРµР¶РґР°</a></li>
+							<li><a href="/catalogue/group/group/">РџР»Р°С‚СЊСЏ Рё СЃР°СЂР°С„Р°РЅС‹</a></li>
+							<li><a href="/catalogue/group/group/">Р”Р¶РµРјРїРµСЂС‹ Рё РєР°СЂРґРёРіР°РЅС‹</a></li>
+							<li><a href="/catalogue/group/group/">Р‘Р»СѓР·С‹ Рё СЂСѓР±Р°С€РєРё</a></li>
+							<li><a href="/catalogue/group/group/">Р‘СЂСЋРєРё</a></li>
+							<li><a href="/catalogue/group/group/">Р®Р±РєРё</a></li>
+							<li><a href="/catalogue/group/group/">Р”Р¶РёРЅСЃС‹</a></li>
 						</menu>
 					</div>
-					<div class="col-md-3">
-						<h3><a href="/catalogue/group/">Детская ОДЕЖДА</a></h3>
+					<div class="col-md-3 col-sm-6">
+						<h3><a href="/catalogue/group/">РњР°Р»СЊС‡РёРєР°Рј</a></h3>
 						<menu>
-							<li><a href="/catalogue/group/group/">Белье</a></li>
-							<li><a href="/catalogue/group/group/">Блузы</a></li>
-							<li><a href="/catalogue/group/group/">Брюки</a></li>
-							<li><a href="/catalogue/group/group/">Джемперы/Свитера</a></li>
-							<li><a href="/catalogue/group/group/">Кардиганы</a></li>
-							<li><a href="/catalogue/group/group/">Куртки/Пальто</a></li>
-							<li><a href="/catalogue/group/group/">Футболки/Фуфайки/Топы</a></li>
-							<li><a href="/catalogue/group/group/">Юбки</a></li>
-							<li><a href="/catalogue/group/group/">Платья</a></li>
-							<li><a href="/catalogue/group/group/">Обувь</a></li>
-							<li><a href="/catalogue/group/group/">Перчатки/Варежки</a></li>
+							<li><a href="/catalogue/group/group/">Р‘РµР»СЊРµ</a></li>
+							<li><a href="/catalogue/group/group/">Р‘Р»СѓР·С‹</a></li>
+							<li><a href="/catalogue/group/group/">Р‘СЂСЋРєРё</a></li>
+							<li><a href="/catalogue/group/group/">Р”Р¶РµРјРїРµСЂС‹/РЎРІРёС‚РµСЂР°</a></li>
+							<li><a href="/catalogue/group/group/">РљР°СЂРґРёРіР°РЅС‹</a></li>
+							<li><a href="/catalogue/group/group/">РљСѓСЂС‚РєРё/РџР°Р»СЊС‚Рѕ</a></li>
 						</menu>
 					</div>
-					<div class="col-md-3">
-						<h3><a href="/catalogue/group/">ОДЕЖДА мужская и женская больших размеров</a></h3>
+					<div class="col-md-3 col-sm-6">
+						<h3><a href="/catalogue/group/">Р”РµРІРѕС‡РєР°Рј</a></h3>
 						<menu>
-							<li><a href="/catalogue/group/group/">Белье</a></li>
-							<li><a href="/catalogue/group/group/">Блузы</a></li>
-							<li><a href="/catalogue/group/group/">Брюки</a></li>
-							<li><a href="/catalogue/group/group/">Джемперы/Свитера</a></li>
-							<li><a href="/catalogue/group/group/">Кардиганы</a></li>
-							<li><a href="/catalogue/group/group/">Куртки/Пальто</a></li>
-							<li><a href="/catalogue/group/group/">Футболки/Фуфайки/Топы</a></li>
-							<li><a href="/catalogue/group/group/">Юбки</a></li>
-							<li><a href="/catalogue/group/group/">Платья</a></li>
-							<li><a href="/catalogue/group/group/">Обувь</a></li>
-							<li><a href="/catalogue/group/group/">Перчатки/Варежки</a></li>
-							<li><a href="/catalogue/group/group/">Колготки/Лосины/Носки</a></li>
-							<li><a href="/catalogue/group/group/">Головные уборы/Шарфы</a></li>
-							<li><a href="/catalogue/group/group/">Джинсы</a></li>
-							<li><a href="/catalogue/group/group/">Шорты</a></li>
-							<li><a href="/catalogue/group/group/">Комбинезоны</a></li>
+							<li><a href="/catalogue/group/group/">Р‘РµР»СЊРµ</a></li>
+							<li><a href="/catalogue/group/group/">Р‘Р»СѓР·С‹</a></li>
+							<li><a href="/catalogue/group/group/">Р‘СЂСЋРєРё</a></li>
+							<li><a href="/catalogue/group/group/">Р”Р¶РµРјРїРµСЂС‹/РЎРІРёС‚РµСЂР°</a></li>
+							<li><a href="/catalogue/group/group/">РљР°СЂРґРёРіР°РЅС‹</a></li>
+							<li><a href="/catalogue/group/group/">РљСѓСЂС‚РєРё/РџР°Р»СЊС‚Рѕ</a></li>
 						</menu>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-3">
-						<h3><a href="/catalogue/group/">Украшения</a></h3>
+					<div class="col-md-3 col-sm-6">
+						<h3><a href="/catalogue/group/">РњР°Р»СЊС‡РёРєР°Рј</a></h3>
 						<menu>
-							<li><a href="/catalogue/group/group/">Белье</a></li>
-							<li><a href="/catalogue/group/group/">Блузы</a></li>
-							<li><a href="/catalogue/group/group/">Брюки</a></li>
-							<li><a href="/catalogue/group/group/">Джемперы/Свитера</a></li>
+							<li><a href="/catalogue/group/group/">Р‘РµР»СЊРµ</a></li>
+							<li><a href="/catalogue/group/group/">Р‘Р»СѓР·С‹</a></li>
+							<li><a href="/catalogue/group/group/">Р‘СЂСЋРєРё</a></li>
+							<li><a href="/catalogue/group/group/">Р”Р¶РµРјРїРµСЂС‹/РЎРІРёС‚РµСЂР°</a></li>
+							<li><a href="/catalogue/group/group/">РљР°СЂРґРёРіР°РЅС‹</a></li>
+							<li><a href="/catalogue/group/group/">РљСѓСЂС‚РєРё/РџР°Р»СЊС‚Рѕ</a></li>
 						</menu>
 					</div>
-					<div class="col-md-3">
-						<h3><a href="/catalogue/group/">Галантерея</a></h3>
+					<div class="col-md-3 col-sm-6">
+						<h3><a href="/catalogue/group/">Р”РµРІРѕС‡РєР°Рј</a></h3>
 						<menu>
-							<li><a href="/catalogue/group/group/">Белье</a></li>
-							<li><a href="/catalogue/group/group/">Блузы</a></li>
-							<li><a href="/catalogue/group/group/">Брюки</a></li>
+							<li><a href="/catalogue/group/group/">Р‘РµР»СЊРµ</a></li>
+							<li><a href="/catalogue/group/group/">Р‘Р»СѓР·С‹</a></li>
+							<li><a href="/catalogue/group/group/">Р‘СЂСЋРєРё</a></li>
+							<li><a href="/catalogue/group/group/">Р”Р¶РµРјРїРµСЂС‹/РЎРІРёС‚РµСЂР°</a></li>
+							<li><a href="/catalogue/group/group/">РљР°СЂРґРёРіР°РЅС‹</a></li>
+							<li><a href="/catalogue/group/group/">РљСѓСЂС‚РєРё/РџР°Р»СЊС‚Рѕ</a></li>
 						</menu>
 					</div>
 				</div>
+        <div><a href=""><strong>Р‘СЂРµРЅРґС‹</strong> (РІСЃРµ 32)</a></div>
+        <hr>
+        <div class="row">
+        
+          <div class="col-md-3 col-sm-6">
+						<div class="media">
+              <div class="media-left media-middle">
+                <a href="#">
+                  <img class="media-object" alt="" src="/upload/brand/brand.png">
+                </a>
+              </div>
+              <div class="media-body media-middle">
+                <a href="">Alexander McQueen</a>
+              </div>
+            </div>
+					</div>
+          
+          <hr class="visible-xs-block clearfix">
+          
+          <div class="col-md-3 col-sm-6">
+						<div class="media">
+              <div class="media-left media-middle">
+                <a href="#">
+                  <img class="media-object" alt="" src="/upload/brand/brand2.png">
+                </a>
+              </div>
+              <div class="media-body media-middle">
+                <a href="">Benetton</a>
+              </div>
+            </div>
+					</div>
+          
+          <div class="visible-xs-block visible-sm-block clearfix"></div>
+          <hr class="visible-xs-block visible-sm-block">
+          
+          <div class="col-md-3 col-sm-6">
+						<div class="media">
+              <div class="media-left media-middle">
+                <a href="#">
+                  <img class="media-object" alt="" src="/upload/brand/brand.png">
+                </a>
+              </div>
+              <div class="media-body media-middle">
+                <a href="">Adidas</a>
+              </div>
+            </div>
+					</div>
+          
+          <hr class="visible-xs-block clearfix">
+          
+          <div class="col-md-3 col-sm-6">
+						<div class="media">
+              <div class="media-left media-middle">
+                <a href="#">
+                  <img class="media-object" alt="" src="/upload/brand/brand2.png">
+                </a>
+              </div>
+              <div class="media-body media-middle">
+                <a href="">Adidas</a>
+              </div>
+            </div>
+					</div>
+        </div>
+        
+        <hr>
+        
+        <div class="row">
+        
+          <div class="col-md-3 col-sm-6">
+						<div class="media">
+              <div class="media-left media-middle">
+                <a href="#">
+                  <img class="media-object" alt="" src="/upload/brand/brand.png">
+                </a>
+              </div>
+              <div class="media-body media-middle">
+                <a href="">Alexander McQueen</a>
+              </div>
+            </div>
+					</div>
+          
+          <hr class="visible-xs-block clearfix">
+          
+          <div class="col-md-3 col-sm-6">
+						<div class="media">
+              <div class="media-left media-middle">
+                <a href="#">
+                  <img class="media-object" alt="" src="/upload/brand/brand2.png">
+                </a>
+              </div>
+              <div class="media-body media-middle">
+                <a href="">Benetton</a>
+              </div>
+            </div>
+					</div>
+          
+          <div class="visible-xs-block visible-sm-block clearfix"></div>
+          <hr class="visible-xs-block visible-sm-block">
+          
+          <div class="col-md-3 col-sm-6">
+						<div class="media">
+              <div class="media-left media-middle">
+                <a href="#">
+                  <img class="media-object" alt="" src="/upload/brand/brand.png">
+                </a>
+              </div>
+              <div class="media-body media-middle">
+                <a href="">Adidas</a>
+              </div>
+            </div>
+					</div>
+          
+          <hr class="visible-xs-block clearfix">
+          
+          <div class="col-md-3 col-sm-6">
+						<div class="media">
+              <div class="media-left media-middle">
+                <a href="#">
+                  <img class="media-object" alt="" src="/upload/brand/brand2.png">
+                </a>
+              </div>
+              <div class="media-body media-middle">
+                <a href="">Adidas</a>
+              </div>
+            </div>
+					</div>
+        </div>
+        
+        <hr class="i-size-L">
+        
 				<button class="up"></button>
 			</article>
 		</div>
@@ -161,7 +280,7 @@
 				<div class="col-md-2 col-xs-4">
 					<a href="" class="bj-page-header__menu-link bj-icon-link">
 						<span class="bj-icon i-menu bj-icon-link__icon"></span>
-						<span class="bj-icon-link__link">Каталог</span>
+						<span class="bj-icon-link__link">РљР°С‚Р°Р»РѕРі</span>
 					</a>
 				</div>
 				<div class="col-md-2 col-xs-4">
@@ -175,14 +294,12 @@
 						<a href="/catalogue/group/">Abercrombie & Fitch</a>
 						<a href="/catalogue/group/">Absorba</a>
 						<a href="/catalogue/group/">Acasta</a>
-						<a href="/catalogue/group/">Addict</a>
-						<a href="/catalogue/group/">Adidas</a>
 					</nav>
 				</div>
 				<div class="col-md-2 col-xs-4">
 					<a href="/catalogue/sales/" class="bj-page-header__sales-link bj-icon-link">
 						<span class="bj-icon i-flash bj-icon-link__icon"></span>
-						<span class="bj-icon-link__link">Акции</span>
+						<span class="bj-icon-link__link">РђРєС†РёРё</span>
 					</a>
 				</div>
 			</div>

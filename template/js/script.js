@@ -1,6 +1,6 @@
 /*!
  * The best internet store
- * 2015 Tatiana
+ * 2016 Tatiana
  * Licensed under ISC
  */
 /*! HTML5 Shiv vpre3.5 | @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed */
@@ -601,25 +601,34 @@
     }
     
     a(function() {
+
+      //materialize sideNav
+      setTimeout( function() {
+        $( '#sideNavPanel' ).css({ left: '-310px', visibility: 'visible' });
+      }, 100);
+      
+      $('#nav-button').sideNav({
+        menuWidth: 300
+      });
     
-        //load mobile banners
-        loadMobileBanners();
-        
-        catalogTabs();
-        
-        if ( window.BX ) {
-          BX.addCustomEvent( "onFrameDataReceived", function () {
-            a(".bj-logo-space [data-toggle='tooltip']").tooltip();
-            a(".bj-sorting [title]").tooltip();
-            g();
-          });
-        }
-            g();
-        
-        e(), f(), h(), i(), d(".bj-sorting", "sort"), d(".bj-catalogue-filter", "set_filter"), c(), b(), matchMedia ? window.matchMedia("(min-width: 500px)").matches && new j("#b-float-phone") : a(document).width() >= 500 && new j("#b-float-phone"), a(".bj-hidden-link").click(function(b) {
-            b.preventDefault();
-            var c = a(this);
-            return c.hasClass("i-up") ? void c.removeClass("i-up").parent().find(".bj-hidden__hidden").slideUp() : void c.addClass("i-up").parent().find(".bj-hidden__hidden").slideDown()
-        })
+      //load mobile banners
+      loadMobileBanners();
+      
+      catalogTabs();
+      
+      if ( window.BX ) {
+        BX.addCustomEvent( "onFrameDataReceived", function () {
+          a(".bj-logo-space [data-toggle='tooltip']").tooltip();
+          a(".bj-sorting [title]").tooltip();
+          g();
+        });
+      }
+          g();
+      
+      e(), f(), h(), i(), d(".bj-sorting", "sort"), d(".bj-catalogue-filter", "set_filter"), c(), b(), matchMedia ? window.matchMedia("(min-width: 500px)").matches && new j("#b-float-phone") : a(document).width() >= 500 && new j("#b-float-phone"), a(".bj-hidden-link").click(function(b) {
+          b.preventDefault();
+          var c = a(this);
+          return c.hasClass("i-up") ? void c.removeClass("i-up").parent().find(".bj-hidden__hidden").slideUp() : void c.addClass("i-up").parent().find(".bj-hidden__hidden").slideDown()
+      })
     })
 }(jQuery);

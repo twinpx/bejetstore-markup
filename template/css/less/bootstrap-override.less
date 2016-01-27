@@ -273,3 +273,57 @@
 .small {
   font-size: 9pt;
 }
+
+//popup
+.modal-backdrop {
+  background: #fff;
+}
+
+.modal-content {
+  border-radius: 0;
+  border: 5px solid #a3add7;
+  .box-shadow( none );
+}
+
+.modal-header {
+  color: #000;
+  padding: 26px;
+}
+
+.modal-body {
+  color: #000;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.modal-footer {
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.bj-text-x-large {
+  font-size: 26pt;
+}
+
+.modal .close {
+  width: 24px;
+  height: 24px;
+  background-color: @gray-lightest;
+  border-radius: 50%;
+  .opacity(1);
+  font-weight: 300;
+  text-shadow: none;
+  margin-top: 3px;
+  color: #999;
+  
+  &:hover {
+    background-color: #a3add7;
+    .opacity(1);
+    color: #fff;
+  }
+}
+
+.text-overflow {
+  .text-overflow();
+}
