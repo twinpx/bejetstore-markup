@@ -1,0 +1,1 @@
+sass materialize.scss ../../materialize/css/materialize.min.css --style compressed

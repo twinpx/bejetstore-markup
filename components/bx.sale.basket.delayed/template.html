@@ -1,0 +1,270 @@
+﻿<link href="/components/bx.sale.basket.basket/style.css" rel="stylesheet">
+
+<div class="bj-panel"><b>Ваша корзина пуста</b></div>
+
+<div id="warning_message"></div>
+
+<form method="post" action="/personal/cart/" name="basket_form" id="basket_form">
+  <div id="basket_form_container">
+    <div class="bx_ordercart">
+      <div class="bx_sort_container"> <span>Товары в корзине:</span>
+				<a href="javascript:void(0)" id="basket_toolbar_button" onclick="showBasketItemsList()">Готовые к заказу
+					<div id="normal_count" class="flat">&nbsp;(2)</div>
+        </a> <a href="javascript:void(0)" id="basket_toolbar_button_delayed" class="current" onclick="showBasketItemsList(2)">Отложенные
+        <div id="delay_count" class="flat">&nbsp;(0)</div>
+        </a> <a href="javascript:void(0)" id="basket_toolbar_button_subscribed" onclick="showBasketItemsList(3)">Ожидаемые
+        <div id="subscribe_count" class="flat">&nbsp;(0)</div>
+        </a> <a href="javascript:void(0)" id="basket_toolbar_button_not_available" onclick="showBasketItemsList(4)">Отсутствуют
+        <div id="not_available_count" class="flat">&nbsp;(0)</div>
+        </a>
+      </div>
+      
+      <div id="basket_items_list">
+        <div class="bx_ordercart_order_table_container">
+          <table id="basket_items">
+            <thead>
+              <tr>
+                <td class="margin"></td>
+                <td class="item" colspan="2" id="col_NAME"> Товары </td>
+                <td class="custom" id="col_DISCOUNT"> Скидка </td>
+                <td class="price" id="col_PRICE"> Цена </td>
+                <td class="custom" id="col_QUANTITY"> Количество </td>
+                <td class="custom" id="col_SUM"> Сумма </td>
+                <td class="custom"></td>
+                <td class="margin"></td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr id="274">
+                <td class="margin"></td>
+                <td class="itemphoto"><div class="bx_ordercart_photo_container"> <a href="/catalog/muzhskie_botinki/zamshevye_botinki/">
+                    <div class="bx_ordercart_photo" style="background-image:url('/bitrix/templates/bejetstore_purple_white/components/bitrix/sale.basket.basket/.default/images/no_photo.png')"></div>
+                    </a> </div></td>
+                <td class="item"><h2 class="bx_ordercart_itemtitle"> <a href="/catalog/muzhskie_botinki/zamshevye_botinki/"> Замшевые ботинки </a> </h2>
+                  <div class="bx_ordercart_itemart"> </div>
+                  <div class="bx_item_detail_scu_small_noadaptive "> <span class="bx_item_section_name_gray"> Цвет: </span>
+                    <div class="bx_scu_scroller_container">
+                      <div class="bx_scu">
+                        <ul id="prop_COLOR_REF_274" style="width: 200%; margin-left:0%;" class="sku_prop_list">
+                          <li style="width:10%;" class="sku_prop " data-value-id="brown" data-element="274" data-property="COLOR_REF"> <a href="javascript:void(0);"> <span style="background-image:url(/upload/uf/dc0/dc0e3e4b39b17df6eff196f15b4f9faa.jpg)"></span> </a> </li>
+                        </ul>
+                      </div>
+                      <div class="bx_slide_left" onClick="leftScroll('COLOR_REF', 274);"></div>
+                      <div class="bx_slide_right" onClick="rightScroll('COLOR_REF', 274);"></div>
+                    </div>
+                  </div>
+                  <div class="bx_item_detail_size_small_noadaptive full"> <span class="bx_item_section_name_gray"> Размеры обуви: </span>
+                    <div class="bx_size_scroller_container">
+                      <div class="bx_size">
+                        <ul id="prop_SIZES_SHOES_274" style="width: 200%; margin-left:0%;" class="sku_prop_list">
+                          <li style="width:10%;" class="sku_prop bx_active" data-value-id="35" data-element="274" data-property="SIZES_SHOES"> <a href="javascript:void(0);">35</a> </li>
+                          <li style="width:10%;" class="sku_prop " data-value-id="36" data-element="274" data-property="SIZES_SHOES"> <a href="javascript:void(0);">36</a> </li>
+                          <li style="width:10%;" class="sku_prop " data-value-id="37" data-element="274" data-property="SIZES_SHOES"> <a href="javascript:void(0);">37</a> </li>
+                          <li style="width:10%;" class="sku_prop " data-value-id="38" data-element="274" data-property="SIZES_SHOES"> <a href="javascript:void(0);">38</a> </li>
+                          <li style="width:10%;" class="sku_prop " data-value-id="39" data-element="274" data-property="SIZES_SHOES"> <a href="javascript:void(0);">39</a> </li>
+                          <li style="width:10%;" class="sku_prop " data-value-id="40" data-element="274" data-property="SIZES_SHOES"> <a href="javascript:void(0);">40</a> </li>
+                        </ul>
+                      </div>
+                      <div class="bx_slide_left" onClick="leftScroll('SIZES_SHOES', 274);"></div>
+                      <div class="bx_slide_right" onClick="rightScroll('SIZES_SHOES', 274);"></div>
+                    </div>
+                  </div></td>
+                <td class="custom"><span>Скидка:</span>
+                  <div id="discount_value_274">0%</div></td>
+                <td class="price"><div class="current_price" id="current_price_274"> 24 000 руб. </div>
+                  <div class="old_price" id="old_price_274"> </div></td>
+                <td class="custom"><span>Количество:</span>
+                
+                  <a href="javascript:void(0);" class="bj-quantity-minus minus" onclick="setQuantity(45, 1, 'down', false);"></a>
+                    
+                  <input type="text" size="3" id="QUANTITY_INPUT_45" name="QUANTITY_INPUT_45" maxlength="18" min="0" max="100" step="1" style="max-width: 50px" value="3" onchange="updateQuantity('QUANTITY_INPUT_45', '45', 1, false)" class="bj-quantity-input">
+                  
+                  <a href="javascript:void(0);" class="bj-quantity-plus plus" onclick="setQuantity(45, 1, 'up', false);"></a>
+                  
+                  <div class="some-class">
+                    <select id="QUANTITY_SELECT_274" name="QUANTITY_SELECT_274" onChange="updateQuantity('QUANTITY_SELECT_274',274,1,false);" disabled="">
+                      <option value="1" selected="">1</option>
+                    </select>
+                    шт</div>
+                  <input type="hidden" id="QUANTITY_274" name="QUANTITY_274" value="1">
+                </td>
+                <td class="custom"><span>Сумма:</span>
+                  <div id="sum_274"> 24 000 руб. </div></td>
+                <td class="control"><a href="/personal/cart/?action=delete&amp;id=274">Удалить</a><br>
+                  <a href="/personal/cart/?action=delay&amp;id=274">Отложить</a> </td>
+                <td class="margin"></td>
+              </tr>
+              <tr id="276">
+                <td class="margin"></td>
+                <td class="itemphoto"><div class="bx_ordercart_photo_container"> <a href="/catalog/accessories/strap-line/">
+                    <div class="bx_ordercart_photo" style="background-image:url('/upload/resize_cache/iblock/ab5/110_110_1/ab565d7b45d06dc7f1e0bb306250ab53.jpg')"></div>
+                    </a> </div></td>
+                <td class="item"><h2 class="bx_ordercart_itemtitle"> <a href="/catalog/accessories/strap-line/"> Ремень Строчка </a> </h2>
+                  <div class="bx_ordercart_itemart"> </div></td>
+                <td class="custom"><span>Скидка:</span>
+                  <div id="discount_value_276">0%</div></td>
+                <td class="price"><div class="current_price" id="current_price_276"> 500 руб. </div>
+                  <div class="old_price" id="old_price_276"> </div></td>
+                <td class="custom"><span>Количество:</span>
+                
+                  <a href="javascript:void(0);" class="bj-quantity-minus minus" onclick="setQuantity(45, 1, 'down', false);"></a>
+                    
+                  <input type="text" size="3" id="QUANTITY_INPUT_45" name="QUANTITY_INPUT_45" maxlength="18" min="0" max="100" step="1" style="max-width: 50px" value="3" onchange="updateQuantity('QUANTITY_INPUT_45', '45', 1, false)" class="bj-quantity-input">
+                  
+                  <a href="javascript:void(0);" class="bj-quantity-plus plus" onclick="setQuantity(45, 1, 'up', false);"></a>
+                  
+                  <div class="some-class">
+                    <select id="QUANTITY_SELECT_276" name="QUANTITY_SELECT_276" onChange="updateQuantity('QUANTITY_SELECT_276',276,1,false);" disabled="">
+                      <option value="1" selected="">1</option>
+                    </select>
+                    шт</div>
+                  <input type="hidden" id="QUANTITY_276" name="QUANTITY_276" value="1">
+                </td>
+                <td class="custom"><span>Сумма:</span>
+                  <div id="sum_276"> 500 руб. </div></td>
+                <td class="control"><a href="/personal/cart/?action=delete&amp;id=276">Удалить</a><br>
+                  <a href="/personal/cart/?action=delay&amp;id=276">Отложить</a> </td>
+                <td class="margin"></td>
+              </tr>
+              <tr id="286">
+                <td class="margin"></td>
+                <td class="itemphoto"><div class="bx_ordercart_photo_container"> <a href="/catalog/shorty/shorty_tims/">
+                    <div class="bx_ordercart_photo" style="background-image:url('/bitrix/templates/bejetstore_purple_white/components/bitrix/sale.basket.basket/.default/images/no_photo.png')"></div>
+                    </a> </div></td>
+                <td class="item"><h2 class="bx_ordercart_itemtitle"> <a href="/catalog/shorty/shorty_tims/"> Шорты Tims </a> </h2>
+                  <div class="bx_ordercart_itemart"> </div>
+                  <div class="bx_item_detail_scu_small_noadaptive "> <span class="bx_item_section_name_gray"> Цвет: </span>
+                    <div class="bx_scu_scroller_container">
+                      <div class="bx_scu">
+                        <ul id="prop_COLOR_REF_286" style="width: 200%; margin-left:0%;" class="sku_prop_list">
+                          <li style="width:10%;" class="sku_prop " data-value-id="see" data-element="286" data-property="COLOR_REF"> <a href="javascript:void(0);"> <span style="background-image:url(/upload/uf/684/684f8b8c86ee2ce1cf7e4e6bc84dff6d.jpg)"></span> </a> </li>
+                          <li style="width:10%;" class="sku_prop " data-value-id="green" data-element="286" data-property="COLOR_REF"> <a href="javascript:void(0);"> <span style="background-image:url(/upload/uf/831/8319a02ed187f0b06f8592febae5f68e.jpg)"></span> </a> </li>
+                          <li style="width:10%;" class="sku_prop bx_active" data-value-id="grey" data-element="286" data-property="COLOR_REF"> <a href="javascript:void(0);"> <span style="background-image:url(/upload/uf/54e/54e5a80ecf625989fc6e7d4ef43a6ed7.gif)"></span> </a> </li>
+                        </ul>
+                      </div>
+                      <div class="bx_slide_left" onClick="leftScroll('COLOR_REF', 286);"></div>
+                      <div class="bx_slide_right" onClick="rightScroll('COLOR_REF', 286);"></div>
+                    </div>
+                  </div>
+                  <div class="bx_item_detail_size_small_noadaptive "> <span class="bx_item_section_name_gray"> Размеры одежды : </span>
+                    <div class="bx_size_scroller_container">
+                      <div class="bx_size">
+                        <ul id="prop_SIZES_CLOTHES_286" style="width: 200%; margin-left:0%;" class="sku_prop_list">
+                          <li style="width:10%;" class="sku_prop " data-value-id="XS" data-element="286" data-property="SIZES_CLOTHES"> <a href="javascript:void(0);">XS</a> </li>
+                          <li style="width:10%;" class="sku_prop bx_active" data-value-id="S" data-element="286" data-property="SIZES_CLOTHES"> <a href="javascript:void(0);">S</a> </li>
+                        </ul>
+                      </div>
+                      <div class="bx_slide_left" onClick="leftScroll('SIZES_CLOTHES', 286);"></div>
+                      <div class="bx_slide_right" onClick="rightScroll('SIZES_CLOTHES', 286);"></div>
+                    </div>
+                  </div></td>
+                <td class="custom"><span>Скидка:</span>
+                  <div id="discount_value_286">0%</div></td>
+                <td class="price"><div class="current_price" id="current_price_286"> 470 руб. </div>
+                  <div class="old_price" id="old_price_286"> </div></td>
+                <td class="custom"><span>Количество:</span>
+                
+                  <a href="javascript:void(0);" class="bj-quantity-minus minus" onclick="setQuantity(45, 1, 'down', false);"></a>
+                    
+                  <input type="text" size="3" id="QUANTITY_INPUT_45" name="QUANTITY_INPUT_45" maxlength="18" min="0" max="100" step="1" style="max-width: 50px" value="3" onchange="updateQuantity('QUANTITY_INPUT_45', '45', 1, false)" class="bj-quantity-input">
+                  
+                  <a href="javascript:void(0);" class="bj-quantity-plus plus" onclick="setQuantity(45, 1, 'up', false);"></a>
+                  
+                  <div class="some-class">
+                    <select id="QUANTITY_SELECT_286" name="QUANTITY_SELECT_286" onChange="updateQuantity('QUANTITY_SELECT_286',286,1,false);" disabled="">
+                      <option value="1" selected="">1</option>
+                    </select>
+                    шт</div>
+                  <input type="hidden" id="QUANTITY_286" name="QUANTITY_286" value="1">
+                </td>
+                <td class="custom"><span>Сумма:</span>
+                  <div id="sum_286"> 470 руб. </div></td>
+                <td class="control"><a href="/personal/cart/?action=delete&amp;id=286">Удалить</a><br>
+                  <a href="/personal/cart/?action=delay&amp;id=286">Отложить</a> </td>
+                <td class="margin"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <input type="hidden" id="column_headers" value="NAME,DISCOUNT,PRICE,QUANTITY,SUM,PROPS,DELETE,DELAY">
+        <input type="hidden" id="offers_props" value="SIZES_SHOES,SIZES_CLOTHES,COLOR_REF">
+        <input type="hidden" id="action_var" value="action">
+        <input type="hidden" id="quantity_float" value="N">
+        <input type="hidden" id="count_discount_4_all_quantity" value="N">
+        <input type="hidden" id="price_vat_show_value" value="Y">
+        <input type="hidden" id="hide_coupon" value="N">
+        <input type="hidden" id="coupon_approved" value="N">
+        <input type="hidden" id="use_prepayment" value="N">
+        <div class="bx_ordercart_order_pay">
+          <div class="bx_ordercart_order_pay_left">
+            <div class="bx_ordercart_coupon"> <span>Введите код купона для скидки:</span>
+              <input type="text" id="coupon" name="COUPON" value="" onChange="enterCoupon();" size="21" class="">
+            </div>
+          </div>
+          <div class="bx_ordercart_order_pay_right">
+            <table class="bx_ordercart_order_sum">
+              <tbody>
+                <tr>
+                  <td>Товаров на:</td>
+                  <td id="allSum_wVAT_FORMATED">24 970 руб.</td>
+                </tr>
+                <tr>
+                  <td>В том числе НДС:</td>
+                  <td id="allVATSum_FORMATED">0 руб.</td>
+                </tr>
+                <tr>
+                  <td class="fwb">Итого:</td>
+                  <td class="fwb" id="allSum_FORMATED">24&nbsp;970&nbsp;руб.</td>
+                </tr>
+                <tr>
+                  <td class="custom_t1"></td>
+                  <td class="custom_t2" style="text-decoration:line-through; color:#828282;" id="PRICE_WITHOUT_DISCOUNT"></td>
+                </tr>
+              </tbody>
+            </table>
+            <div style="clear:both;"></div>
+          </div>
+          <div style="clear:both;"></div>
+          <div class="bx_ordercart_order_pay_center"> <a href="javascript:void(0)" onClick="checkOut();" class="checkout">Оформить заказ</a> </div>
+        </div>
+      </div>
+      
+      <div id="basket_items_subscribed" class="bx_ordercart_order_table_container" style="display:none">
+        <table>
+          <thead>
+            <tr>
+              <td class="margin"></td>
+              <td class="item" colspan="2"> Товары </td>
+              <td class="custom"> Скидка </td>
+              <td class="price"> Цена </td>
+              <td class="custom"> Количество </td>
+              <td class="custom"> Сумма </td>
+              <td class="custom"></td>
+              <td class="margin"></td>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+      <div id="basket_items_not_available" class="bx_ordercart_order_table_container" style="display:none">
+        <table>
+          <thead>
+            <tr>
+              <td class="margin"></td>
+              <td class="item" colspan="2"> Товары </td>
+              <td class="price"> Цена </td>
+              <td class="custom"> Количество </td>
+              <td class="custom"></td>
+              <td class="margin"></td>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <input type="hidden" name="BasketOrder" value="BasketOrder">
+  <!-- <input type="hidden" name="ajax_post" id="ajax_post" value="Y"> -->
+</form>

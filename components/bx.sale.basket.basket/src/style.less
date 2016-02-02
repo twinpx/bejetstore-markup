@@ -18,38 +18,51 @@
   &.sku_prop {
     min-width: 27px !important;
     width: auto !important;
-    margin: 0 2px 2px 0;
+    margin: 0 10px 2px 0;
     
     a {
       position: static;
       display: block;
-      padding: 1px 3px;
+      padding: 1px 0;
       border: none;
       background: transparent;
+      font-size: 9pt;
+      color: #999;
+      font-weight: 300;
+      
+      &:hover {
+        color: #999;
+      }
     }
     
-    &:active,
     &.bx_active {
       
       &:before {
         content: ' ';
         display: block;
         position: absolute;
-        bottom: -4px;
+        bottom: -1px;
         background: #000;
         width: 100%;
         left: 0;
         height: 2px;
       }
-    
+      
       a {
-        border: none;
-        background: #fff !important;
         color: #333;
         
         &:hover {
           color: #333;
         }
+      }
+    }
+    
+    &:active,
+    &.bx_active {
+    
+      a {
+        border: none;
+        background: #fff !important;
       }
       
     }
@@ -94,8 +107,10 @@
 	}
 	
 	.bx_scu ul li {
-		width: 30px !important;
-		padding-top: 30px !important;
+		width: 24px !important;
+		padding-top: 24px !important;
+    float: left;
+    margin: 0 1px 12px 0;
 		
 		a span {
 			top: 0 !important;
@@ -268,7 +283,7 @@
         content: ' ';
         display: block;
         position: absolute;
-        bottom: 0px;
+        bottom: -4px;
         background: #000;
         width: 100%;
         left: 0;
@@ -276,5 +291,43 @@
       }
       
     }
+  }
+}
+
+.bj-quantity {
+  
+  &-minus {
+    .ib();
+    background-color: @gray-lightest;
+    .square( 26px );
+    text-align: center;
+    
+    &:before {
+      content: '-';
+      .ib();
+      font-size: 13.5pt;
+      line-height: 23px;
+      color: #000;
+    }
+  }
+  
+  &-plus {
+    .ib();
+    background-color: @gray-lightest;
+    .square( 26px );
+    text-align: center;
+    
+    &:before {
+      content: '+';
+      .ib();
+      font-size: 13.5pt;
+      line-height: 26px;
+      color: #000;
+    }
+  }
+  
+  &-input {
+    border: 1px solid @gray-lightest;
+    text-align: center;
   }
 }
