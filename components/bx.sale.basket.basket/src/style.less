@@ -251,6 +251,7 @@
   
 	.bx-touch .bx_ordercart .bx_ordercart_order_table_container table.counter tbody tr td {
 		display:table-cell;
+    width: 33%;
 	}
 	
 	.bx-touch .bx_ordercart .bx_ordercart_order_table_container {
@@ -330,4 +331,24 @@
     border: 1px solid @gray-lightest;
     text-align: center;
   }
+}
+
+@media (max-width:530px){
+
+  .bx_ordercart .bx_ordercart_order_sum tr td {
+    padding:1px;
+    text-align:right;
+    font-size:13px;
+    width: 50%;
+    
+    &:last-child {
+      text-align: left;
+      padding-left: 10px;
+    }
+  }
+  
+  .bx_ordercart .bx_ordercart_order_sum tr td.custom_t1 {
+    width:50%;
+  }
+  
 }
