@@ -377,10 +377,8 @@
   font-size: 13.5pt;
   display: block;
   width: 100% !important;
-  line-height: 25px;
-  height: 25px;
+  height: 35px;
   vertical-align: top;
-  margin-bottom: 5px;
 }
 .item_buttons_counter_block .transparent_input:focus {
   output: none;
@@ -392,7 +390,7 @@
   line-height: 15px;
   display: block;
   font-size: 9pt;
-  margin-top: -3px;
+  margin-top: -8px;
 }
 .bx_scu ul {
   margin: 0 !important;

@@ -114,6 +114,10 @@
   &__info {
     display: block;
     
+    @media (min-width: @screen-sm) and (max-width: @screen-md-max) {
+      text-align: center;
+    }
+    
     .bx-touch & {
       border-top: 1px solid #f2f2f2;
       padding: 10px 0 0 16px;
@@ -147,6 +151,12 @@
       position: absolute;
       right: 16px;
       top: 18px;
+      
+      @media (min-width: @screen-sm) and (max-width: @screen-md-max) {
+        position: static;
+        right: auto;
+        top: auto;
+      }
     }
     
     .bx-no-touch & {

@@ -1497,7 +1497,6 @@
 .bx_catalog_top_home .bx_item_detail_scu .bx_scu ul li {
   display: inline-block;
   height: auto;
-  margin-right: -3px;
 }
 .bx_catalog_top_home .bx_item_detail_scu .bx_scu li {
   float: none !important;

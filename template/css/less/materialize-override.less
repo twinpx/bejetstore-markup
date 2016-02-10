@@ -95,3 +95,19 @@
 .breadcrumb {
   color: @text-color;
 }
+
+.breadcrumb:before {
+  display: none;
+}
+
+//pagination
+.pagination li {
+  display: inline;
+  padding: 0;
+  border-radius: 0;
+  
+  &.active {
+    background-color: transparent;
+  }
+}
+
